@@ -1,0 +1,9 @@
+diff --git a/node_modules/@types/react-native-modals/index.d.ts b/node_modules/@types/react-native-modals/index.d.ts
+index 6a22310..d446568 100755
+--- a/node_modules/@types/react-native-modals/index.d.ts
++++ b/node_modules/@types/react-native-modals/index.d.ts
+@@ -137,3 +137,4 @@ export default class Modal extends React.Component<ModalProps> {
+     modalSize: { width: number, height: number };
+     pointerEvents: 'auto' | 'none';
+ }
++export class ModalPortal extends React.Component<any> { }

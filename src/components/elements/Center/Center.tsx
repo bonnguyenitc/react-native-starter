@@ -1,0 +1,26 @@
+import React from 'react';
+import { ViewProps } from '@/types';
+import { Box } from '../Box';
+
+export interface CenterProps {
+  horizontal?: boolean;
+  vertical?: boolean;
+}
+
+export const Center = function ({
+  horizontal = false,
+  vertical = false,
+  children = null,
+  ...props
+}: ViewProps & CenterProps) {
+  return (
+    <Box
+      alignItems={(horizontal && !vertical) || (!horizontal && !vertical) ? 'center' : 'flex-start'}
+      justifyContent={
+        (vertical && !horizontal) || (!horizontal && !vertical) ? 'center' : 'flex-start'
+      }
+      {...props}>
+      {children}
+    </Box>
+  );
+};
