@@ -1,4 +1,5 @@
 #import "AppDelegate.h"
+#import "RNBootSplash.h"
 
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
@@ -57,6 +58,7 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+	[RNBootSplash initWithStoryboard:@"BootSplash" rootView:rootView];
   return YES;
 }
 
