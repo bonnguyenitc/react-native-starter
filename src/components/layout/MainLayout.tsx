@@ -1,24 +1,45 @@
+import { MotiView } from 'moti';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Col } from '../elements/Col';
+import { useTheme } from '@shopify/restyle';
+import { styles, transitions } from '@/global';
+import { useThemeStore } from '@/stores';
 
 type MainLayoutProps = {
   children: React.ReactNode;
   safe?: boolean;
 };
 
-export const MainLayout = function ({ children, safe = false }: MainLayoutProps) {
+export const MainLayout: React.FC<MainLayoutProps> = function ({ children, safe = false }) {
+  const { isDarkMode } = useThemeStore();
+  const { colors } = useTheme();
   if (!safe)
     return (
-      <Col flex={1} backgroundColor="background">
+      <MotiView
+        style={styles.flex_1}
+        transition={transitions.screen}
+        from={{
+          backgroundColor: isDarkMode ? colors.dark : colors.light,
+        }}
+        animate={{
+          backgroundColor: isDarkMode ? colors.dark : colors.light,
+        }}>
         {children}
-      </Col>
+      </MotiView>
     );
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <Col flex={1} backgroundColor="background">
+    <SafeAreaView style={styles.flex_1}>
+      <MotiView
+        style={styles.flex_1}
+        transition={transitions.screen}
+        from={{
+          backgroundColor: isDarkMode ? colors.dark : colors.light,
+        }}
+        animate={{
+          backgroundColor: isDarkMode ? colors.dark : colors.light,
+        }}>
         {children}
-      </Col>
+      </MotiView>
     </SafeAreaView>
   );
 };

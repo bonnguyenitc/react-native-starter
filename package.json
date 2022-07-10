@@ -35,6 +35,7 @@
     "@types/react-native-modals": "^0.19.2",
     "axios": "^0.27.2",
     "i18next": "^21.8.11",
+    "moti": "^0.18.0",
     "nanoid": "^4.0.0",
     "patch-package": "^6.4.7",
     "postinstall-postinstall": "^2.1.0",

@@ -15,6 +15,7 @@ export const lightTheme: any = createTheme({
     defaults: {
       fontSize: 16,
       color: 'text',
+      fontFamily: 'Poppins',
     },
   },
   textVariants: {

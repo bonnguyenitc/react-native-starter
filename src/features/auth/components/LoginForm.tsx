@@ -4,9 +4,11 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useTranslation } from 'react-i18next';
 import { useNavigation } from '@react-navigation/native';
+import { useTheme } from '@shopify/restyle';
 import { Button, Col, Space } from '@/components/elements';
 import { InputField } from '@/components/form/InputField';
 import { useAuth } from '../stores/auth';
+import { useThemeStore } from '@/stores';
 
 type FormData = {
   email: string;
@@ -22,6 +24,8 @@ export const LoginForm = function () {
   const navigation = useNavigation();
   const { login } = useAuth();
   const { t } = useTranslation();
+  const { isDarkMode } = useThemeStore();
+  const { colors } = useTheme();
 
   useEffect(() => {
     navigation.setOptions({
@@ -57,6 +61,7 @@ export const LoginForm = function () {
         placeholder={t('auth:enter_email')}
         autoCapitalize="none"
         keyboardType="email-address"
+        placeholderTextColor={!isDarkMode ? colors.dark : colors.light}
       />
       <Space height={16} />
       <InputField
@@ -66,16 +71,17 @@ export const LoginForm = function () {
         placeholder={t('auth:enter_password')}
         autoCapitalize="none"
         secureTextEntry
+        placeholderTextColor={!isDarkMode ? colors.dark : colors.light}
       />
       <Space height={32} />
       <Col>
-        <Button backgroundColor="primaryDarker" onPress={handleSubmit(onSubmit)}>
+        <Button backgroundColor={!isDarkMode ? 'dark' : 'light'} onPress={handleSubmit(onSubmit)}>
           {t('auth:login')}
         </Button>
       </Col>
       <Space height={32} />
       <Col>
-        <Button backgroundColor="violet" onPress={goToRegister}>
+        <Button backgroundColor={!isDarkMode ? 'dark' : 'light'} onPress={goToRegister}>
           {t('auth:register')}
         </Button>
       </Col>

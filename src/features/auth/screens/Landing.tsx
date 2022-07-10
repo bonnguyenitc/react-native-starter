@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Button, Space, Text } from '@/components/elements';
 import { AuthLayout } from '../components/Layout';
 import { APP_NAME } from '@/config';
+import { useThemeStore } from '@/stores';
 
 const languages = [
   // Language List
@@ -25,14 +26,15 @@ export const Landing = function () {
 
   const { t, i18n } = useTranslation();
   const [lang, setLang] = useState(i18n.language);
+  const { isDarkMode } = useThemeStore();
 
   return (
-    <AuthLayout title={APP_NAME}>
-      <Button onPress={goToLogin} backgroundColor="highlight" width={200}>
+    <AuthLayout safe isShowToggleDarkMode title={APP_NAME}>
+      <Button onPress={goToLogin} backgroundColor={!isDarkMode ? 'dark' : 'light'} width={200}>
         {t('auth:login')}
       </Button>
       <Space height={28} />
-      <Button onPress={goToRegister} backgroundColor="highlight" width={200}>
+      <Button onPress={goToRegister} backgroundColor={!isDarkMode ? 'dark' : 'light'} width={200}>
         {t('auth:register')}
       </Button>
       <Space height={18} />
@@ -40,7 +42,8 @@ export const Landing = function () {
         const selectedLanguage = currentLang.code === lang;
         return (
           <Text
-            color={!selectedLanguage ? 'text' : 'highlight'}
+            color="text"
+            variant={!selectedLanguage ? 'defaults' : 'normal'}
             key={currentLang.code}
             onPress={() => {
               setLang(currentLang.code);

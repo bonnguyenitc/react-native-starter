@@ -7,12 +7,12 @@ export interface CenterProps {
   vertical?: boolean;
 }
 
-export const Center = function ({
+export const Center: React.FC<ViewProps & CenterProps> = function ({
   horizontal = false,
   vertical = false,
   children = null,
   ...props
-}: ViewProps & CenterProps) {
+}) {
   return (
     <Box
       alignItems={(horizontal && !vertical) || (!horizontal && !vertical) ? 'center' : 'flex-start'}

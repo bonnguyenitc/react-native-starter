@@ -10,13 +10,13 @@ export interface SpaceProps {
   align?: FlexAlignType;
 }
 
-export const Space = function ({
+export const Space: React.FC<SpaceProps & ViewProps> = function ({
   style,
   height = 0,
   width = '100%',
   align = 'flex-start',
   ...props
-}: SpaceProps & ViewProps) {
+}) {
   const styles = [style, { height, width }];
 
   return <Box alignSelf={align} {...props} style={styles} />;

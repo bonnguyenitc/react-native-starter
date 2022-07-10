@@ -14,7 +14,12 @@ type ButtonProps = {
   style?: StyleProp<ViewStyle>;
 };
 
-export const Button = function ({ children, style, onPress, ...props }: ButtonProps & ViewProps) {
+export const Button: React.FC<ButtonProps & ViewProps> = function ({
+  children,
+  style,
+  onPress,
+  ...props
+}) {
   return (
     <TouchableOpacity onPress={onPress} activeOpacity={0.6}>
       <Center style={[styleDefault, style]} {...props}>

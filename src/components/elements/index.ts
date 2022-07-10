@@ -7,3 +7,4 @@ export * from './Space';
 export * from './Spinner';
 export * from './Text';
 export * from './Button';
+export * from './Switch';

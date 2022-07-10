@@ -20,7 +20,9 @@ export const color: RecordString = {
 
   violet: palette.deepPurple,
 
-  white: palette.white,
-
   highlight: palette.blue,
+
+  dark: palette.black,
+
+  light: palette.white,
 };
