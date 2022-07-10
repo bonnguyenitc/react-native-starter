@@ -1,4 +1,5 @@
 import create from 'zustand';
+import storage from '@/utils/storage';
 
 export type ThemeStore = {
   isDarkMode: boolean;
@@ -6,10 +7,13 @@ export type ThemeStore = {
 };
 
 export const useThemeStore = create<ThemeStore>(set => ({
-  isDarkMode: false,
+  isDarkMode: !!storage.getDarkMode(),
   toggleMode: () => {
-    set((state: { isDarkMode: any }) => ({
-      isDarkMode: !state.isDarkMode,
-    }));
+    set((state: { isDarkMode: any }) => {
+      storage.saveDarkMode(!state.isDarkMode);
+      return {
+        isDarkMode: !state.isDarkMode,
+      };
+    });
   },
 }));

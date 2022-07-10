@@ -2,6 +2,7 @@ import { mmkv } from '@/lib/mmvk';
 
 const KEYS = {
   TOKEN: '@TOKEN',
+  THEME: '@THEME',
 };
 
 const storage = {
@@ -10,6 +11,12 @@ const storage = {
   },
   getAccessToken: () => {
     return mmkv.getString(KEYS.TOKEN);
+  },
+  saveDarkMode: (isDark: boolean) => {
+    mmkv.set(KEYS.THEME, isDark);
+  },
+  getDarkMode: () => {
+    return mmkv.getBoolean(KEYS.THEME);
   },
 };
 
