@@ -1,19 +1,21 @@
 import React from 'react';
 import {
-  createNativeStackNavigator,
-  NativeStackNavigationOptions,
-} from '@react-navigation/native-stack';
+  createStackNavigator,
+  StackNavigationOptions,
+  TransitionPresets,
+} from '@react-navigation/stack';
 import { Home } from '../screens/Home';
 
 type HomeStackParamList = {
   home: undefined;
 };
 
-const options: NativeStackNavigationOptions = {
+const options: StackNavigationOptions = {
   headerShown: true,
+  ...TransitionPresets.SlideFromRightIOS,
 };
 
-const Stack = createNativeStackNavigator<HomeStackParamList>();
+const Stack = createStackNavigator<HomeStackParamList>();
 
 export const HomeRoutes = function () {
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { t as trans } from 'i18next';
 import { useTranslation } from 'react-i18next';
@@ -15,6 +15,12 @@ const languages = [
 
 export const Landing = function () {
   const navigation = useNavigation();
+
+  useEffect(() => {
+    navigation.setOptions({
+      headerTitle: '',
+    });
+  }, [navigation]);
 
   const goToLogin = () => {
     navigation.navigate('login' as never);

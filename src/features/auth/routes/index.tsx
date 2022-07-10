@@ -1,8 +1,9 @@
 import React from 'react';
 import {
-  createNativeStackNavigator,
-  NativeStackNavigationOptions,
-} from '@react-navigation/native-stack';
+  createStackNavigator,
+  StackNavigationOptions,
+  TransitionPresets,
+} from '@react-navigation/stack';
 import { Register } from '../screens/Register';
 import { Login } from '../screens/Login';
 import { Landing } from '../screens/Landing';
@@ -13,11 +14,12 @@ type AuthStackParamList = {
   landing: undefined;
 };
 
-const options: NativeStackNavigationOptions = {
+const options: StackNavigationOptions = {
   headerShown: true,
+  ...TransitionPresets.SlideFromRightIOS,
 };
 
-const Stack = createNativeStackNavigator<AuthStackParamList>();
+const Stack = createStackNavigator<AuthStackParamList>();
 
 export const AuthRoutes = function () {
   return (
