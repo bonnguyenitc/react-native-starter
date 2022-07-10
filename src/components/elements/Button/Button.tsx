@@ -1,5 +1,6 @@
-import React from 'react';
-import { StyleProp, TouchableOpacity, ViewStyle } from 'react-native';
+import React, { useMemo } from 'react';
+import { StyleProp, ViewStyle } from 'react-native';
+import { MotiPressable } from 'moti/interactions';
 import { ViewProps } from '@/types';
 import { Text } from '../Text';
 import { Center } from '../Center';
@@ -21,7 +22,19 @@ export const Button: React.FC<ButtonProps & ViewProps> = function ({
   ...props
 }) {
   return (
-    <TouchableOpacity onPress={onPress} activeOpacity={0.6}>
+    <MotiPressable
+      onPress={onPress}
+      animate={useMemo(
+        () =>
+          ({ hovered, pressed }) => {
+            'worklet';
+
+            return {
+              opacity: hovered || pressed ? 0.6 : 1,
+            };
+          },
+        [],
+      )}>
       <Center style={[styleDefault, style]} {...props}>
         {typeof children === 'string' ? (
           <Text variant="normal" color="background">
@@ -31,6 +44,6 @@ export const Button: React.FC<ButtonProps & ViewProps> = function ({
           children
         )}
       </Center>
-    </TouchableOpacity>
+    </MotiPressable>
   );
 };
