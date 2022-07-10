@@ -4,7 +4,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 platform :ios, '12.4'
 install! 'cocoapods', :deterministic_uuids => false
 
-target 'starter' do
+abstract_target 'starter' do
   config = use_native_modules!
 
   # Flags change depending on the env values.
@@ -19,16 +19,18 @@ target 'starter' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  target 'starterTests' do
-    inherit! :complete
-    # Pods for testing
-  end
+  target 'production' do
+	end
+	target 'staging' do
+	end
+	target 'development' do
+	end
 
   # Enables Flipper.
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work and
   # you should disable the next line.
-  use_flipper!()
+	use_flipper!()
 
   post_install do |installer|
     react_native_post_install(installer)

@@ -13,7 +13,19 @@
     "format": "npm run prettier -- --write",
     "check-types": "tsc --project tsconfig.json --pretty --noEmit",
     "check-format": "npm run prettier -- --list-different",
-    "validate": "npm-run-all --parallel check-types && lint-staged"
+    "validate": "npm-run-all --parallel check-types && lint-staged",
+    "android:dev": "ENVFILE=.env.development react-native run-android --variant=DevelopmentDebug",
+    "android:prod": "ENVFILE=.env.production react-native run-android --variant=ProductionDebug",
+    "android:stg": "ENVFILE=.env.staging react-native run-android --variant=StagingDebug",
+    "ios:dev": "ENVFILE=.env.development react-native run-ios --scheme development --configuration debug --simulator='IPhone 13'",
+    "ios:prod": "ENVFILE=.env.production react-native run-ios --scheme production --configuration debug --simulator='IPhone 13'",
+    "ios:stg": "ENVFILE=.env.staging react-native run-ios --scheme staging --configuration debug --simulator='IPhone 13'",
+    "build-android:dev": "cd android && ENVFILE=.env.development ./gradlew assembleDevelopmentRelease",
+    "build-android:stg": "cd android && ENVFILE=.env.staging ./gradlew assembleStagingRelease",
+    "build-android:prod": "cd android && ENVFILE=.env.production ./gradlew assembleProductionRelease",
+    "clear:android": "cd android && ./gradlew clean",
+    "devices:ios": "xcrun simctl list devices",
+    "devices:android": "adb devices"
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.3",
@@ -31,6 +43,7 @@
     "react-i18next": "^11.17.4",
     "react-native": "0.69.1",
     "react-native-bootsplash": "^4.2.3",
+    "react-native-config": "^1.4.6",
     "react-native-gesture-handler": "^2.5.0",
     "react-native-mmkv": "^2.4.2",
     "react-native-modals": "^0.22.3",

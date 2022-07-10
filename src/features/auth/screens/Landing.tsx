@@ -4,6 +4,7 @@ import { t as trans } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { Button, Space, Text } from '@/components/elements';
 import { AuthLayout } from '../components/Layout';
+import { APP_NAME } from '@/config';
 
 const languages = [
   // Language List
@@ -26,7 +27,7 @@ export const Landing = function () {
   const [lang, setLang] = useState(i18n.language);
 
   return (
-    <AuthLayout title="Landing">
+    <AuthLayout title={APP_NAME}>
       <Button onPress={goToLogin} backgroundColor="highlight" width={200}>
         {t('auth:login')}
       </Button>

@@ -1,4 +1,11 @@
 apply plugin: "com.android.application"
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+
+project.ext.envConfigFiles = [
+	development: ".env.development",
+	staging: ".env.staging",
+	production: ".env.production",
+]
 
 import com.android.build.OutputFile
 
@@ -138,8 +145,9 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
+		resValue "string", "build_config_package", "com.starter"
 
         if (isNewArchitectureEnabled()) {
             // We configure the NDK build only if you decide to opt-in for the New Architecture.
@@ -218,11 +226,46 @@ android {
         }
     }
     signingConfigs {
-        debug {
-            storeFile file('debug.keystore')
-            storePassword 'android'
-            keyAlias 'androiddebugkey'
-            keyPassword 'android'
+       	debug {
+            storeFile file(DEBUG_STORE_FILE)
+            storePassword DEBUG_STORE_PASSWORD
+            keyAlias DEBUG_KEY_ALIAS
+            keyPassword DEBUG_KEY_PASSWORD
+        }
+		development {
+            storeFile file(DEBUG_STORE_FILE)
+            storePassword DEBUG_STORE_PASSWORD
+            keyAlias DEBUG_KEY_ALIAS
+            keyPassword DEBUG_KEY_PASSWORD
+        }
+        staging {
+            storeFile file(STAGING_STORE_FILE)
+            storePassword STAGING_STORE_PASSWORD
+            keyAlias STAGING_KEY_ALIAS
+            keyPassword STAGING_KEY_PASSWORD
+        }
+        production {
+            storeFile file(PRODUCT_STORE_FILE)
+            storePassword PRODUCT_STORE_PASSWORD
+            keyAlias PRODUCT_KEY_ALIAS
+            keyPassword PRODUCT_KEY_PASSWORD
+        }
+    }
+	flavorDimensions "enviroment"
+    productFlavors {
+        development {
+            dimension "enviroment"
+            signingConfig signingConfigs.development
+			applicationIdSuffix ".development"
+        }
+        staging {
+            dimension "enviroment"
+            signingConfig signingConfigs.staging
+			applicationIdSuffix ".staging"
+        }
+        production {
+            dimension "enviroment"
+            signingConfig signingConfigs.production
         }
     }
     buildTypes {
@@ -232,7 +275,6 @@ android {
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
-            signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
