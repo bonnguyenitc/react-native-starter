@@ -5,15 +5,29 @@ import { Spinner } from '@/components/elements';
 const modal: any = ModalPortal;
 
 const loadingIds: string[] = [];
+const modalIds: string[] = [];
 
 export function hideLoading() {
-  const loadingId = loadingIds.shift();
-  modal.dismiss(loadingId);
+  const id = loadingIds.shift();
+  modal.dismiss(id);
 }
 
 export function showLoading() {
-  const loadingId = modal.show(<Spinner color="white" />, {
+  const id = modal.show(<Spinner color="white" />, {
     modalStyle: { backgroundColor: 'transparent' },
   });
-  loadingIds.push(loadingId);
+  loadingIds.push(id);
+}
+
+export function hideModalComponent() {
+  const id = modalIds.shift();
+  modal.dismiss(id);
+}
+
+export function showModalComponent(Component: React.FC) {
+  const id = modal.show(<Component />, {
+    modalStyle: { backgroundColor: 'transparent' },
+    onTouchOutside: hideModalComponent,
+  });
+  modalIds.push(id);
 }
