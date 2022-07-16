@@ -11,10 +11,10 @@
 - Local storage with MMKV
 - Axios
 - Flipper
-- Multiple evironment devepment
+- Multiple environment development
 - Modal, popup
 - Theme with @shopify/restyle
-- Form validattion with react-hook-form, yup
+- Form validation with react-hook-form, yup
 - Multi language with react-i18next, i18next
 - Splash
 - Error Boundary
@@ -110,7 +110,7 @@ And more in package.json. Check it!
 └── utils
 ```
 
-# Structure fodler for a full feature
+# Structure folder for a full feature
 
 ```
 ├── auth
