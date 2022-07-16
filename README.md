@@ -1,6 +1,6 @@
 # React Native Starter (RNS) - React Native boilerplate full feature to start make your app
 
-<p align="center"><img src="https://raw.githubusercontent.com/bonnguyenitc/react-native-starter/main/dist/demo.gif" alt="logo"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/bonnguyenitc/react-native-starter/main/dist/demo.gif" alt="demo"></p>
 
 ## Tech Stack
 
@@ -50,7 +50,7 @@ yarn ios:prod
 And more in package.json. Check it!
 ```
 
-# Struture app
+# Structure app
 
 ```
 ├── __mocks__
@@ -108,6 +108,21 @@ And more in package.json. Check it!
 ├── themes
 ├── types
 └── utils
+```
+
+# Structure fodler for a full feature
+
+```
+├── auth
+    ├── api
+    ├── assets
+    ├── components
+    ├── hooks
+    ├── routes
+    ├── screens
+    ├── stores
+    ├── types
+    └── utils
 ```
 
 # Welcome all PR
