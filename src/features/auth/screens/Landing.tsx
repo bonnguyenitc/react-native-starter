@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { t as trans } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { Button, Space, Text } from '@/components/elements';
 import { AuthLayout } from '../components/Layout';
 import { APP_NAME } from '@/config';
 import { useThemeStore } from '@/stores';
+import { language } from '@/localization/language';
 
 const languages = [
   // Language List
-  { code: 'en', label: trans('language:english') },
-  { code: 'vi', label: trans('language:vietnam') },
+  { code: 'en', label: language.english },
+  { code: 'vi', label: language.vietnam },
 ];
 
 export const Landing = function () {

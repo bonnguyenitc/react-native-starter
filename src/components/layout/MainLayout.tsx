@@ -1,5 +1,5 @@
-import { MotiView } from 'moti';
 import React from 'react';
+import { MotiView } from 'moti';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTheme } from '@shopify/restyle';
 import { styles, transitions } from '@/global';
