@@ -7,7 +7,6 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "postinstall": "husky install && patch-package",
     "lint": "eslint --fix --ext .js,.ts,.tsx ./src --ignore-path .gitignore",
     "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|ts|tsx)\"",
     "format": "npm run prettier -- --write",
@@ -25,7 +24,9 @@
     "build-android:prod": "cd android && ENVFILE=.env.production ./gradlew assembleProductionRelease",
     "clear:android": "cd android && ./gradlew clean",
     "devices:ios": "xcrun simctl list devices",
-    "devices:android": "adb devices"
+    "devices:android": "adb devices",
+    "patch": "patch-package",
+    "postinstall": "node ./bin/podInstall"
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.3",
@@ -45,10 +46,12 @@
     "react-native": "0.69.1",
     "react-native-bootsplash": "^4.2.3",
     "react-native-config": "^1.4.6",
+    "react-native-error-boundary": "^1.1.14",
     "react-native-gesture-handler": "^2.5.0",
     "react-native-mmkv": "^2.4.2",
     "react-native-modals": "^0.22.3",
     "react-native-reanimated": "^2.9.1",
+    "react-native-restart": "^0.0.24",
     "react-native-safe-area-context": "^4.3.1",
     "react-native-screens": "^3.14.0",
     "yup": "^0.32.11",

@@ -9,6 +9,7 @@ import { useThemeStore } from '@/stores';
 export const AppRoutes = function () {
   const { isLoggedIn } = useAuth();
   const { isDarkMode } = useThemeStore();
+
   return (
     <NavigationContainer
       theme={isDarkMode ? DarkTheme : DefaultTheme}
