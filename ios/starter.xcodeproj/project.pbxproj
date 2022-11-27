@@ -103,10 +103,10 @@
 		3CE429C89B627DA2C136800C /* Pods-starter-development.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-starter-development.release.xcconfig"; path = "Target Support Files/Pods-starter-development/Pods-starter-development.release.xcconfig"; sourceTree = "<group>"; };
 		3D11A0C1287A7E1C002B081D /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		3D7567582871475F009F18B1 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = starter/BootSplash.storyboard; sourceTree = "<group>"; };
+		3DD2A4D3293303E200443689 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DD2A4D5293303EF00443689 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DD9644C287748D400F3E21A /* development.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = development.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3DD9644D287748D400F3E21A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = /Users/bap/Documents/grow/rn/starter/ios/development/Info.plist; sourceTree = "<absolute>"; };
 		3DD96464287748E600F3E21A /* staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = staging.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3DD96465287748E700F3E21A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = /Users/bap/Documents/grow/rn/starter/ios/staging/Info.plist; sourceTree = "<absolute>"; };
 		46B766D38A6A4D29894715C2 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraLight.ttf"; path = "../src/assets/fonts/Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
 		4E58B449A9464EEFBA15654E /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-BoldItalic.ttf"; path = "../src/assets/fonts/Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
 		4EC996FD56074331A2658A5E /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraLightItalic.ttf"; path = "../src/assets/fonts/Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
@@ -206,7 +206,7 @@
 		3D11A0BD287A7AE4002B081D /* development */ = {
 			isa = PBXGroup;
 			children = (
-				3DD9644D287748D400F3E21A /* Info.plist */,
+				3DD2A4D3293303E200443689 /* Info.plist */,
 			);
 			path = development;
 			sourceTree = "<group>";
@@ -214,7 +214,7 @@
 		3D11A0BE287A7AF4002B081D /* staging */ = {
 			isa = PBXGroup;
 			children = (
-				3DD96465287748E700F3E21A /* Info.plist */,
+				3DD2A4D5293303EF00443689 /* Info.plist */,
 			);
 			path = staging;
 			sourceTree = "<group>";

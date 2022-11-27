@@ -1,10 +1,11 @@
-import { createTheme } from '@shopify/restyle';
+import { createTheme, useTheme as useThemeRS } from '@shopify/restyle';
 import { color } from './color';
-
 import { palette } from './palette';
 import { spacing } from './spacing';
 
-export const lightTheme: any = createTheme({
+export type KeysColor = keyof typeof color;
+
+export const lightTheme = createTheme({
   colors: {
     ...color,
   },
@@ -17,20 +18,31 @@ export const lightTheme: any = createTheme({
       color: 'text',
       fontFamily: 'Poppins',
     },
-  },
-  textVariants: {
-    emoji: {
-      fontSize: 50,
+    normal: {
+      fontSize: 16,
       color: 'text',
       fontFamily: 'Poppins',
+      fontWeight: 'bold',
     },
+  },
+  textVariants: {
     defaults: {
       fontSize: 16,
       color: 'text',
       fontFamily: 'Poppins',
     },
+    emoji: {
+      fontSize: 50,
+      color: 'text',
+      fontFamily: 'Poppins',
+    },
     normal: {
       fontWeight: 'bold',
+      fontSize: 16,
+      color: 'text',
+      fontFamily: 'Poppins',
+    },
+    light: {
       fontSize: 16,
       color: 'text',
       fontFamily: 'Poppins',
@@ -43,6 +55,11 @@ export const lightTheme: any = createTheme({
     },
     h2: {
       fontSize: 28,
+      color: 'text',
+      fontFamily: 'Poppins',
+    },
+    subTitle: {
+      fontSize: 14,
       color: 'text',
       fontFamily: 'Poppins',
     },
@@ -65,5 +82,9 @@ export const darkTheme: Theme = {
     background: palette.black,
     highlight: palette.white,
     text: palette.white,
+    dark: palette.white,
+    light: palette.black,
   },
 };
+
+export const useTheme = () => useThemeRS<Theme>();

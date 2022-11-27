@@ -3,7 +3,7 @@ import { createVariant, VariantProps, createRestyleComponent } from '@shopify/re
 import { TextInput as RNTextInput } from 'react-native';
 import { Theme } from '@/themes';
 
-const variant = createVariant<Theme>({
+const variant = createVariant({
   themeKey: 'textInputVariants',
   defaults: {
     width: '100%',

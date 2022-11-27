@@ -36,11 +36,19 @@ export const Landing = function () {
 
   return (
     <AuthLayout safe isShowToggleDarkMode title={APP_NAME}>
-      <Button onPress={goToLogin} backgroundColor={!isDarkMode ? 'dark' : 'light'} width={200}>
+      <Button
+        onPress={goToLogin}
+        backgroundColor={!isDarkMode ? 'dark' : 'light'}
+        width={200}
+        labelColor={isDarkMode ? 'dark' : 'light'}>
         {t('auth:login')}
       </Button>
       <Space height={28} />
-      <Button onPress={goToRegister} backgroundColor={!isDarkMode ? 'dark' : 'light'} width={200}>
+      <Button
+        onPress={goToRegister}
+        backgroundColor={!isDarkMode ? 'dark' : 'light'}
+        width={200}
+        labelColor={isDarkMode ? 'dark' : 'light'}>
         {t('auth:register')}
       </Button>
       <Space height={18} />
@@ -49,7 +57,7 @@ export const Landing = function () {
         return (
           <Text
             color="text"
-            variant={!selectedLanguage ? 'defaults' : 'normal'}
+            variant={!selectedLanguage ? 'light' : 'normal'}
             key={currentLang.code}
             onPress={() => {
               setLang(currentLang.code);

@@ -4,6 +4,7 @@ import { MotiPressable } from 'moti/interactions';
 import { ViewProps } from '@/types';
 import { Text } from '../Text';
 import { Center } from '../Center';
+import { KeysColor } from '@/themes';
 
 const styleDefault: ViewStyle = {
   padding: 16,
@@ -11,9 +12,10 @@ const styleDefault: ViewStyle = {
 };
 
 type ButtonProps = {
-  onPress?: () => void;
+  onPress: () => void;
   isModal?: boolean;
   style?: StyleProp<ViewStyle>;
+  labelColor?: KeysColor;
 };
 
 export const Button: React.FC<ButtonProps & ViewProps> = function ({
@@ -21,6 +23,7 @@ export const Button: React.FC<ButtonProps & ViewProps> = function ({
   style,
   onPress,
   isModal,
+  labelColor = 'dark',
   ...props
 }) {
   if (isModal) {
@@ -28,7 +31,7 @@ export const Button: React.FC<ButtonProps & ViewProps> = function ({
       <TouchableOpacity onPress={onPress} activeOpacity={0.6}>
         <Center style={[styleDefault, style]} {...props}>
           {typeof children === 'string' ? (
-            <Text variant="normal" color="background">
+            <Text variant="normal" color={labelColor}>
               {children}
             </Text>
           ) : (
@@ -55,7 +58,7 @@ export const Button: React.FC<ButtonProps & ViewProps> = function ({
       )}>
       <Center style={[styleDefault, style]} {...props}>
         {typeof children === 'string' ? (
-          <Text variant="normal" color="background">
+          <Text variant="normal" color={labelColor}>
             {children}
           </Text>
         ) : (

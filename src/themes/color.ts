@@ -1,7 +1,6 @@
-import { RecordString } from '@/types';
 import { palette } from './palette';
 
-export const color: RecordString = {
+export const color = {
   transparent: 'rgba(0, 0, 0, 0)',
 
   background: palette.white,

@@ -1,6 +1,4 @@
-import { RecordNumber } from '@/types';
-
-export const spacing: RecordNumber = {
+export const spacing = {
   tiny: 4,
   small: 8,
   medium: 12,

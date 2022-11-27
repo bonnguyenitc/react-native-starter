@@ -1,6 +1,4 @@
-import { RecordString } from '@/types';
-
-export const palette: RecordString = {
+export const palette = {
   black: '#000000',
   white: '#ffffff',
   offWhite: '#e6e6e6',

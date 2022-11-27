@@ -49,5 +49,6 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 0,
     'no-restricted-imports': 0,
     'prettier/prettier': ['error', { bracketSpacing: true }],
+    'react/jsx-no-bind': 'error',
   },
 };
