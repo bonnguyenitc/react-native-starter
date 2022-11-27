@@ -4,4 +4,5 @@ export const spacing = {
   medium: 12,
   large: 24,
   huge: 64,
+  '16px': 16,
 };
