@@ -5,10 +5,19 @@ import { ViewProps } from '@/types';
 import { Text } from '../Text';
 import { Center } from '../Center';
 import { KeysColor } from '@/themes';
+import { palette } from '@/themes/palette';
 
 const styleDefault: ViewStyle = {
   padding: 16,
   borderRadius: 32,
+};
+
+const SHADOW: ViewStyle = {
+  elevation: 5,
+  shadowColor: palette.black,
+  shadowOffset: { width: 0, height: 0 },
+  shadowOpacity: 0.4,
+  shadowRadius: 10,
 };
 
 type ButtonProps = {
@@ -16,6 +25,7 @@ type ButtonProps = {
   isModal?: boolean;
   style?: StyleProp<ViewStyle>;
   labelColor?: KeysColor;
+  shadow?: boolean;
 };
 
 export const Button: React.FC<ButtonProps & ViewProps> = function ({
@@ -24,12 +34,13 @@ export const Button: React.FC<ButtonProps & ViewProps> = function ({
   onPress,
   isModal,
   labelColor = 'dark',
+  shadow,
   ...props
 }) {
   if (isModal) {
     return (
       <TouchableOpacity onPress={onPress} activeOpacity={0.6}>
-        <Center style={[styleDefault, style]} {...props}>
+        <Center style={[styleDefault, style, shadow && SHADOW]} {...props}>
           {typeof children === 'string' ? (
             <Text variant="normal" color={labelColor}>
               {children}
@@ -56,7 +67,7 @@ export const Button: React.FC<ButtonProps & ViewProps> = function ({
           },
         [],
       )}>
-      <Center style={[styleDefault, style]} {...props}>
+      <Center style={[styleDefault, style, shadow && SHADOW]} {...props}>
         {typeof children === 'string' ? (
           <Text variant="normal" color={labelColor}>
             {children}
