@@ -6,7 +6,7 @@ import {
 } from '@react-navigation/stack';
 import { Home } from '../screens/Home';
 
-type HomeStackParamList = {
+export type HomeStackParamList = {
   home: undefined;
 };
 

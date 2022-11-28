@@ -8,7 +8,7 @@ import { Register } from '../screens/Register';
 import { Login } from '../screens/Login';
 import { Landing } from '../screens/Landing';
 
-type AuthStackParamList = {
+export type AuthStackParamList = {
   register: undefined;
   login: undefined;
   landing: undefined;

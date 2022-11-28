@@ -50,5 +50,6 @@ module.exports = {
     'no-restricted-imports': 0,
     'prettier/prettier': ['error', { bracketSpacing: true }],
     'react/jsx-no-bind': 'error',
+    'no-empty-function': 'off',
   },
 };

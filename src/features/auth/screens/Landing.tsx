@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { useTranslation } from 'react-i18next';
 import { Button, Space, Text } from '@/components/elements';
 import { AuthLayout } from '../components/Layout';
 import { APP_NAME } from '@/config';
 import { useThemeStore } from '@/stores';
 import { language } from '@/localization/language';
+import { AppNavigationProp } from '@/routes';
+import { useAuth } from '../hooks/useAuth';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const languages = [
   // Language List
@@ -14,21 +16,14 @@ const languages = [
 ];
 
 export const Landing = function () {
-  const navigation = useNavigation();
+  const navigation = useNavigation<AppNavigationProp>();
+  const { goToLogin, goToRegister } = useAuth();
 
   useEffect(() => {
     navigation.setOptions({
       headerTitle: '',
     });
   }, [navigation]);
-
-  const goToLogin = () => {
-    navigation.navigate('login' as never);
-  };
-
-  const goToRegister = () => {
-    navigation.navigate('register' as never);
-  };
 
   const { t, i18n } = useTranslation();
   const [lang, setLang] = useState(i18n.language);

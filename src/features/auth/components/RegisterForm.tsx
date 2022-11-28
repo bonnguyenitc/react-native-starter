@@ -3,12 +3,13 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useNavigation } from '@react-navigation/native';
-import { useTranslation } from 'react-i18next';
 import { Button, Col, Space } from '@/components/elements';
 import { InputField } from '@/components/form/InputField';
-import { useAuth } from '../stores/auth';
 import { useThemeStore } from '@/stores';
 import { useTheme } from '@/themes';
+import { AppNavigationProp } from '@/routes';
+import { useAuth } from '../hooks/useAuth';
+import { useTranslation } from '@/hooks/useTranslation';
 
 type FormData = {
   email: string;
@@ -26,7 +27,7 @@ const schema = yup.object({
 });
 
 export const RegisterForm = function () {
-  const navigation = useNavigation();
+  const navigation = useNavigation<AppNavigationProp>();
   const { register } = useAuth();
   const { t } = useTranslation();
   const { isDarkMode } = useThemeStore();
@@ -53,10 +54,10 @@ export const RegisterForm = function () {
 
   const onSubmit = (/* data: FormData */) => {
     register();
-    navigation.navigate('login' as never);
+    navigation.navigate('login');
   };
 
-  const goToLogin = () => navigation.navigate('login' as never);
+  const goToLogin = () => navigation.navigate('login');
 
   return (
     <Col width="80%">

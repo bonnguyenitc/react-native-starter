@@ -6,15 +6,15 @@ import ErrorBoundary from 'react-native-error-boundary';
 import { AppRoutes } from '@/routes';
 import { darkTheme, lightTheme } from '@/themes';
 import { useThemeStore } from '@/stores/themes';
-import { useAuth } from '@/features/auth/stores/auth';
+import { useAuthStore } from '@/features/auth/stores/auth';
 import Crash from '@/features/error/screens/Crash';
 
 export const AppProvider = function () {
   const { isDarkMode } = useThemeStore();
-  const { checkLoggedIn } = useAuth();
+  const { checkLoggedInAction } = useAuthStore();
   useEffect(() => {
-    checkLoggedIn();
-  }, [checkLoggedIn]);
+    checkLoggedInAction();
+  }, [checkLoggedInAction]);
 
   const errorHandler = (error: Error, stackTrace: string) => {
     // send error to service log

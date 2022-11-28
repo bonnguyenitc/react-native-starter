@@ -2,13 +2,14 @@ import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { useTranslation } from 'react-i18next';
 import { useNavigation } from '@react-navigation/native';
 import { Button, Col, Space } from '@/components/elements';
 import { InputField } from '@/components/form/InputField';
-import { useAuth } from '../stores/auth';
 import { useThemeStore } from '@/stores';
 import { useTheme } from '@/themes';
+import { AppNavigationProp } from '@/routes';
+import { useAuth } from '../hooks/useAuth';
+import { useTranslation } from '@/hooks/useTranslation';
 
 type FormData = {
   email: string;
@@ -21,7 +22,7 @@ const schema = yup.object({
 });
 
 export const LoginForm = function () {
-  const navigation = useNavigation();
+  const navigation = useNavigation<AppNavigationProp>();
   const { login } = useAuth();
   const { t } = useTranslation();
   const { isDarkMode } = useThemeStore();
@@ -47,10 +48,9 @@ export const LoginForm = function () {
 
   const onSubmit = (data: FormData) => {
     login(data);
-    navigation.navigate('login' as never);
   };
 
-  const goToRegister = () => navigation.navigate('register' as never);
+  const goToRegister = () => navigation.navigate('register');
 
   return (
     <Col width="80%">
