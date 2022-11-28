@@ -1,4 +1,6 @@
-export const styles = {
+import { ViewStyle } from 'react-native';
+
+export const styles: Record<string, ViewStyle> = {
   flex_1: {
     flex: 1,
   },

@@ -1,9 +1,8 @@
 import React from 'react';
 import { MotiView } from 'moti';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useTheme } from '@shopify/restyle';
 import { styles, transitions } from '@/global';
-import { useThemeStore } from '@/stores';
+import { useTheme } from '@/themes';
 
 type MainLayoutProps = {
   children: React.ReactNode;
@@ -11,7 +10,6 @@ type MainLayoutProps = {
 };
 
 export const MainLayout: React.FC<MainLayoutProps> = function ({ children, safe = false }) {
-  const { isDarkMode } = useThemeStore();
   const { colors } = useTheme();
   if (!safe)
     return (
@@ -19,24 +17,24 @@ export const MainLayout: React.FC<MainLayoutProps> = function ({ children, safe 
         style={styles.flex_1}
         transition={transitions.screen}
         from={{
-          backgroundColor: isDarkMode ? colors.dark : colors.light,
+          backgroundColor: colors.background,
         }}
         animate={{
-          backgroundColor: isDarkMode ? colors.dark : colors.light,
+          backgroundColor: colors.background,
         }}>
         {children}
       </MotiView>
     );
   return (
-    <SafeAreaView style={styles.flex_1}>
+    <SafeAreaView style={[styles.flex_1, { backgroundColor: colors.background }]}>
       <MotiView
         style={styles.flex_1}
         transition={transitions.screen}
         from={{
-          backgroundColor: isDarkMode ? colors.dark : colors.light,
+          backgroundColor: colors.background,
         }}
         animate={{
-          backgroundColor: isDarkMode ? colors.dark : colors.light,
+          backgroundColor: colors.background,
         }}>
         {children}
       </MotiView>

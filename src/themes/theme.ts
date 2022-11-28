@@ -82,8 +82,6 @@ export const darkTheme: Theme = {
     background: palette.black,
     highlight: palette.white,
     text: palette.white,
-    dark: palette.white,
-    light: palette.black,
   },
 };
 

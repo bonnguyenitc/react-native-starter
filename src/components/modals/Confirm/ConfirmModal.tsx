@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import { Button, Col, Row, Space, Text } from '@/components/elements';
 import { WIDTH } from '@/global';
 import { hideModalComponent } from '@/lib/dialog';
+import { useThemeStore } from '@/stores';
 
 type Props = {
   onClose?: () => void;
@@ -20,6 +21,7 @@ export const ConfirmModal: React.FC<Props> = function ({
   labelCancel = 'Cancel',
   labelConfirm = 'OK',
 }) {
+  const { isDarkMode } = useThemeStore();
   const handleClose = useCallback(() => {
     onClose?.();
     hideModalComponent();
@@ -31,12 +33,16 @@ export const ConfirmModal: React.FC<Props> = function ({
   }, [onConfirm]);
 
   return (
-    <Col width={0.8 * WIDTH} padding="medium" backgroundColor="background">
+    <Col width={0.8 * WIDTH} padding="medium" backgroundColor={isDarkMode ? 'light' : 'dark'}>
       <Col>
-        <Text variant="normal">{title}</Text>
+        <Text variant="normal" color={!isDarkMode ? 'light' : 'dark'}>
+          {title}
+        </Text>
       </Col>
       <Col>
-        <Text variant="subTitle">{content}</Text>
+        <Text variant="subTitle" color={!isDarkMode ? 'light' : 'dark'}>
+          {content}
+        </Text>
       </Col>
       <Row justifyContent="flex-end">
         <Button isModal backgroundColor="dark" onPress={handleClose} labelColor="light">

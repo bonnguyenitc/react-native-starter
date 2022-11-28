@@ -13,7 +13,7 @@ export function hideLoading() {
 }
 
 export function showLoading() {
-  const id = modal.show(<Spinner color="white" />, {
+  const id = modal.show(<Spinner color="white" size="large" />, {
     modalStyle: { backgroundColor: 'transparent' },
   });
   loadingIds.push(id);
