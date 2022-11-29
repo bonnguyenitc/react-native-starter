@@ -53,28 +53,33 @@ And more in package.json. Check it!
 # Structure app
 
 ```
-├── __mocks__
+├── App.tsx
 ├── assets
 │   ├── fonts
 │   ├── images
 │   └── jsons
 ├── components
 │   ├── elements
+│   │   ├── Align
+│   │   ├── AppBar
 │   │   ├── Box
 │   │   ├── Button
 │   │   ├── Center
 │   │   ├── Col
+│   │   ├── Image
+│   │   ├── Positioned
 │   │   ├── Row
 │   │   ├── Space
 │   │   ├── Spinner
+│   │   ├── Stack
 │   │   ├── Switch
 │   │   ├── Text
-│   │   └── TextInput
+│   │   ├── TextInput
+│   │   └── index.ts
 │   ├── form
 │   │   └── InputField
 │   ├── layout
 │   └── modals
-│       └── Confirm
 ├── config
 ├── features
 │   ├── auth
@@ -82,29 +87,21 @@ And more in package.json. Check it!
 │   │   ├── assets
 │   │   ├── components
 │   │   ├── hooks
+│   │   ├── index.ts
 │   │   ├── routes
 │   │   ├── screens
 │   │   ├── stores
 │   │   ├── types
 │   │   └── utils
 │   ├── error
-│   │   └── screens
 │   └── home
-│       ├── components
-│       ├── routes
-│       └── screens
 ├── global
 ├── hooks
-│   └── __tests__
 ├── lib
 ├── localization
-│   ├── en
-│   └── vi
 ├── provider
 ├── routes
 ├── stores
-│   └── __tests__
-├── test
 ├── themes
 ├── types
 └── utils

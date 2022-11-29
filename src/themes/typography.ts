@@ -1,3 +1,1 @@
-import { RecordString } from '@/types';
-
-export const typography: RecordString = {};
+export const typography = {};
