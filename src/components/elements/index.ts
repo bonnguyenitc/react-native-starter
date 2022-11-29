@@ -8,3 +8,8 @@ export * from './Spinner';
 export * from './Text';
 export * from './Button';
 export * from './Switch';
+export * from './Align';
+export * from './AppBar';
+export * from './Positioned';
+export * from './Stack';
+export * from './Image';
