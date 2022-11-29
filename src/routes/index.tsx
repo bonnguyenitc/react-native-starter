@@ -6,6 +6,7 @@ import { AuthRoutes, AuthStackParamList } from '@/features/auth/routes';
 import { useAuthStore } from '@/features/auth/stores/auth';
 import { HomeRoutes, HomeStackParamList } from '@/features/home/routes';
 import { useThemeStore } from '@/stores';
+import { navigationRef } from '@/utils/navigation-utilities';
 
 export type StackParamList = AuthStackParamList & HomeStackParamList;
 
@@ -17,6 +18,7 @@ export const AppRoutes = function () {
 
   return (
     <NavigationContainer
+      ref={navigationRef}
       theme={isDarkMode ? DarkTheme : DefaultTheme}
       onReady={() => RNBootSplash.hide({ fade: true })}>
       {!isLoggedIn ? <AuthRoutes /> : <HomeRoutes />}
