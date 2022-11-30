@@ -1,5 +1,4 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react';
-import { LayoutChangeEvent, ViewStyle } from 'react-native';
+import React from 'react';
 import { ViewProps } from '@/types';
 import { Box } from '../Box';
 
