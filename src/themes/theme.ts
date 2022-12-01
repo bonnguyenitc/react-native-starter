@@ -1,9 +1,11 @@
-import { createTheme, useTheme as useThemeRS } from '@shopify/restyle';
+import { createTheme, ResponsiveValue, useTheme as useThemeRS } from '@shopify/restyle';
 import { color } from './color';
 import { palette } from './palette';
 import { spacing } from './spacing';
+import { typography } from './typography';
 
 export type KeysColor = keyof typeof color;
+export type KeysTypo = keyof typeof typography;
 
 export const lightTheme = createTheme({
   colors: {
@@ -31,38 +33,7 @@ export const lightTheme = createTheme({
       color: 'text',
       fontFamily: 'Poppins',
     },
-    emoji: {
-      fontSize: 50,
-      color: 'text',
-      fontFamily: 'Poppins',
-    },
-    normal: {
-      fontWeight: 'bold',
-      fontSize: 16,
-      color: 'text',
-      fontFamily: 'Poppins',
-    },
-    light: {
-      fontSize: 16,
-      color: 'text',
-      fontFamily: 'Poppins',
-    },
-    h1: {
-      fontWeight: 'bold',
-      fontSize: 28,
-      color: 'text',
-      fontFamily: 'Poppins',
-    },
-    h2: {
-      fontSize: 28,
-      color: 'text',
-      fontFamily: 'Poppins',
-    },
-    subTitle: {
-      fontSize: 14,
-      color: 'text',
-      fontFamily: 'Poppins',
-    },
+    ...typography,
   },
   breakpoints: {
     phone: 0,
