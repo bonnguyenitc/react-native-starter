@@ -14,3 +14,4 @@ export * from './Positioned';
 export * from './Stack';
 export * from './Image';
 export * from './If';
+export * from './Touchable';
