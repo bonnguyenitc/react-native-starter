@@ -16,3 +16,4 @@ export * from './Image';
 export * from './If';
 export * from './Touchable';
 export * from './TextButton';
+export * from './Card';
