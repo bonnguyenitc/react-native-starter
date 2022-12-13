@@ -1,6 +1,6 @@
 import React from 'react';
 import { Control, Controller } from 'react-hook-form';
-import { Space, Text, TextInput } from '@/components/elements';
+import { Space, Text, TextInput } from '@/components/widgets';
 
 type InputFieldProps = {
   control?: Control<any, any>;

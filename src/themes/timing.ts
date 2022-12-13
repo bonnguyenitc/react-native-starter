@@ -1,5 +1,3 @@
-import { RecordNumber } from '@/types';
-
-export const timing: RecordNumber = {
+export const timing = {
   quick: 300,
 };

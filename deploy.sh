@@ -10,29 +10,52 @@ read -r -p 'Enter the environment (DEV|STG|PROD): ' environment
 
 platform=${platform:-ios}
 environment=${environment:-prod}
+format=""
 # store=${store:-store}
 platform="$(tr [A-Z] [a-z] <<< "$platform")"
 environment="$(tr [A-Z] [a-z] <<< "$environment")"
 # store="$(tr [A-Z] [a-z] <<< "$store")"
+if [ "$platform" == android ]
+then
+  read -r -p 'Format (APK|AAB): ' format
+  format=${format:-APK}
+  format="$(tr [A-Z] [a-z] <<< "$format")"
+else
+  read -r -p 'Format (ADHOC|TF): ' format
+  format=${format:-ADHOC}
+  format="$(tr [A-Z] [a-z] <<< "$format")"
+fi
+
 
 if [ "$platform" == android ]
 then
   if [ "$environment" == dev ]
   then
-    npx jetify
-    cd android
-    ENVFILE=.env.development ./gradlew assembleDevelopmentRelease
-    # dg deploy "app/build/outputs/apk/development/release/app-development-release.apk" --message "Android Development - $now"
+    if [ "$format" == apk ]
+    then
+      npx jetify
+      cd android
+      ENVFILE=.env.development ./gradlew assembleDevelopmentRelease
+      # dg deploy "app/build/outputs/apk/development/release/app-development-release.apk" --message "Android Development - $now"
+    else
+      npx jetify
+      cd android
+      ENVFILE=.env.development ./gradlew bundleDevelopmentRelease
+    fi
   elif [ "$environment" == stg ]
   then
-    npx jetify
-    cd android
-    ENVFILE=.env.staging ./gradlew assembleStagingRelease
-    # dg deploy "app/build/outputs/apk/staging/release/app-staging-release.apk" --message "Android Staging - $now"
+    if [ "$format" == apk ]
+    then
+      npx jetify
+      cd android
+      ENVFILE=.env.staging ./gradlew assembleStagingRelease
+      # dg deploy "app/build/outputs/apk/staging/release/app-staging-release.apk" --message "Android Staging - $now"
+    else
+      npx jetify
+      cd android
+      ENVFILE=.env.staging ./gradlew bundleStagingRelease
+    fi
   else
-    read -r -p 'Format (APK|AAB): ' format
-    format=${format:-APK}
-    format="$(tr [A-Z] [a-z] <<< "$format")"
     if [ "$format" == apk ]
     then
       npx jetify
@@ -42,7 +65,7 @@ then
     else
       npx jetify
       cd android
-      ENVFILE=.env.production ./gradlew bundleRelease
+      ENVFILE=.env.production ./gradlew bundleProductionRelease
     fi
   fi
 else
@@ -50,19 +73,19 @@ else
   then
     cd ios
     pod install
-    xcrun agvtool next-version -all
-    xcodebuild -workspace app.xcworkspace -scheme "development" -sdk iphoneos -configuration Release clean
-    xcodebuild -workspace app.xcworkspace -scheme "development" -sdk iphoneos -configuration Release archive -archivePath "$PWD"/build/app.xcarchive
-    xcodebuild -exportArchive -archivePath $PWD/build/app.xcarchive -exportOptionsPlist DevelopmentExportOptions.plist -exportPath "$PWD"/build
+    # xcrun agvtool next-version -all
+    xcodebuild -workspace starter.xcworkspace -scheme "development" -sdk iphoneos -configuration Release clean
+    xcodebuild -workspace starter.xcworkspace -scheme "development" -sdk iphoneos -configuration Release archive -archivePath "$PWD"/build/starter.xcarchive
+    xcodebuild -exportArchive -archivePath $PWD/build/starter.xcarchive -exportOptionsPlist DevelopmentExportOptions.plist -exportPath "$PWD"/build
     # dg deploy "build/development.ipa" --message "IOS Development - $now"
   elif [ "$environment" == stg ]
   then
     cd ios
     pod install
-    xcrun agvtool next-version -all
-    xcodebuild -workspace app.xcworkspace -scheme "staging" -sdk iphoneos -configuration Release clean
-    xcodebuild -workspace app.xcworkspace -scheme "staging" -sdk iphoneos -configuration Release archive -archivePath "$PWD"/build/app.xcarchive
-    xcodebuild -exportArchive -archivePath $PWD/build/app.xcarchive -exportOptionsPlist StagingExportOptions.plist -exportPath "$PWD"/build
+    # xcrun agvtool next-version -all
+    xcodebuild -workspace starter.xcworkspace -scheme "staging" -sdk iphoneos -configuration Release clean
+    xcodebuild -workspace starter.xcworkspace -scheme "staging" -sdk iphoneos -configuration Release archive -archivePath "$PWD"/build/starter.xcarchive
+    xcodebuild -exportArchive -archivePath $PWD/build/starter.xcarchive -exportOptionsPlist StagingExportOptions.plist -exportPath "$PWD"/build
     # dg deploy "build/staging.ipa" --message "IOS Staging - $now"
   else
     read -r -p 'Enter Apple ID username: ' username
@@ -70,10 +93,10 @@ else
 
     cd ios
     pod install
-    xcrun agvtool next-version -all
-    xcodebuild -workspace app.xcworkspace -scheme "production" -sdk iphoneos -configuration Release clean
-    xcodebuild -workspace app.xcworkspace -scheme "production" -sdk iphoneos -configuration Release archive -archivePath "$PWD"/build/app.xcarchive
-    xcodebuild -exportArchive -archivePath "$PWD"/build/app.xcarchive -exportOptionsPlist ProductionExportOptions.plist -exportPath "$PWD"/build
-    xcrun altool --upload-app --file "build/production.ipa" --username "${username}" --password "${password}"
+    # xcrun agvtool next-version -all
+    xcodebuild -workspace starter.xcworkspace -scheme "production" -sdk iphoneos -configuration Release clean
+    xcodebuild -workspace starter.xcworkspace -scheme "production" -sdk iphoneos -configuration Release archive -archivePath "$PWD"/build/starter.xcarchive
+    xcodebuild -exportArchive -archivePath "$PWD"/build/starter.xcarchive -exportOptionsPlist ProductionExportOptions.plist -exportPath "$PWD"/build
+    # xcrun altool --upload-app --file "build/production.ipa" --username "${username}" --password "${password}"
   fi
 fi

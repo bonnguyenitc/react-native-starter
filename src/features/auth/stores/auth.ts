@@ -1,11 +1,8 @@
 import create from 'zustand';
-import { delay } from '@/utils/delay';
 import storage from '@/utils/storage';
-import { hideLoading, showLoading } from '@/lib/dialog';
-
-export type User = {
-  email: string;
-};
+import { hideLoading, showLoading } from '@/libs/dialog';
+import { delay } from '@/utils/helpers';
+import { User } from './models';
 
 export type AuthStore = {
   data: User | undefined;

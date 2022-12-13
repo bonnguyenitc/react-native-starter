@@ -1,6 +1,6 @@
 import { ViewStyle } from 'react-native';
 
-export const styles: Record<string, ViewStyle> = {
+export const styles: { [key: string]: ViewStyle } = {
   flex_1: {
     flex: 1,
   },

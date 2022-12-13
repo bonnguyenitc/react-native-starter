@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useNavigation } from '@react-navigation/native';
-import { Button, Col, Space } from '@/components/elements';
+import { Button, Col, Space } from '@/components/widgets';
 import { InputField } from '@/components/form/InputField';
 import { useThemeStore } from '@/stores';
 import { useTheme } from '@/themes';

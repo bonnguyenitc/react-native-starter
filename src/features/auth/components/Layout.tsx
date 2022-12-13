@@ -1,7 +1,7 @@
 import React from 'react';
-import { MainLayout } from '@/components/layout/MainLayout';
+import { Layout } from '@/components/layout/Layout';
 import { ChildrenProps } from '@/types';
-import { Center, Row, Space, Switch, Text } from '@/components/elements';
+import { Center, Row, Space, Switch, Text } from '@/components/widgets';
 import { useThemeStore } from '@/stores';
 
 type AuthLayoutProps = {
@@ -18,7 +18,7 @@ export const AuthLayout: React.FC<ChildrenProps & AuthLayoutProps> = function ({
 }) {
   const { isDarkMode, toggleMode } = useThemeStore();
   return (
-    <MainLayout safe={safe}>
+    <Layout safe={safe}>
       {isShowToggleDarkMode && (
         <Row justifyContent="flex-end" padding="small">
           <Switch size={60} isActive={isDarkMode} onPress={toggleMode} />
@@ -29,6 +29,6 @@ export const AuthLayout: React.FC<ChildrenProps & AuthLayoutProps> = function ({
         <Space height={32} />
         {children}
       </Center>
-    </MainLayout>
+    </Layout>
   );
 };

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import RNRestart from 'react-native-restart';
-import { MainLayout } from '@/components/layout';
-import { Button, Center, Space, Text } from '@/components/elements';
+import { Layout } from '@/components/layout';
+import { Button, Center, Space, Text } from '@/components/widgets';
 import { useThemeStore } from '@/stores';
 
 interface IProps {
@@ -10,12 +10,15 @@ interface IProps {
 }
 
 function Crash({ error, resetError }: IProps) {
-  const handleResetApp = () => RNRestart.Restart();
+  const handleResetApp = useCallback(() => {
+    resetError?.();
+    RNRestart.Restart();
+  }, [resetError]);
 
   const { isDarkMode } = useThemeStore();
 
   return (
-    <MainLayout>
+    <Layout>
       <Center flex={1}>
         <Text>{__DEV__ ? error.toString() : 'Oops!'}</Text>
         <Space height={32} />
@@ -26,7 +29,7 @@ function Crash({ error, resetError }: IProps) {
           Reset App
         </Button>
       </Center>
-    </MainLayout>
+    </Layout>
   );
 }
 

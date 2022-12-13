@@ -1,4 +1,4 @@
-import { axios } from '@/lib/axios';
+import { axios } from '@/libs/axios';
 
 import { UserResponse } from '../types';
 

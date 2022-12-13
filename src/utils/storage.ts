@@ -1,8 +1,15 @@
-import { mmkv } from '@/lib/mmvk';
+import { StateStorage } from 'zustand/middleware';
+import { mmkv } from '@/libs/mmvk';
 
 const KEYS = {
   TOKEN: '@TOKEN',
   THEME: '@THEME',
+};
+
+export const MMKVStorage: StateStorage = {
+  getItem: (name: string) => mmkv.getString(name) || null,
+  setItem: (name: string, value: string) => mmkv.set(name, value),
+  removeItem: (name: string) => mmkv.delete(name),
 };
 
 const storage = {
@@ -11,12 +18,6 @@ const storage = {
   },
   getAccessToken: () => {
     return mmkv.getString(KEYS.TOKEN);
-  },
-  saveDarkMode: (isDark: boolean) => {
-    mmkv.set(KEYS.THEME, isDark);
-  },
-  getDarkMode: () => {
-    return mmkv.getBoolean(KEYS.THEME);
   },
 };
 

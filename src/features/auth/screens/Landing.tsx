@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { Button, Space, Text } from '@/components/elements';
+import { Button, Space, Text } from '@/components/widgets';
 import { AuthLayout } from '../components/Layout';
 import { APP_NAME } from '@/config';
 import { useThemeStore } from '@/stores';

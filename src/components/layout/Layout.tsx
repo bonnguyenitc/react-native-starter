@@ -4,12 +4,12 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { styles, transitions } from '@/global';
 import { useTheme } from '@/themes';
 
-type MainLayoutProps = {
+type LayoutProps = {
   children: React.ReactNode;
   safe?: boolean;
 };
 
-export const MainLayout: React.FC<MainLayoutProps> = function ({ children, safe = false }) {
+export const Layout: React.FC<LayoutProps> = function ({ children, safe = false }) {
   const { colors } = useTheme();
   if (!safe)
     return (

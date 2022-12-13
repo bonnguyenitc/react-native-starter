@@ -1,6 +1,6 @@
 import React from 'react';
 import { ModalPortal } from 'react-native-modals';
-import { Spinner } from '@/components/elements';
+import { Spinner } from '@/components/widgets';
 
 const modal: any = ModalPortal;
 

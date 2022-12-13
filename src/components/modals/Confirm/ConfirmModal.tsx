@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
-import { Button, Col, Row, Space, Text } from '@/components/elements';
+import { Button, Col, Row, Space, Text } from '@/components/widgets';
 import { WIDTH } from '@/global';
-import { hideModalComponent } from '@/lib/dialog';
+import { hideModalComponent } from '@/libs/dialog';
 
 type Props = {
   onClose?: () => void;

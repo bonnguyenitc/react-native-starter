@@ -22,8 +22,10 @@ export const color = {
   highlight: palette.blue,
 
   dark: palette.black,
+
   black: palette.black,
 
   light: palette.white,
+
   white: palette.white,
 };

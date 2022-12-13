@@ -1,4 +1,4 @@
-import { createTheme, ResponsiveValue, useTheme as useThemeRS } from '@shopify/restyle';
+import { createTheme, useTheme as useThemeRS } from '@shopify/restyle';
 import { color } from './color';
 import { palette } from './palette';
 import { spacing } from './spacing';

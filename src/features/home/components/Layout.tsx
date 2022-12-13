@@ -1,7 +1,7 @@
 import React from 'react';
-import { MainLayout } from '@/components/layout/MainLayout';
+import { Layout } from '@/components/layout/Layout';
 import { ChildrenProps } from '@/types';
-import { Center, Space, Text } from '@/components/elements';
+import { Center, Space, Text } from '@/components/widgets';
 
 type HomeLayoutProps = {
   title?: string;
@@ -9,12 +9,12 @@ type HomeLayoutProps = {
 
 export const HomeLayout = function ({ children, title }: ChildrenProps & HomeLayoutProps) {
   return (
-    <MainLayout>
+    <Layout>
       <Center flex={1}>
         <Text variant="h1">{title}</Text>
         <Space height={32} />
         {children}
       </Center>
-    </MainLayout>
+    </Layout>
   );
 };

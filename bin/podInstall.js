@@ -1,12 +1,8 @@
 #!/usr/bin/env node
-/**
- * Do all things that need to be done after installing packages (with yarn, npm, pnpm).
- *
- * Yes, it slows down package installation a little, but it's nice to not
- * have to remember these extra steps.
- */
+
 // Husky install
 run('npx husky install');
+
 // Patch any packages that need patching
 run('npx patch-package');
 
