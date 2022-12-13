@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 import { Layout } from '@/components/layout/Layout'
 import { ChildrenProps } from '@/types'
 import { Center, Row, Space, Switch, Text } from '@/components/widgets'
@@ -10,7 +10,7 @@ type AuthLayoutProps = {
   safe?: boolean
 }
 
-export const AuthLayout: React.FC<ChildrenProps & AuthLayoutProps> = memo(function ({
+export const AuthLayout: React.FC<ChildrenProps & AuthLayoutProps> = function ({
   children,
   title,
   isShowToggleDarkMode,
@@ -31,4 +31,4 @@ export const AuthLayout: React.FC<ChildrenProps & AuthLayoutProps> = memo(functi
       </Center>
     </Layout>
   )
-})
+}

@@ -1,4 +1,4 @@
-export const spacing = {
+export const spacing: { [key: string]: number } = {
   tiny: 4,
   small: 8,
   medium: 12,

@@ -17,7 +17,7 @@ const options: StackNavigationOptions = {
 
 const Stack = createStackNavigator<HomeStackParamList>()
 
-export const HomeRoutes = function () {
+export const HomeRoutes: React.FC = function () {
   return (
     <Stack.Navigator initialRouteName="home" screenOptions={options}>
       <Stack.Screen

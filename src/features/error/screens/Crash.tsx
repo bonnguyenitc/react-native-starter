@@ -4,14 +4,14 @@ import { Layout } from '@/components/layout'
 import { Button, Center, Space, Text } from '@/components/widgets'
 import { useThemeStore } from '@/stores'
 
-interface IProps {
+type IProps = {
   error: Error
-  resetError?: () => void
+  resetError: () => void
 }
 
-function Crash({ error, resetError }: IProps) {
+export const Crash: React.FC<IProps> = function ({ error, resetError }) {
   const handleResetApp = useCallback(() => {
-    resetError?.()
+    resetError()
     RNRestart.Restart()
   }, [resetError])
 
@@ -32,5 +32,3 @@ function Crash({ error, resetError }: IProps) {
     </Layout>
   )
 }
-
-export default Crash

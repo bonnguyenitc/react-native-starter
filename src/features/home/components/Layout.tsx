@@ -7,7 +7,10 @@ type HomeLayoutProps = {
   title?: string
 }
 
-export const HomeLayout = function ({ children, title }: ChildrenProps & HomeLayoutProps) {
+export const HomeLayout: React.FC<ChildrenProps & HomeLayoutProps> = function ({
+  children,
+  title,
+}) {
   return (
     <Layout>
       <Center flex={1}>

@@ -1,4 +1,4 @@
-export const palette = {
+export const palette: { [key: string]: string } = {
   black: '#252525',
   white: '#ffffff',
   offWhite: '#e6e6e6',

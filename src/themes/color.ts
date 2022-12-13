@@ -1,6 +1,6 @@
 import { palette } from './palette'
 
-export const color = {
+export const color: { [key: string]: string } = {
   transparent: 'rgba(0, 0, 0, 0)',
 
   background: palette.white,

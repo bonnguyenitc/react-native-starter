@@ -12,7 +12,7 @@ export type StackParamList = AuthStackParamList & HomeStackParamList
 
 export type AppNavigationProp = StackNavigationProp<StackParamList>
 
-export const AppRoutes = function () {
+export const AppRoutes: React.FC = function () {
   const { isLoggedIn } = useAuthStore()
   const { isDarkMode } = useThemeStore()
 

@@ -1,6 +1,6 @@
 import React, { ReactElement, useCallback, useMemo } from 'react'
 import ErrorBoundaryLib from 'react-native-error-boundary'
-import Crash from '../screens/Crash'
+import { Crash } from '../screens/Crash'
 
 type Props = {
   children: ReactElement

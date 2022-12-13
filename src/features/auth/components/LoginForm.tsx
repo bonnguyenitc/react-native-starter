@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
@@ -46,11 +46,14 @@ export const LoginForm: React.FC = function () {
     resolver: yupResolver(schema),
   })
 
-  const onSubmit = (data: FormData) => {
-    login(data)
-  }
+  const onSubmit = useCallback(
+    (data: FormData) => {
+      login(data)
+    },
+    [login],
+  )
 
-  const goToRegister = () => navigation.navigate('register')
+  const goToRegister = useCallback(() => navigation.navigate('register'), [navigation])
 
   return (
     <Col width="80%">

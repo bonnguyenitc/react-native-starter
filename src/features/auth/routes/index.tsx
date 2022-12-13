@@ -21,7 +21,7 @@ const options: StackNavigationOptions = {
 
 const Stack = createStackNavigator<AuthStackParamList>()
 
-export const AuthRoutes = function () {
+export const AuthRoutes: React.FC = function () {
   return (
     <Stack.Navigator initialRouteName="landing" screenOptions={options}>
       <Stack.Screen name="register" component={Register} />
