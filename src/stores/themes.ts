@@ -2,13 +2,16 @@ import create from 'zustand'
 import { persist, StateStorage } from 'zustand/middleware'
 import { MMKVStorage } from '@/utils/storage'
 
-export type ThemeStore = {
+export type State = {
   isDarkMode: boolean
+}
+
+export type Action = {
   toggleMode: () => void
 }
 
 export const useThemeStore = create(
-  persist<ThemeStore>(
+  persist<State & Action>(
     set => ({
       isDarkMode: false,
       toggleMode: () => {

@@ -7,13 +7,16 @@ export type Notification = {
   message?: string
 }
 
-type NotificationsStore = {
+type State = {
   notifications: Notification[]
+}
+
+type Action = {
   addNotification: (notification: Omit<Notification, 'id'>) => void
   dismissNotification: (id: string) => void
 }
 
-export const useNotificationStore = create<NotificationsStore>(set => ({
+export const useNotificationStore = create<State & Action>(set => ({
   notifications: [],
   addNotification: notification =>
     set(state => ({
