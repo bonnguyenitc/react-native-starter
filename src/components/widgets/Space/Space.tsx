@@ -11,7 +11,7 @@ export interface SpaceProps {
 }
 
 export const Space: React.FC<SpaceProps & ViewProps> = function ({
-  style,
+  style = {},
   height = 0,
   width = '100%',
   align = 'flex-start',
