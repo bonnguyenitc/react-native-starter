@@ -8,9 +8,9 @@
  * @format
  */
 
-import React from 'react';
-import { AppProvider } from './provider';
+import React from 'react'
+import { AppProvider } from './provider'
 
 export function App() {
-  return <AppProvider />;
+  return <AppProvider />
 }

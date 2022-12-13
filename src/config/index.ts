@@ -1,3 +1,3 @@
-import Config from 'react-native-config';
+import Config from 'react-native-config'
 
-export const { APP_NAME, API_URL } = Config;
+export const { APP_NAME, API_URL } = Config

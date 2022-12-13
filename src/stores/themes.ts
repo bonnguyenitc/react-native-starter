@@ -1,12 +1,12 @@
-import { StatusBar } from 'react-native';
-import create from 'zustand';
-import { persist, StateStorage } from 'zustand/middleware';
-import { MMKVStorage } from '@/utils/storage';
+import { StatusBar } from 'react-native'
+import create from 'zustand'
+import { persist, StateStorage } from 'zustand/middleware'
+import { MMKVStorage } from '@/utils/storage'
 
 export type ThemeStore = {
-  isDarkMode: boolean;
-  toggleMode: () => void;
-};
+  isDarkMode: boolean
+  toggleMode: () => void
+}
 
 export const useThemeStore = create(
   persist<ThemeStore>(
@@ -14,11 +14,11 @@ export const useThemeStore = create(
       isDarkMode: false,
       toggleMode: () => {
         set(state => {
-          StatusBar.setBarStyle(!state.isDarkMode ? 'light-content' : 'dark-content');
+          StatusBar.setBarStyle(!state.isDarkMode ? 'light-content' : 'dark-content')
           return {
             isDarkMode: !state.isDarkMode,
-          };
-        });
+          }
+        })
       },
     }),
     {
@@ -27,4 +27,4 @@ export const useThemeStore = create(
       partialize: state => ({ isDarkMode: state.isDarkMode }),
     },
   ),
-);
+)

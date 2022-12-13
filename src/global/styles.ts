@@ -1,4 +1,4 @@
-import { ViewStyle } from 'react-native';
+import { ViewStyle } from 'react-native'
 
 export const styles: { [key: string]: ViewStyle } = {
   flex_1: {
@@ -11,4 +11,4 @@ export const styles: { [key: string]: ViewStyle } = {
     shadowOpacity: 0.3,
     shadowRadius: 10,
   },
-};
+}

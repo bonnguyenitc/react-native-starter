@@ -1,18 +1,18 @@
-import React, { useCallback } from 'react';
-import { Button, Col, Row, Space, Text } from '@/components/widgets';
-import { WIDTH } from '@/global';
-import { hideModalComponent } from '@/libs/dialog';
+import React, { memo, useCallback } from 'react'
+import { Button, Col, Row, Space, Text } from '@/components/widgets'
+import { WIDTH } from '@/global'
+import { hideModalComponent } from '@/libs/dialog'
 
 type Props = {
-  onClose?: () => void;
-  onConfirm?: () => void;
-  title: string;
-  content: string;
-  labelConfirm?: string;
-  labelCancel?: string;
-};
+  onClose?: () => void
+  onConfirm?: () => void
+  title: string
+  content: string
+  labelConfirm?: string
+  labelCancel?: string
+}
 
-export const ConfirmModal: React.FC<Props> = function ({
+export const ConfirmModal: React.FC<Props> = memo(function ({
   onClose,
   onConfirm,
   title,
@@ -21,14 +21,14 @@ export const ConfirmModal: React.FC<Props> = function ({
   labelConfirm = 'OK',
 }) {
   const handleClose = useCallback(() => {
-    onClose?.();
-    hideModalComponent();
-  }, [onClose]);
+    onClose?.()
+    hideModalComponent()
+  }, [onClose])
 
   const handleConfirm = useCallback(() => {
-    onConfirm?.();
-    hideModalComponent();
-  }, [onConfirm]);
+    onConfirm?.()
+    hideModalComponent()
+  }, [onConfirm])
 
   return (
     <Col width={0.8 * WIDTH} padding="medium" backgroundColor="light">
@@ -52,5 +52,5 @@ export const ConfirmModal: React.FC<Props> = function ({
         </Button>
       </Row>
     </Col>
-  );
-};
+  )
+})

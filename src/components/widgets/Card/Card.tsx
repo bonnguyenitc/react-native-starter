@@ -1,6 +1,6 @@
-import React from 'react';
-import { ViewProps } from '@/types';
-import { Box } from '../Box';
+import React from 'react'
+import { ViewProps } from '@/types'
+import { Box } from '../Box'
 
 export const Card: React.FC<ViewProps> = function (props) {
   return (
@@ -17,5 +17,5 @@ export const Card: React.FC<ViewProps> = function (props) {
       elevation={5}
       {...props}
     />
-  );
-};
+  )
+}

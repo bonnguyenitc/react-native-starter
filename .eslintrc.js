@@ -51,5 +51,6 @@ module.exports = {
     'prettier/prettier': ['error', { bracketSpacing: true }],
     'react/jsx-no-bind': 'error',
     'no-empty-function': 'off',
+    'no-extra-semi': 0,
   },
-};
+}

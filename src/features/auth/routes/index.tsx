@@ -1,25 +1,25 @@
-import React from 'react';
+import React from 'react'
 import {
   createStackNavigator,
   StackNavigationOptions,
   TransitionPresets,
-} from '@react-navigation/stack';
-import { Register } from '../screens/Register';
-import { Login } from '../screens/Login';
-import { Landing } from '../screens/Landing';
+} from '@react-navigation/stack'
+import { Register } from '../screens/Register'
+import { Login } from '../screens/Login'
+import { Landing } from '../screens/Landing'
 
 export type AuthStackParamList = {
-  register: undefined;
-  login: undefined;
-  landing: undefined;
-};
+  register: undefined
+  login: undefined
+  landing: undefined
+}
 
 const options: StackNavigationOptions = {
   headerShown: true,
   ...TransitionPresets.SlideFromRightIOS,
-};
+}
 
-const Stack = createStackNavigator<AuthStackParamList>();
+const Stack = createStackNavigator<AuthStackParamList>()
 
 export const AuthRoutes = function () {
   return (
@@ -34,5 +34,5 @@ export const AuthRoutes = function () {
         }}
       />
     </Stack.Navigator>
-  );
-};
+  )
+}

@@ -1,38 +1,38 @@
-import React, { useEffect } from 'react';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-import { useNavigation } from '@react-navigation/native';
-import { Button, Col, Space } from '@/components/widgets';
-import { InputField } from '@/components/form/InputField';
-import { useThemeStore } from '@/stores';
-import { useTheme } from '@/themes';
-import { AppNavigationProp } from '@/routes';
-import { useAuth } from '../hooks/useAuth';
-import { useTranslation } from '@/hooks/useTranslation';
+import React, { useEffect } from 'react'
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as yup from 'yup'
+import { useNavigation } from '@react-navigation/native'
+import { Button, Col, Space } from '@/components/widgets'
+import { InputField } from '@/components/form/InputField'
+import { useThemeStore } from '@/stores'
+import { useTheme } from '@/themes'
+import { AppNavigationProp } from '@/routes'
+import { useAuth } from '../hooks/useAuth'
+import { useTranslation } from '@/hooks/useTranslation'
 
 type FormData = {
-  email: string;
-  password: string;
-};
+  email: string
+  password: string
+}
 
 const schema = yup.object({
   email: yup.string().required('Required'),
   password: yup.string().required('Required'),
-});
+})
 
-export const LoginForm = function () {
-  const navigation = useNavigation<AppNavigationProp>();
-  const { login } = useAuth();
-  const { t } = useTranslation();
-  const { isDarkMode } = useThemeStore();
-  const { colors } = useTheme();
+export const LoginForm: React.FC = function () {
+  const navigation = useNavigation<AppNavigationProp>()
+  const { login } = useAuth()
+  const { t } = useTranslation()
+  const { isDarkMode } = useThemeStore()
+  const { colors } = useTheme()
 
   useEffect(() => {
     navigation.setOptions({
       headerTitle: t('navigate:login'),
-    });
-  }, [navigation, t]);
+    })
+  }, [navigation, t])
 
   const {
     control,
@@ -44,13 +44,13 @@ export const LoginForm = function () {
       password: '',
     },
     resolver: yupResolver(schema),
-  });
+  })
 
   const onSubmit = (data: FormData) => {
-    login(data);
-  };
+    login(data)
+  }
 
-  const goToRegister = () => navigation.navigate('register');
+  const goToRegister = () => navigation.navigate('register')
 
   return (
     <Col width="80%">
@@ -92,5 +92,5 @@ export const LoginForm = function () {
         </Button>
       </Col>
     </Col>
-  );
-};
+  )
+}

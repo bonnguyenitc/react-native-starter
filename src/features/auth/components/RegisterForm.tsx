@@ -1,21 +1,21 @@
-import React, { useEffect } from 'react';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-import { useNavigation } from '@react-navigation/native';
-import { Button, Col, Space } from '@/components/widgets';
-import { InputField } from '@/components/form/InputField';
-import { useThemeStore } from '@/stores';
-import { useTheme } from '@/themes';
-import { AppNavigationProp } from '@/routes';
-import { useAuth } from '../hooks/useAuth';
-import { useTranslation } from '@/hooks/useTranslation';
+import React, { useEffect } from 'react'
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as yup from 'yup'
+import { useNavigation } from '@react-navigation/native'
+import { Button, Col, Space } from '@/components/widgets'
+import { InputField } from '@/components/form/InputField'
+import { useThemeStore } from '@/stores'
+import { useTheme } from '@/themes'
+import { AppNavigationProp } from '@/routes'
+import { useAuth } from '../hooks/useAuth'
+import { useTranslation } from '@/hooks/useTranslation'
 
 type FormData = {
-  email: string;
-  password: string;
-  confirmPassword: string;
-};
+  email: string
+  password: string
+  confirmPassword: string
+}
 
 const schema = yup.object({
   email: yup.string().email().required('Required'),
@@ -24,20 +24,20 @@ const schema = yup.object({
     .string()
     .required('Required')
     .oneOf([yup.ref('password'), null], 'Passwords must match'),
-});
+})
 
 export const RegisterForm = function () {
-  const navigation = useNavigation<AppNavigationProp>();
-  const { register } = useAuth();
-  const { t } = useTranslation();
-  const { isDarkMode } = useThemeStore();
-  const { colors } = useTheme();
+  const navigation = useNavigation<AppNavigationProp>()
+  const { register } = useAuth()
+  const { t } = useTranslation()
+  const { isDarkMode } = useThemeStore()
+  const { colors } = useTheme()
 
   useEffect(() => {
     navigation.setOptions({
       headerTitle: t('navigate:register'),
-    });
-  }, [navigation, t]);
+    })
+  }, [navigation, t])
 
   const {
     control,
@@ -50,14 +50,14 @@ export const RegisterForm = function () {
       confirmPassword: '',
     },
     resolver: yupResolver(schema),
-  });
+  })
 
   const onSubmit = (/* data: FormData */) => {
-    register();
-    navigation.navigate('login');
-  };
+    register()
+    navigation.navigate('login')
+  }
 
-  const goToLogin = () => navigation.navigate('login');
+  const goToLogin = () => navigation.navigate('login')
 
   return (
     <Col width="80%">
@@ -109,5 +109,5 @@ export const RegisterForm = function () {
         </Button>
       </Col>
     </Col>
-  );
-};
+  )
+}

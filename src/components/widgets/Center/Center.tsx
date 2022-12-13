@@ -1,10 +1,10 @@
-import React from 'react';
-import { ViewProps } from '@/types';
-import { Box } from '../Box';
+import React from 'react'
+import { ViewProps } from '@/types'
+import { Box } from '../Box'
 
 export interface CenterProps {
-  horizontal?: boolean;
-  vertical?: boolean;
+  horizontal?: boolean
+  vertical?: boolean
 }
 
 export const Center: React.FC<ViewProps & CenterProps> = function ({
@@ -22,5 +22,5 @@ export const Center: React.FC<ViewProps & CenterProps> = function ({
       {...props}>
       {children}
     </Box>
-  );
-};
+  )
+}

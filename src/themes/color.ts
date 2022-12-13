@@ -1,4 +1,4 @@
-import { palette } from './palette';
+import { palette } from './palette'
 
 export const color = {
   transparent: 'rgba(0, 0, 0, 0)',
@@ -28,4 +28,4 @@ export const color = {
   light: palette.white,
 
   white: palette.white,
-};
+}

@@ -31,4 +31,4 @@ export const typography = {
     color: 'text',
     fontFamily: 'Poppins',
   },
-};
+}

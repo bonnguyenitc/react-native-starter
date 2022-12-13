@@ -6,4 +6,4 @@ export default {
   enter_email: 'Nhập email của bạn',
   enter_password: 'Nhập mật khẩu của bạn',
   enter_confirm_password: 'Nhập lại mật khẩu của bạn',
-};
+}

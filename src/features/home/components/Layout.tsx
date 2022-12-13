@@ -1,11 +1,11 @@
-import React from 'react';
-import { Layout } from '@/components/layout/Layout';
-import { ChildrenProps } from '@/types';
-import { Center, Space, Text } from '@/components/widgets';
+import React from 'react'
+import { Layout } from '@/components/layout/Layout'
+import { ChildrenProps } from '@/types'
+import { Center, Space, Text } from '@/components/widgets'
 
 type HomeLayoutProps = {
-  title?: string;
-};
+  title?: string
+}
 
 export const HomeLayout = function ({ children, title }: ChildrenProps & HomeLayoutProps) {
   return (
@@ -16,5 +16,5 @@ export const HomeLayout = function ({ children, title }: ChildrenProps & HomeLay
         {children}
       </Center>
     </Layout>
-  );
-};
+  )
+}

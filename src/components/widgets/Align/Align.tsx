@@ -1,6 +1,6 @@
-import React from 'react';
-import { ViewProps } from '@/types';
-import { Box } from '../Box';
+import React from 'react'
+import { ViewProps } from '@/types'
+import { Box } from '../Box'
 
 type Props = {
   alignment?:
@@ -12,8 +12,8 @@ type Props = {
     | 'centerRight'
     | 'topCenter'
     | 'topLeft'
-    | 'topRight';
-};
+    | 'topRight'
+}
 
 const Alignment: any = {
   bottomCenter: {
@@ -52,7 +52,7 @@ const Alignment: any = {
     justifyContent: 'flex-start',
     alignItems: 'flex-end',
   },
-};
+}
 
 export const Align: React.FC<Props & ViewProps> = function ({
   children,
@@ -63,5 +63,5 @@ export const Align: React.FC<Props & ViewProps> = function ({
     <Box {...Alignment[alignment]} {...props}>
       {children}
     </Box>
-  );
-};
+  )
+}

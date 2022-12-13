@@ -1,21 +1,21 @@
-import React, { useCallback } from 'react';
-import RNRestart from 'react-native-restart';
-import { Layout } from '@/components/layout';
-import { Button, Center, Space, Text } from '@/components/widgets';
-import { useThemeStore } from '@/stores';
+import React, { useCallback } from 'react'
+import RNRestart from 'react-native-restart'
+import { Layout } from '@/components/layout'
+import { Button, Center, Space, Text } from '@/components/widgets'
+import { useThemeStore } from '@/stores'
 
 interface IProps {
-  error: Error;
-  resetError?: () => void;
+  error: Error
+  resetError?: () => void
 }
 
 function Crash({ error, resetError }: IProps) {
   const handleResetApp = useCallback(() => {
-    resetError?.();
-    RNRestart.Restart();
-  }, [resetError]);
+    resetError?.()
+    RNRestart.Restart()
+  }, [resetError])
 
-  const { isDarkMode } = useThemeStore();
+  const { isDarkMode } = useThemeStore()
 
   return (
     <Layout>
@@ -30,7 +30,7 @@ function Crash({ error, resetError }: IProps) {
         </Button>
       </Center>
     </Layout>
-  );
+  )
 }
 
-export default Crash;
+export default Crash

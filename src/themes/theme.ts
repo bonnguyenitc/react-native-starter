@@ -1,11 +1,11 @@
-import { createTheme, useTheme as useThemeRS } from '@shopify/restyle';
-import { color } from './color';
-import { palette } from './palette';
-import { spacing } from './spacing';
-import { typography } from './typography';
+import { createTheme, useTheme as useThemeRS } from '@shopify/restyle'
+import { color } from './color'
+import { palette } from './palette'
+import { spacing } from './spacing'
+import { typography } from './typography'
 
-export type KeysColor = keyof typeof color;
-export type KeysTypo = keyof typeof typography;
+export type KeysColor = keyof typeof color
+export type KeysTypo = keyof typeof typography
 
 export const lightTheme = createTheme({
   colors: {
@@ -41,9 +41,9 @@ export const lightTheme = createTheme({
     largeTablet: 1024,
   },
   isDark: false,
-});
+})
 
-export type Theme = typeof lightTheme;
+export type Theme = typeof lightTheme
 
 export const darkTheme: Theme = {
   ...lightTheme,
@@ -54,6 +54,6 @@ export const darkTheme: Theme = {
     highlight: palette.white,
     text: palette.white,
   },
-};
+}
 
-export const useTheme = () => useThemeRS<Theme>();
+export const useTheme = () => useThemeRS<Theme>()

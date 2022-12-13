@@ -1,31 +1,31 @@
-import { useCallback } from 'react';
-import { useNavigation } from '@react-navigation/native';
-import { AppNavigationProp } from '@/routes';
-import { useAuthStore } from '../stores/auth';
-import { User } from '../stores/models';
+import { useCallback } from 'react'
+import { useNavigation } from '@react-navigation/native'
+import { AppNavigationProp } from '@/routes'
+import { useAuthStore } from '../stores/auth'
+import { User } from '../stores/models'
 
 export const useAuth = () => {
-  const navigation = useNavigation<AppNavigationProp>();
-  const { loginAction, registerAction } = useAuthStore();
+  const navigation = useNavigation<AppNavigationProp>()
+  const { loginAction, registerAction } = useAuthStore()
 
   const goToLogin = useCallback(() => {
-    navigation.navigate('login');
-  }, [navigation]);
+    navigation.navigate('login')
+  }, [navigation])
 
   const goToRegister = useCallback(() => {
-    navigation.navigate('register');
-  }, [navigation]);
+    navigation.navigate('register')
+  }, [navigation])
 
   const login = useCallback(
     (data: User) => {
-      loginAction(data);
+      loginAction(data)
     },
     [loginAction],
-  );
+  )
 
   const register = useCallback(() => {
-    registerAction();
-  }, [registerAction]);
+    registerAction()
+  }, [registerAction])
 
-  return { goToLogin, goToRegister, login, register };
-};
+  return { goToLogin, goToRegister, login, register }
+}

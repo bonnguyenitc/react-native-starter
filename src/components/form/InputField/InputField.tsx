@@ -1,12 +1,12 @@
-import React from 'react';
-import { Control, Controller } from 'react-hook-form';
-import { Space, Text, TextInput } from '@/components/widgets';
+import React from 'react'
+import { Control, Controller } from 'react-hook-form'
+import { Space, Text, TextInput } from '@/components/widgets'
 
 type InputFieldProps = {
-  control?: Control<any, any>;
-  error?: string | undefined;
-  name: string;
-};
+  control?: Control<any, any>
+  error?: string | undefined
+  name: string
+}
 
 export const InputField: React.FC<InputFieldProps & React.ComponentProps<typeof TextInput>> =
   function ({ control, error, name, ...props }) {
@@ -25,5 +25,5 @@ export const InputField: React.FC<InputFieldProps & React.ComponentProps<typeof 
         <Space height={8} />
         {!!error && <Text>{error}</Text>}
       </>
-    );
-  };
+    )
+  }

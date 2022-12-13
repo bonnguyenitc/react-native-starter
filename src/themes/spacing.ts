@@ -5,4 +5,4 @@ export const spacing = {
   large: 24,
   huge: 64,
   '16px': 16,
-};
+}

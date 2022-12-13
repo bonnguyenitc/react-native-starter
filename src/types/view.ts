@@ -5,12 +5,12 @@ import {
   PositionProps,
   ShadowProps,
   SpacingProps,
-} from '@shopify/restyle';
-import { StyleProp, ViewStyle, ViewProps as ViewPropsRN } from 'react-native';
-import { Theme } from '@/themes';
+} from '@shopify/restyle'
+import { StyleProp, ViewStyle, ViewProps as ViewPropsRN } from 'react-native'
+import { Theme } from '@/themes'
 
 export interface ChildrenProps {
-  children?: React.ReactNode;
+  children?: React.ReactNode
 }
 export type ViewProps = { style?: StyleProp<ViewStyle> } & SpacingProps<Theme> &
   BorderProps<Theme> &
@@ -18,4 +18,4 @@ export type ViewProps = { style?: StyleProp<ViewStyle> } & SpacingProps<Theme> &
   LayoutProps<Theme> &
   PositionProps<Theme> &
   ShadowProps<Theme> &
-  ViewPropsRN;
+  ViewPropsRN

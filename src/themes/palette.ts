@@ -9,4 +9,4 @@ export const palette = {
   angry: '#dd3333',
   deepPurple: '#5D2555',
   blue: 'blue',
-};
+}

@@ -1,1 +1,1 @@
-export * from './Positioned';
+export * from './Positioned'
