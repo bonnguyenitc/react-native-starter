@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import {
   ImageResizeMode,
   ImageSourcePropType,
@@ -34,7 +34,7 @@ export const Image: React.FC<Props> = function (props) {
     opacity: x.value,
   }))
 
-  const handleOnLayout = React.useCallback(() => {
+  const handleOnLayout = useCallback(() => {
     x.value = withTiming(1, {
       duration: 1200,
       easing: Easing.in(Easing.ease),
