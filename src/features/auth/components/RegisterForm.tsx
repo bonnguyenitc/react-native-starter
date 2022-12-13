@@ -30,7 +30,7 @@ export const RegisterForm = function () {
   const navigation = useNavigation<AppNavigationProp>()
   const { register } = useAuth()
   const { t } = useTranslation()
-  const { isDarkMode } = useThemeStore()
+  const isDarkMode = useThemeStore(state => state.isDarkMode)
   const { colors } = useTheme()
 
   useEffect(() => {

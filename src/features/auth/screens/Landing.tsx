@@ -27,7 +27,7 @@ export const Landing: React.FC = function () {
 
   const { t, i18n } = useTranslation()
   const [lang, setLang] = useState(i18n.language)
-  const { isDarkMode } = useThemeStore()
+  const isDarkMode = useThemeStore(state => state.isDarkMode)
 
   return (
     <AuthLayout safe isShowToggleDarkMode title={APP_NAME}>

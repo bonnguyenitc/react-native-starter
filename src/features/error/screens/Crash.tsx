@@ -15,7 +15,7 @@ export const Crash: React.FC<IProps> = function ({ error, resetError }) {
     RNRestart.Restart()
   }, [resetError])
 
-  const { isDarkMode } = useThemeStore()
+  const isDarkMode = useThemeStore(state => state.isDarkMode)
 
   return (
     <Layout>

@@ -9,7 +9,7 @@ import { useAuthStore } from '@/features/auth/stores/auth'
 import { ErrorBoundary } from '@/features/error/components/ErrorBoundary'
 
 export const AppProvider: React.FC = function () {
-  const { isDarkMode } = useThemeStore()
+  const isDarkMode = useThemeStore(state => state.isDarkMode)
   const { checkLoggedInAction } = useAuthStore()
 
   useEffect(() => {

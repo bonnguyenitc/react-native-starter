@@ -6,7 +6,7 @@ import { showModalComponent } from '@/libs/dialog'
 import { useThemeStore } from '@/stores'
 
 export const Home: React.FC = function () {
-  const { isDarkMode } = useThemeStore()
+  const isDarkMode = useThemeStore(state => state.isDarkMode)
   const showModal = () => {
     showModalComponent(() => <ConfirmModal title="Alert" content="This is long text" />)
   }

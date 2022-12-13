@@ -25,7 +25,7 @@ export const LoginForm: React.FC = function () {
   const navigation = useNavigation<AppNavigationProp>()
   const { login } = useAuth()
   const { t } = useTranslation()
-  const { isDarkMode } = useThemeStore()
+  const isDarkMode = useThemeStore(state => state.isDarkMode)
   const { colors } = useTheme()
 
   useEffect(() => {
