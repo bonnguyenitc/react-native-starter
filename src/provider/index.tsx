@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import { ThemeProvider } from '@shopify/restyle'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { ModalPortal } from 'react-native-modals'
@@ -7,17 +7,20 @@ import { darkTheme, lightTheme } from '@/themes'
 import { useThemeStore } from '@/stores/themes'
 import { useAuthStore } from '@/features/auth/stores/auth'
 import { ErrorBoundary } from '@/features/error/components/ErrorBoundary'
+import { useBarStyle } from '@/hooks/useBarStyle'
 
 export const AppProvider: React.FC = function () {
+  useBarStyle()
+  const checkLoggedIn = useAuthStore(state => state.checkLoggedInAction)
   const isDarkMode = useThemeStore(state => state.isDarkMode)
-  const { checkLoggedInAction } = useAuthStore()
+  const theme = useMemo(() => (isDarkMode ? darkTheme : lightTheme), [isDarkMode])
 
   useEffect(() => {
-    checkLoggedInAction()
-  }, [checkLoggedInAction])
+    checkLoggedIn()
+  }, [checkLoggedIn])
 
   return (
-    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+    <ThemeProvider theme={theme}>
       <SafeAreaProvider>
         <ErrorBoundary catchErrors="dev">
           <AppRoutes />
