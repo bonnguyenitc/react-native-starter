@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { AppNavigationProp } from '@/routes'
-import { useAuthStore } from '../stores/auth'
+import { useAuthStore } from '../stores/useAuthStore'
 import { User } from '../stores/models'
 
 export const useAuth = () => {

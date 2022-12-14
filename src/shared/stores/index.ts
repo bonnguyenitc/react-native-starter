@@ -1,2 +1,2 @@
-export * from './notifications'
-export * from './themes'
+export * from './useNotificationStore'
+export * from './useThemeStore'

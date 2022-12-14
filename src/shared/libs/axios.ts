@@ -1,6 +1,6 @@
 import Axios, { AxiosRequestConfig } from 'axios'
 import { API_URL } from '@/shared/config'
-import { useNotificationStore } from '@/shared/stores/notifications'
+import { useNotificationStore } from '@/shared/stores/useNotificationStore'
 import storage from '@/shared/utils/storage'
 
 function authRequestInterceptor(config: AxiosRequestConfig) {

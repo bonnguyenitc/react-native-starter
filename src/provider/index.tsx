@@ -4,9 +4,9 @@ import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { ModalPortal } from 'react-native-modals'
 import { AppRoutes } from '@/routes'
 import { darkTheme, lightTheme } from '@/shared/themes'
-import { useThemeStore } from '@/shared/stores/themes'
-import { useAuthStore } from '@/features/auth/stores/auth'
-import { ErrorBoundary } from '@/features/error/components/ErrorBoundary'
+import { useThemeStore } from '@/shared/stores/useThemeStore'
+import { useAuthStore } from '@/modules/auth/stores/useAuthStore'
+import { ErrorBoundary } from '@/modules/error/components/ErrorBoundary'
 import { useBarStyle } from '@/shared/hooks/useBarStyle'
 
 export const AppProvider: React.FC = function () {

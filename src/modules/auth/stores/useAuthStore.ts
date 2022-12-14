@@ -4,15 +4,18 @@ import { hideLoading, showLoading } from '@/shared/libs/dialog'
 import { delay } from '@/shared/utils/helpers'
 import { User } from './models'
 
-export type AuthStore = {
+type State = {
   data: User | undefined
   isLoggedIn: boolean
+}
+
+type Action = {
   registerAction: () => void
   checkLoggedInAction: () => void
   loginAction: (data: User) => void
 }
 
-export const useAuthStore = create<AuthStore>(set => ({
+export const useAuthStore = create<State & Action>(set => ({
   isLoggedIn: false,
   data: undefined,
   loginAction: async (data: User) => {
