@@ -28,7 +28,7 @@ const schema = yup.object({
 
 export const RegisterForm = function () {
   const navigation = useNavigation<AppNavigationProp>()
-  const { register } = useAuth()
+  const { register, goToLogin } = useAuth()
   const { t } = useTranslation()
   const isDarkMode = useThemeStore(state => state.isDarkMode)
   const { colors } = useTheme()
@@ -55,12 +55,9 @@ export const RegisterForm = function () {
   const onSubmit = useCallback(
     (/* data: FormData */) => {
       register()
-      navigation.navigate('login')
     },
-    [navigation, register],
+    [register],
   )
-
-  const goToLogin = useCallback(() => navigation.navigate('login'), [navigation])
 
   return (
     <Col width="80%">

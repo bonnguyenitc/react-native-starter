@@ -23,9 +23,10 @@ export const useAuth = () => {
     [loginAction],
   )
 
-  const register = useCallback(() => {
-    registerAction()
-  }, [registerAction])
+  const register = useCallback(async () => {
+    await registerAction()
+    navigation.navigate('login')
+  }, [registerAction, navigation])
 
   return { goToLogin, goToRegister, login, register }
 }

@@ -23,7 +23,7 @@ const schema = yup.object({
 
 export const LoginForm: React.FC = function () {
   const navigation = useNavigation<AppNavigationProp>()
-  const { login } = useAuth()
+  const { login, goToRegister } = useAuth()
   const { t } = useTranslation()
   const isDarkMode = useThemeStore(state => state.isDarkMode)
   const { colors } = useTheme()
@@ -52,8 +52,6 @@ export const LoginForm: React.FC = function () {
     },
     [login],
   )
-
-  const goToRegister = useCallback(() => navigation.navigate('register'), [navigation])
 
   return (
     <Col width="80%">
