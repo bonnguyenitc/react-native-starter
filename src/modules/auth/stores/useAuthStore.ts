@@ -10,9 +10,9 @@ type State = {
 }
 
 type Action = {
-  registerAction: () => void
+  registerAction: () => Promise<void>
   checkLoggedInAction: () => void
-  loginAction: (data: User) => void
+  loginAction: (data: User) => Promise<void>
 }
 
 export const useAuthStore = create<State & Action>(set => ({
