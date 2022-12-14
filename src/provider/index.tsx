@@ -3,11 +3,11 @@ import { ThemeProvider } from '@shopify/restyle'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { ModalPortal } from 'react-native-modals'
 import { AppRoutes } from '@/routes'
-import { darkTheme, lightTheme } from '@/themes'
-import { useThemeStore } from '@/stores/themes'
+import { darkTheme, lightTheme } from '@/shared/themes'
+import { useThemeStore } from '@/shared/stores/themes'
 import { useAuthStore } from '@/features/auth/stores/auth'
 import { ErrorBoundary } from '@/features/error/components/ErrorBoundary'
-import { useBarStyle } from '@/hooks/useBarStyle'
+import { useBarStyle } from '@/shared/hooks/useBarStyle'
 
 export const AppProvider: React.FC = function () {
   useBarStyle()

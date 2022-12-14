@@ -5,11 +5,11 @@ import * as yup from 'yup'
 import { useNavigation } from '@react-navigation/native'
 import { Button, Col, Space } from '@/components/widgets'
 import { InputField } from '@/components/form/InputField'
-import { useThemeStore } from '@/stores'
-import { useTheme } from '@/themes'
+import { useThemeStore } from '@/shared/stores'
+import { useTheme } from '@/shared/themes'
 import { AppNavigationProp } from '@/routes'
 import { useAuth } from '../hooks/useAuth'
-import { useTranslation } from '@/hooks/useTranslation'
+import { useTranslation } from '@/shared/hooks/useTranslation'
 
 type FormData = {
   email: string

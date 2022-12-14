@@ -1,6 +1,6 @@
 import React from 'react'
 import { Layout } from '@/components/layout/Layout'
-import { ChildrenProps } from '@/types'
+import { ChildrenProps } from '@/shared/types'
 import { Center, Space, Text } from '@/components/widgets'
 
 type HomeLayoutProps = {

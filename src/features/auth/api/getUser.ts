@@ -1,4 +1,4 @@
-import { axios } from '@/libs/axios'
+import { axios } from '@/shared/libs/axios'
 
 import { AuthUser } from '../types'
 

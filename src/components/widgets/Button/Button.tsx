@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react'
 import { StyleProp, ViewStyle, TouchableOpacity } from 'react-native'
 import { MotiPressable } from 'moti/interactions'
-import { ViewProps } from '@/types'
+import { ViewProps } from '@/shared/types'
 import { Text } from '../Text'
 import { Center } from '../Center'
-import { KeysColor } from '@/themes'
-import { palette } from '@/themes/palette'
+import { KeysColor } from '@/shared/themes'
+import { palette } from '@/shared/themes/palette'
 
 const styleDefault: ViewStyle = {
   padding: 16,

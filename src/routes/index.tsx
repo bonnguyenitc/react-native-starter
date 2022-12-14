@@ -5,8 +5,8 @@ import { StackNavigationProp } from '@react-navigation/stack'
 import { AuthRoutes, AuthStackParamList } from '@/features/auth/routes'
 import { useAuthStore } from '@/features/auth/stores/auth'
 import { HomeRoutes, HomeStackParamList } from '@/features/home/routes'
-import { useThemeStore } from '@/stores'
-import { navigationRef } from '@/utils/navigation-utilities'
+import { useThemeStore } from '@/shared/stores'
+import { navigationRef } from '@/shared/utils/navigation-utilities'
 
 export type StackParamList = AuthStackParamList & HomeStackParamList
 

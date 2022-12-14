@@ -1,7 +1,7 @@
 import create from 'zustand'
-import storage from '@/utils/storage'
-import { hideLoading, showLoading } from '@/libs/dialog'
-import { delay } from '@/utils/helpers'
+import storage from '@/shared/utils/storage'
+import { hideLoading, showLoading } from '@/shared/libs/dialog'
+import { delay } from '@/shared/utils/helpers'
 import { User } from './models'
 
 export type AuthStore = {

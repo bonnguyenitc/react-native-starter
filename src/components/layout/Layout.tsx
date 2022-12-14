@@ -1,8 +1,8 @@
 import React from 'react'
 import { MotiView } from 'moti'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { styles, transitions } from '@/global'
-import { useTheme } from '@/themes'
+import { styles, transitions } from '@/shared/constants'
+import { useTheme } from '@/shared/themes'
 
 type LayoutProps = {
   children: React.ReactNode

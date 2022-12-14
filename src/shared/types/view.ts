@@ -7,7 +7,7 @@ import {
   SpacingProps,
 } from '@shopify/restyle'
 import { StyleProp, ViewStyle, ViewProps as ViewPropsRN } from 'react-native'
-import { Theme } from '@/themes'
+import { Theme } from '@/shared/themes'
 
 export interface ChildrenProps {
   children?: React.ReactNode

@@ -1,5 +1,5 @@
 import React from 'react'
-import { KeysColor, KeysTypo } from '@/themes'
+import { KeysColor, KeysTypo } from '@/shared/themes'
 import { Text } from '../Text/Text'
 import { Touchable } from '../Touchable'
 

@@ -2,7 +2,7 @@ import React, { useCallback } from 'react'
 import RNRestart from 'react-native-restart'
 import { Layout } from '@/components/layout'
 import { Button, Center, Space, Text } from '@/components/widgets'
-import { useThemeStore } from '@/stores'
+import { useThemeStore } from '@/shared/stores'
 
 type IProps = {
   error: Error

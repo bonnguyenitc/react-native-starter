@@ -1,5 +1,5 @@
 import React from 'react'
-import { ViewProps } from '@/types'
+import { ViewProps } from '@/shared/types'
 import { Box } from '../Box'
 
 export const Card: React.FC<ViewProps> = function (props) {

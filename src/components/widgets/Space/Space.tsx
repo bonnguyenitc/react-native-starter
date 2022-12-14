@@ -1,6 +1,6 @@
 import React from 'react'
 import { FlexAlignType, StyleProp, ViewStyle } from 'react-native'
-import { ViewProps } from '@/types'
+import { ViewProps } from '@/shared/types'
 import { Box } from '../Box'
 
 export interface SpaceProps {

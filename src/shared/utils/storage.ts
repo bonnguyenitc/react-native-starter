@@ -1,5 +1,5 @@
 import { StateStorage } from 'zustand/middleware'
-import { mmkv } from '@/libs/mmvk'
+import { mmkv } from '@/shared/libs/mmvk'
 
 const KEYS = {
   TOKEN: '@TOKEN',
