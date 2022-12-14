@@ -54,57 +54,29 @@ And more in package.json. Check it!
 
 ```
 ├── App.tsx
+├── __mocks__
 ├── assets
 │   ├── fonts
 │   ├── images
 │   └── jsons
 ├── components
-│   ├── elements
-│   │   ├── Align
-│   │   ├── AppBar
-│   │   ├── Box
-│   │   ├── Button
-│   │   ├── Center
-│   │   ├── Col
-│   │   ├── Image
-│   │   ├── Positioned
-│   │   ├── Row
-│   │   ├── Space
-│   │   ├── Spinner
-│   │   ├── Stack
-│   │   ├── Switch
-│   │   ├── Text
-│   │   ├── TextInput
-│   │   └── index.ts
 │   ├── form
-│   │   └── InputField
 │   ├── layout
-│   └── modals
-├── config
-├── features
-│   ├── auth
-│   │   ├── api
-│   │   ├── assets
-│   │   ├── components
-│   │   ├── hooks
-│   │   ├── index.ts
-│   │   ├── routes
-│   │   ├── screens
-│   │   ├── stores
-│   │   ├── types
-│   │   └── utils
-│   ├── error
-│   └── home
-├── global
-├── hooks
-├── lib
+│   ├── modals
+│   └── widgets
 ├── localization
+├── modules
 ├── provider
 ├── routes
-├── stores
-├── themes
-├── types
-└── utils
+└── shared
+    ├── config
+    ├── constants
+    ├── hooks
+    ├── libs
+    ├── stores
+    ├── themes
+    ├── types
+    └── utils
 ```
 
 # Structure folder for a full feature
