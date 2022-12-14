@@ -5,15 +5,6 @@ import { Theme } from '@/shared/themes'
 
 const variant = createVariant({
   themeKey: 'textInputVariants',
-  defaults: {
-    width: '100%',
-    color: 'text',
-    borderWidth: 1,
-    borderColor: 'text',
-    borderRadius: 8,
-    height: 50,
-    paddingHorizontal: 'small',
-  },
 })
 
 export const TextInput = createRestyleComponent<

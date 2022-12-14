@@ -16,9 +16,10 @@ export const lightTheme = createTheme({
   },
   textInputVariants: {
     defaults: {
+      flex: 1,
       fontSize: 16,
-      color: 'text',
       fontFamily: 'Poppins',
+      lineHeight: 16 * 1.5,
     },
     normal: {
       fontSize: 16,
