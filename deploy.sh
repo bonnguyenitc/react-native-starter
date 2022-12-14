@@ -6,15 +6,15 @@ now=$(date +'%d/%m/%Y - %H:%M')
 iosBuildVersion=$(date +'%H%M.%d%m%Y')
 read -r -p 'Enter the platform (ANDROID|IOS): ' platform
 read -r -p 'Enter the environment (DEV|STG|PROD): ' environment
-# read -r -p 'Enter the store (deploygate|store): ' store
+read -r -p 'Enter the store (deploygate|store): ' store
 
 platform=${platform:-ios}
 environment=${environment:-prod}
 format=""
-# store=${store:-store}
+store=${store:-store}
 platform="$(tr [A-Z] [a-z] <<< "$platform")"
 environment="$(tr [A-Z] [a-z] <<< "$environment")"
-# store="$(tr [A-Z] [a-z] <<< "$store")"
+store="$(tr [A-Z] [a-z] <<< "$store")"
 if [ "$platform" == android ]
 then
   read -r -p 'Format (APK|AAB): ' format
@@ -36,7 +36,10 @@ then
       npx jetify
       cd android
       ENVFILE=.env.development ./gradlew assembleDevelopmentRelease
-      # dg deploy "app/build/outputs/apk/development/release/app-development-release.apk" --message "Android Development - $now"
+      if [ "$store" == deploygate ]
+      then
+        dg deploy "app/build/outputs/apk/development/release/app-development-release.apk" --message "Android Development - $now"
+      fi
     else
       npx jetify
       cd android
@@ -49,7 +52,10 @@ then
       npx jetify
       cd android
       ENVFILE=.env.staging ./gradlew assembleStagingRelease
-      # dg deploy "app/build/outputs/apk/staging/release/app-staging-release.apk" --message "Android Staging - $now"
+      if [ "$store" == deploygate ]
+      then
+        dg deploy "app/build/outputs/apk/staging/release/app-staging-release.apk" --message "Android Staging - $now"
+      if
     else
       npx jetify
       cd android
@@ -61,7 +67,10 @@ then
       npx jetify
       cd android
       ENVFILE=.env.production ./gradlew assembleProductionRelease
-      # dg deploy "app/build/outputs/apk/production/release/app-production-release.apk" --message "Android Production - $now"
+      if [ "$store" == deploygate ]
+      then
+        dg deploy "app/build/outputs/apk/production/release/app-production-release.apk" --message "Android Production - $now"
+      if
     else
       npx jetify
       cd android
