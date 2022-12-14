@@ -13,6 +13,7 @@ type Action = {
   registerAction: () => Promise<void>
   checkLoggedInAction: () => void
   loginAction: (data: User) => Promise<void>
+  logOutAction: () => Promise<void>
 }
 
 export const useAuthStore = create<State & Action>(set => ({
@@ -22,6 +23,7 @@ export const useAuthStore = create<State & Action>(set => ({
     showLoading()
     await delay(3000)
     hideLoading()
+    storage.saveAccessToken('token')
     set(() => ({
       isLoggedIn: true,
       data,
@@ -34,5 +36,15 @@ export const useAuthStore = create<State & Action>(set => ({
     set({
       isLoggedIn: !!storage.getAccessToken(),
     })
+  },
+  logOutAction: async () => {
+    showLoading()
+    await delay(1000)
+    storage.saveAccessToken('')
+    set({
+      isLoggedIn: false,
+      data: undefined,
+    })
+    hideLoading()
   },
 }))
