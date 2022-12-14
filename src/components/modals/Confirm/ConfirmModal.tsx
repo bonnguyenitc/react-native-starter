@@ -43,7 +43,14 @@ export const ConfirmModal: React.FC<Props> = memo(function ({
         </Text>
       </Col>
       <Row justifyContent="flex-end">
-        <Button isModal backgroundColor="dark" onPress={handleClose} labelColor="light">
+        <Button
+          isModal
+          backgroundColor="light"
+          onPress={handleClose}
+          labelColor="dark"
+          borderWidth={1}
+          borderColor="dark"
+          paddingHorizontal="large">
           {labelCancel}
         </Button>
         <Space width={16} />

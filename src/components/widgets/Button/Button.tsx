@@ -4,11 +4,12 @@ import { MotiPressable } from 'moti/interactions'
 import { ViewProps } from '@/shared/types'
 import { Text } from '../Text'
 import { Center } from '../Center'
-import { KeysColor } from '@/shared/themes'
+import { KeysColor, KeysTypo } from '@/shared/themes'
 import { palette } from '@/shared/themes/palette'
 
 const styleDefault: ViewStyle = {
-  padding: 16,
+  padding: 8,
+  paddingHorizontal: 16,
   borderRadius: 32,
 }
 
@@ -26,23 +27,27 @@ type ButtonProps = {
   style?: StyleProp<ViewStyle>
   labelColor?: KeysColor
   shadow?: boolean
+  labelVariant?: KeysTypo
+  custom?: boolean
 }
 
 export const Button: React.FC<ButtonProps & ViewProps> = function ({
   children,
-  style,
+  style = {},
   onPress,
-  isModal,
+  isModal = false,
   labelColor = 'dark',
-  shadow,
+  shadow = false,
+  labelVariant = 'normal',
+  custom = false,
   ...props
 }) {
   if (isModal) {
     return (
       <TouchableOpacity onPress={onPress} activeOpacity={0.6}>
-        <Center style={[styleDefault, style, shadow && SHADOW]} {...props}>
+        <Center style={[!custom && styleDefault, style, shadow && SHADOW]} {...props}>
           {typeof children === 'string' ? (
-            <Text variant="normal" color={labelColor}>
+            <Text variant={labelVariant} color={labelColor}>
               {children}
             </Text>
           ) : (
@@ -67,9 +72,9 @@ export const Button: React.FC<ButtonProps & ViewProps> = function ({
           },
         [],
       )}>
-      <Center style={[styleDefault, style, shadow && SHADOW]} {...props}>
+      <Center style={[!custom && styleDefault, style, shadow && SHADOW]} {...props}>
         {typeof children === 'string' ? (
-          <Text variant="normal" color={labelColor}>
+          <Text variant={labelVariant} color={labelColor}>
             {children}
           </Text>
         ) : (
