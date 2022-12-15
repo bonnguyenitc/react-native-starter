@@ -28,7 +28,8 @@
     "patch": "patch-package",
     "postinstall": "node ./bin/podInstall",
     "find-deadcode": "ts-prune",
-    "vs": "react-native-bundle-visualizer"
+    "vs": "react-native-bundle-visualizer",
+    "fonts": "npx react-native-asset"
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.3",
