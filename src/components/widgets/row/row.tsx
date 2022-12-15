@@ -1,0 +1,11 @@
+import React from 'react'
+import { ViewProps } from '@/shared/types'
+import { Box } from '../box'
+
+export const Row: React.FC<ViewProps> = function ({ children, ...props }) {
+  return (
+    <Box flexDirection="row" {...props}>
+      {children}
+    </Box>
+  )
+}
