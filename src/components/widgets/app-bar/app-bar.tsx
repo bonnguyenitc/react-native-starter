@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { ViewProps } from '@/shared/types'
 import { Row } from '../row'
-import { styles, WIDTH } from '@/shared/constants'
+import { shadows, WIDTH } from '@/shared/constants'
 import { Text } from '../text'
 import { Center } from '../center'
 import { Col } from '../col'
@@ -24,7 +24,7 @@ export const AppBar: React.FC<ViewProps & Props> = function ({ leading, actions,
       height={56 + topSpace}
       backgroundColor="dark"
       paddingHorizontal="16px"
-      {...(styles.shadow as any)}>
+      {...shadows.normal}>
       <Space height={topSpace} />
       <Row flex={1} alignItems="center">
         {leading && <Center>{leading}</Center>}

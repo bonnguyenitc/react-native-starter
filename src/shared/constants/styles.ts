@@ -1,10 +1,18 @@
 import { ViewStyle } from 'react-native'
+import { ViewProps } from '../types'
 
-export const styles: { [key: string]: ViewStyle } = {
+export type StyleName = 'flex_1'
+
+export const styles: { [key in StyleName]: ViewStyle } = {
   flex_1: {
     flex: 1,
   },
-  shadow: {
+}
+
+export type ShowdownName = 'normal'
+
+export const shadows: { [key in ShowdownName]: ViewProps } = {
+  normal: {
     elevation: 5,
     shadowColor: 'dark',
     shadowOffset: { width: 0, height: 0 },

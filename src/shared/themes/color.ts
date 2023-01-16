@@ -1,6 +1,21 @@
 import { palette } from './palette'
 
-export const color: { [key: string]: string } = {
+export type ColorName =
+  | 'transparent'
+  | 'background'
+  | 'primary'
+  | 'primaryDarker'
+  | 'line'
+  | 'text'
+  | 'dim'
+  | 'error'
+  | 'violet'
+  | 'highlight'
+  | 'dark'
+  | 'black'
+  | 'light'
+  | 'white'
+export const color: { [key in ColorName]: string } = {
   transparent: 'rgba(0, 0, 0, 0)',
 
   background: palette.white,

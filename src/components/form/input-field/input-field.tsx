@@ -3,14 +3,14 @@ import { ViewStyle } from 'react-native'
 import { Control, Controller } from 'react-hook-form'
 import { TextProps } from '@shopify/restyle'
 import { Row, Space, Text, TextInput } from '@/components/widgets'
-import { KeysColor, spacing, Theme, useTheme } from '@/shared/themes'
+import { ColorName, spacing, Theme, useTheme } from '@/shared/themes'
 
 type InputFieldProps = {
   control?: Control<any, any>
   error?: string | undefined
   name: string
   styleContainer?: ViewStyle
-  colorText?: KeysColor
+  colorText?: ColorName
 }
 
 const INPUT: ViewStyle = {

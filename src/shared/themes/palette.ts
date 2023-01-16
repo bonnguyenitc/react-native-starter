@@ -1,4 +1,16 @@
-export const palette: { [key: string]: string } = {
+type PaletteName =
+  | 'black'
+  | 'white'
+  | 'offWhite'
+  | 'orange'
+  | 'orangeDarker'
+  | 'lightGrey'
+  | 'lighterGrey'
+  | 'angry'
+  | 'deepPurple'
+  | 'blue'
+
+export const palette: { [key in PaletteName]: string } = {
   black: '#252525',
   white: '#ffffff',
   offWhite: '#e6e6e6',

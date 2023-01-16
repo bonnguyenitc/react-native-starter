@@ -1,12 +1,12 @@
 import React from 'react'
-import { KeysColor, KeysTypo } from '@/shared/themes'
+import { ColorName, TypoName } from '@/shared/themes'
 import { Text } from '../text/text'
 import { Touchable } from '../touchable'
 
 type Props = {
   label: string
-  variant?: KeysTypo
-  color?: KeysColor
+  variant?: TypoName
+  color?: ColorName
   onPress: () => void
 }
 

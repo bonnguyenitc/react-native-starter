@@ -2,20 +2,7 @@ import React from 'react'
 import { ViewProps } from '@/shared/types'
 import { Box } from '../box'
 
-type Props = {
-  alignment?:
-    | 'bottomCenter'
-    | 'bottomLeft'
-    | 'bottomRight'
-    | 'center'
-    | 'centerLeft'
-    | 'centerRight'
-    | 'topCenter'
-    | 'topLeft'
-    | 'topRight'
-}
-
-const Alignment: any = {
+const Alignment = {
   bottomCenter: {
     justifyContent: 'flex-end',
     alignItems: 'center',
@@ -54,13 +41,17 @@ const Alignment: any = {
   },
 }
 
+type Props = {
+  alignment?: keyof typeof Alignment
+}
+
 export const Align: React.FC<Props & ViewProps> = function ({
   children,
-  alignment = 'bottomLeft',
+  alignment = 'center',
   ...props
 }) {
   return (
-    <Box {...Alignment[alignment]} {...props}>
+    <Box {...(Alignment[alignment] as ViewProps)} {...props}>
       {children}
     </Box>
   )

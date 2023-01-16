@@ -4,7 +4,7 @@ import { MotiPressable } from 'moti/interactions'
 import { ViewProps } from '@/shared/types'
 import { Text } from '../text'
 import { Center } from '../center'
-import { KeysColor, KeysTypo } from '@/shared/themes'
+import { ColorName, TypoName } from '@/shared/themes'
 import { palette } from '@/shared/themes/palette'
 
 const styleDefault: ViewStyle = {
@@ -25,9 +25,9 @@ type ButtonProps = {
   onPress: () => void
   isModal?: boolean
   style?: StyleProp<ViewStyle>
-  labelColor?: KeysColor
+  labelColor?: ColorName
   shadow?: boolean
-  labelVariant?: KeysTypo
+  labelVariant?: TypoName
   custom?: boolean
 }
 

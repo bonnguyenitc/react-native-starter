@@ -1,4 +1,8 @@
-export const typography = {
+import { TextStyle } from 'react-native'
+
+export type TypoName = 'emoji' | 'normal' | 'light' | 'h1' | 'h2' | 'subTitle'
+
+export const typography: { [key in TypoName]: TextStyle } = {
   emoji: {
     fontSize: 50,
     color: 'text',

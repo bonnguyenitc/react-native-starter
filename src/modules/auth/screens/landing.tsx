@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
-import { Button, Space, Text } from '@/components/widgets'
+import { Align, Button, Space, Text } from '@/components/widgets'
 import { AuthLayout } from '../components/layout/layout'
 import { APP_NAME } from '@/shared/config'
 import { useThemeStore } from '@/shared/stores'
@@ -62,6 +62,7 @@ export const Landing: React.FC = function () {
           </Text>
         )
       })}
+      <Align alignment="bottomCenter" backgroundColor="black" padding="16px" />
     </AuthLayout>
   )
 }
