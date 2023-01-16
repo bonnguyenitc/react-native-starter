@@ -9,9 +9,9 @@ export const styles: { [key in StyleName]: ViewStyle } = {
   },
 }
 
-export type ShowdownName = 'normal'
+export type ShadowName = 'normal'
 
-export const shadows: { [key in ShowdownName]: ViewProps } = {
+export const shadows: { [key in ShadowName]: ViewProps } = {
   normal: {
     elevation: 5,
     shadowColor: 'dark',
