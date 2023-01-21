@@ -257,15 +257,21 @@ android {
             dimension "enviroment"
             signingConfig signingConfigs.development
 			applicationIdSuffix ".development"
+            versionCode 1
+            versionName "1.0.0"
         }
         staging {
             dimension "enviroment"
             signingConfig signingConfigs.staging
 			applicationIdSuffix ".staging"
+            versionCode 1
+            versionName "1.0.0"
         }
         production {
             dimension "enviroment"
             signingConfig signingConfigs.production
+            versionCode 1
+            versionName "1.0.0"
         }
     }
     buildTypes {

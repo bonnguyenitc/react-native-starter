@@ -36,6 +36,7 @@ then
       npx jetify
       cd android
       ENVFILE=.env.development ./gradlew assembleDevelopmentRelease
+      open "app/build/outputs/apk/development/release"
       if [ "$store" == deploygate ]
       then
         dg deploy "app/build/outputs/apk/development/release/app-development-release.apk" --message "Android Development - $now"
@@ -52,10 +53,11 @@ then
       npx jetify
       cd android
       ENVFILE=.env.staging ./gradlew assembleStagingRelease
+      open "app/build/outputs/apk/staging/release"
       if [ "$store" == deploygate ]
       then
         dg deploy "app/build/outputs/apk/staging/release/app-staging-release.apk" --message "Android Staging - $now"
-      if
+      fi
     else
       npx jetify
       cd android
@@ -67,10 +69,11 @@ then
       npx jetify
       cd android
       ENVFILE=.env.production ./gradlew assembleProductionRelease
+      open "app/build/outputs/apk/production/release"
       if [ "$store" == deploygate ]
       then
         dg deploy "app/build/outputs/apk/production/release/app-production-release.apk" --message "Android Production - $now"
-      if
+      fi
     else
       npx jetify
       cd android

@@ -29,7 +29,8 @@
     "postinstall": "node ./bin/podInstall",
     "find-deadcode": "ts-prune",
     "vs": "react-native-bundle-visualizer",
-    "fonts": "npx react-native-asset"
+    "fonts": "npx react-native-asset",
+    "clean-watchman": "watchman watch-del-all && watchman shutdown-server "
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.3",
