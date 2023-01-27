@@ -115,7 +115,7 @@
       "node"
     ],
     "moduleNameMapper": {
-      "\\.svg": "<rootDir>/src/__mocks__/svgMock.js"
+      "\\.svg": "<rootDir>/__mocks__/svgMock.js"
     }
   },
   "lint-staged": {
