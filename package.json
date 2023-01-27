@@ -39,6 +39,7 @@
     "@shopify/restyle": "^2.1.0",
     "@types/react-native-modals": "^0.19.2",
     "axios": "^0.27.2",
+    "dayjs": "^1.11.7",
     "i18next": "^21.8.11",
     "immer": "^9.0.16",
     "moti": "^0.18.0",
