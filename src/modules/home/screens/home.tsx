@@ -5,8 +5,8 @@ import { ConfirmModal } from '@/components/modals'
 import { Button, Space } from '@/components/widgets'
 import { useAuthStore } from '@/modules/auth/stores'
 import { showModalComponent } from '@/shared/libs/dialog'
-import { EventRegister, EVENTS } from '@/shared/libs/event-register'
 import { useThemeStore } from '@/shared/stores'
+import { EventRegister, EVENTS } from '@/shared/utils/event-register'
 
 export const Home: React.FC = function () {
   const isDarkMode = useThemeStore(state => state.isDarkMode)

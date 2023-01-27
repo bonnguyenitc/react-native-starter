@@ -9,9 +9,9 @@ import { useAuthStore } from '@/modules/auth/stores'
 import { ErrorBoundary } from '@/modules/error/components'
 import { AppRoutes } from '@/routes'
 import { useBarStyle } from '@/shared/hooks'
-import { EventRegister, EVENTS } from '@/shared/libs/event-register'
 import { useThemeStore } from '@/shared/stores'
 import { darkTheme, lightTheme } from '@/shared/themes'
+import { EventRegister, EVENTS } from '@/shared/utils/event-register'
 
 export const AppProvider: React.FC = function () {
   useBarStyle()
