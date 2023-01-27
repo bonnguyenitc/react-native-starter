@@ -1,7 +1,8 @@
 import { axios, generateErrorData } from '@/shared/libs/axios'
 import { ResponseApi } from '@/shared/types/api'
-import { LoginPayload, RegisterPayload, UserResponse } from '../types'
+import { LoginPayload, RegisterPayload } from '../types'
 import { UserModel } from '../types/models'
+import { UserResponse } from '../types/api'
 
 export const getUserApi = async (): Promise<ResponseApi<UserModel, any>> => {
   try {

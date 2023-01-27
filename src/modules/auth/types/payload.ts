@@ -1,10 +1,3 @@
-import { UserModel } from './models'
-
-export type UserResponse = {
-  jwt: string
-  user: UserModel
-}
-
 export type RegisterPayload = {
   email: string
   password: string
