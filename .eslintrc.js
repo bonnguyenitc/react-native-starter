@@ -17,12 +17,6 @@ module.exports = {
     project: './tsconfig.json',
   },
   rules: {
-    'no-restricted-imports': [
-      'error',
-      {
-        patterns: ['@/features/*/*'],
-      },
-    ],
     'import/no-unresolved': 0,
     'react/jsx-filename-extension': [
       1,
