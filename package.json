@@ -30,7 +30,8 @@
     "find-deadcode": "ts-prune",
     "vs": "react-native-bundle-visualizer",
     "fonts": "npx react-native-asset",
-    "clean-watchman": "watchman watch-del-all && watchman shutdown-server "
+    "clean-watchman": "watchman watch-del-all && watchman shutdown-server",
+    "debug": "open \"rndebugger://set-debugger-loc?host=localhost&port=8081\""
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.3",
