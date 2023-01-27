@@ -10,11 +10,7 @@ import { useTheme } from '@/shared/themes'
 import { AppNavigationProp } from '@/routes'
 import { useAuth } from '../../hooks'
 import { useTranslation } from '@/shared/hooks'
-
-type FormData = {
-  email: string
-  password: string
-}
+import { LoginPayload } from '../../types'
 
 const schema = yup.object({
   email: yup.string().required('Required'),
@@ -38,7 +34,7 @@ export const LoginForm: React.FC = function () {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>({
+  } = useForm<LoginPayload>({
     defaultValues: {
       email: '',
       password: '',
@@ -47,7 +43,7 @@ export const LoginForm: React.FC = function () {
   })
 
   const onSubmit = useCallback(
-    (data: FormData) => {
+    (data: LoginPayload) => {
       login(data)
     },
     [login],

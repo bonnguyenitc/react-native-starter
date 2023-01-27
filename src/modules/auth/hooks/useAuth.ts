@@ -1,7 +1,8 @@
 import { useCallback } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { AppNavigationProp } from '@/routes'
-import { useAuthStore, User } from '../stores'
+import { useAuthStore } from '../stores'
+import { LoginPayload } from '../types'
 
 export const useAuth = () => {
   const navigation = useNavigation<AppNavigationProp>()
@@ -16,7 +17,7 @@ export const useAuth = () => {
   }, [navigation])
 
   const login = useCallback(
-    (data: User) => {
+    (data: LoginPayload) => {
       loginAction(data)
     },
     [loginAction],
