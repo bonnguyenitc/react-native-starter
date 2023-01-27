@@ -5,11 +5,10 @@ import { Spinner } from '@/components/widgets'
 
 const modal: any = ModalPortal
 
-const loadingIds: string[] = []
 const modalIds: string[] = []
 
 export function hideLoading() {
-  const id = loadingIds.shift()
+  const id = modalIds.shift()
   modal.dismiss(id)
 }
 
@@ -17,7 +16,7 @@ export function showLoading() {
   const id = modal.show(<Spinner color="white" size="large" />, {
     modalStyle: { backgroundColor: 'transparent' },
   })
-  loadingIds.push(id)
+  modalIds.push(id)
 }
 
 export function hideModalComponent() {

@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native'
 
 import { AuthLayout } from '../components/layout/layout'
 import { useAuth } from '../hooks'
-import { Align, Button, Space, Text } from '@/components/widgets'
+import { Button, Space, Text } from '@/components/widgets'
 import { language } from '@/localization/language'
 import { AppNavigationProp } from '@/routes'
 import { APP_NAME } from '@/shared/config'
@@ -64,7 +64,6 @@ export const Landing: React.FC = function () {
           </Text>
         )
       })}
-      <Align alignment="bottomCenter" backgroundColor="black" padding="16px" />
     </AuthLayout>
   )
 }

@@ -26,9 +26,10 @@ export const useAuthStore = create<State & Action>(set => ({
     showLoading()
     await delay(3000)
     hideLoading()
-    storage.saveAccessToken('token')
     const resp = await loginWithEmailAndPasswordApi(data)
+    resp.ok = true
     if (resp.ok) {
+      storage.saveAccessToken('token')
       set(() => ({
         isLoggedIn: true,
         data: resp.data?.user,
