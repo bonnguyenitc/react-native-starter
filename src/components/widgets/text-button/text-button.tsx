@@ -1,7 +1,8 @@
 import React from 'react'
-import { ColorName, TypoName } from '@/shared/themes'
+
 import { Text } from '../text/text'
 import { Touchable } from '../touchable'
+import { ColorName, TypoName } from '@/shared/themes'
 
 type Props = {
   label: string

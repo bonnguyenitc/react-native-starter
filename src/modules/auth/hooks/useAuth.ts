@@ -1,8 +1,10 @@
 import { useCallback } from 'react'
+
 import { useNavigation } from '@react-navigation/native'
-import { AppNavigationProp } from '@/routes'
+
 import { useAuthStore } from '../stores'
 import { LoginPayload } from '../types'
+import { AppNavigationProp } from '@/routes'
 
 export const useAuth = () => {
   const navigation = useNavigation<AppNavigationProp>()

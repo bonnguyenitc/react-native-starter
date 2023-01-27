@@ -1,12 +1,13 @@
 import React, { useMemo } from 'react'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
-import { ViewProps } from '@/shared/types'
-import { Row } from '../row'
-import { shadows, WIDTH } from '@/shared/constants'
-import { Text } from '../text'
+
 import { Center } from '../center'
 import { Col } from '../col'
+import { Row } from '../row'
 import { Space } from '../space'
+import { Text } from '../text'
+import { shadows, WIDTH } from '@/shared/constants'
+import { ViewProps } from '@/shared/types'
 
 type Props = {
   leading?: React.ReactNode

@@ -1,6 +1,7 @@
 import React from 'react'
-import { ViewProps } from '@/shared/types'
+
 import { Box } from '../box'
+import { ViewProps } from '@/shared/types'
 
 export const Stack: React.FC<ViewProps> = function ({ children, ...props }) {
   return (

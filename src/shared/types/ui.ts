@@ -1,3 +1,5 @@
+import { StyleProp, ViewProps as ViewPropsRN, ViewStyle } from 'react-native'
+
 import {
   BackgroundColorProps,
   BorderProps,
@@ -6,7 +8,7 @@ import {
   ShadowProps,
   SpacingProps,
 } from '@shopify/restyle'
-import { StyleProp, ViewStyle, ViewProps as ViewPropsRN } from 'react-native'
+
 import { Theme } from '@/shared/themes'
 
 export interface ChildrenProps {

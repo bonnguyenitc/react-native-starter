@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react'
 import RNRestart from 'react-native-restart'
+
 import { Button, Center, Screen, Space, Text } from '@/components/widgets'
 import { useThemeStore } from '@/shared/stores'
 

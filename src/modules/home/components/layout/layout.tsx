@@ -1,6 +1,7 @@
 import React from 'react'
-import { ChildrenProps } from '@/shared/types'
+
 import { Center, Screen, Space, Text } from '@/components/widgets'
+import { ChildrenProps } from '@/shared/types'
 
 type HomeLayoutProps = {
   title?: string

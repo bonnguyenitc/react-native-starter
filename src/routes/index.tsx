@@ -1,7 +1,9 @@
 import React from 'react'
-import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native'
 import RNBootSplash from 'react-native-bootsplash'
+
+import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
+
 import { AuthRoutes, AuthStackParamList } from '@/modules/auth/routes'
 import { useAuthStore } from '@/modules/auth/stores'
 import { HomeRoutes, HomeStackParamList } from '@/modules/home/routes'

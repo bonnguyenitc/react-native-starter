@@ -1,10 +1,11 @@
 import React, { useCallback } from 'react'
-import { Button, Space } from '@/components/widgets'
+
+import { HomeLayout } from '../components/layout'
 import { ConfirmModal } from '@/components/modals'
+import { Button, Space } from '@/components/widgets'
+import { useAuthStore } from '@/modules/auth/stores'
 import { showModalComponent } from '@/shared/libs/dialog'
 import { useThemeStore } from '@/shared/stores'
-import { useAuthStore } from '@/modules/auth/stores'
-import { HomeLayout } from '../components/layout'
 
 export const Home: React.FC = function () {
   const isDarkMode = useThemeStore(state => state.isDarkMode)

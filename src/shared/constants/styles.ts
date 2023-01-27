@@ -1,4 +1,5 @@
 import { ViewStyle } from 'react-native'
+
 import { ViewProps } from '../types'
 
 export type StyleName = 'flex_1'

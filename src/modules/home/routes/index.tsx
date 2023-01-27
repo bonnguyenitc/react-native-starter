@@ -1,9 +1,11 @@
 import React from 'react'
+
 import {
   createStackNavigator,
   StackNavigationOptions,
   TransitionPresets,
 } from '@react-navigation/stack'
+
 import { Home } from '../screens'
 
 export type HomeStackParamList = {

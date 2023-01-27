@@ -1,7 +1,9 @@
 import React from 'react'
-import { ViewStyle } from 'react-native'
 import { Control, Controller } from 'react-hook-form'
+import { ViewStyle } from 'react-native'
+
 import { TextProps } from '@shopify/restyle'
+
 import { Row, Space, Text, TextInput } from '@/components/widgets'
 import { ColorName, spacing, Theme, useTheme } from '@/shared/themes'
 

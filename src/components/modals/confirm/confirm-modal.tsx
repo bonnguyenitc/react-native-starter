@@ -1,4 +1,5 @@
 import React, { memo, useCallback } from 'react'
+
 import { Button, Col, Row, Space, Text } from '@/components/widgets'
 import { WIDTH } from '@/shared/constants'
 import { hideModalComponent } from '@/shared/libs/dialog'

@@ -1,13 +1,15 @@
 import React, { useEffect, useMemo } from 'react'
-import { ThemeProvider } from '@shopify/restyle'
-import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { ModalPortal } from 'react-native-modals'
-import { AppRoutes } from '@/routes'
-import { darkTheme, lightTheme } from '@/shared/themes'
-import { useThemeStore } from '@/shared/stores'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
+
+import { ThemeProvider } from '@shopify/restyle'
+
 import { useAuthStore } from '@/modules/auth/stores'
-import { useBarStyle } from '@/shared/hooks'
 import { ErrorBoundary } from '@/modules/error/components'
+import { AppRoutes } from '@/routes'
+import { useBarStyle } from '@/shared/hooks'
+import { useThemeStore } from '@/shared/stores'
+import { darkTheme, lightTheme } from '@/shared/themes'
 
 export const AppProvider: React.FC = function () {
   useBarStyle()

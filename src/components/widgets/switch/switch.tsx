@@ -1,7 +1,9 @@
 import React, { useMemo } from 'react'
-import { MotiTransitionProp, MotiView } from 'moti'
 import { Pressable, View } from 'react-native'
 import { Easing } from 'react-native-reanimated'
+
+import { MotiTransitionProp, MotiView } from 'moti'
+
 import { useTheme } from '@/shared/themes'
 
 type SwitchProps = {

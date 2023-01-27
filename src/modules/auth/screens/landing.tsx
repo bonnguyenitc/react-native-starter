@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
+
 import { useNavigation } from '@react-navigation/native'
-import { Align, Button, Space, Text } from '@/components/widgets'
+
 import { AuthLayout } from '../components/layout/layout'
-import { APP_NAME } from '@/shared/config'
-import { useThemeStore } from '@/shared/stores'
+import { useAuth } from '../hooks'
+import { Align, Button, Space, Text } from '@/components/widgets'
 import { language } from '@/localization/language'
 import { AppNavigationProp } from '@/routes'
-import { useAuth } from '../hooks'
+import { APP_NAME } from '@/shared/config'
 import { useTranslation } from '@/shared/hooks'
+import { useThemeStore } from '@/shared/stores'
 
 const languages = [
   // Language List

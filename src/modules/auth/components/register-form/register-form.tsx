@@ -1,15 +1,18 @@
 import React, { useCallback, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
+
+import { useNavigation } from '@react-navigation/native'
+
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
-import { useNavigation } from '@react-navigation/native'
-import { Button, Col, Space } from '@/components/widgets'
+
+import { useAuth } from '../../hooks'
 import { InputField } from '@/components/form/input-field'
+import { Button, Col, Space } from '@/components/widgets'
+import { AppNavigationProp } from '@/routes'
+import { useTranslation } from '@/shared/hooks'
 import { useThemeStore } from '@/shared/stores'
 import { useTheme } from '@/shared/themes'
-import { AppNavigationProp } from '@/routes'
-import { useAuth } from '../../hooks'
-import { useTranslation } from '@/shared/hooks'
 
 type FormData = {
   email: string

@@ -1,4 +1,5 @@
 import { PixelRatio } from 'react-native'
+
 import { HEIGHT, WIDTH } from '@/shared/constants'
 
 // change it

@@ -12,6 +12,7 @@ import Reanimated, {
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated'
+
 import { Box } from '../box'
 
 type Props = {

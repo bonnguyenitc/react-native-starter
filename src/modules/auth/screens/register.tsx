@@ -1,6 +1,7 @@
 import React from 'react'
-import { useTranslation } from '@/shared/hooks'
+
 import { AuthLayout, RegisterForm } from '../components'
+import { useTranslation } from '@/shared/hooks'
 
 export const Register = function () {
   const { t } = useTranslation()

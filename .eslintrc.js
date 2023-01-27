@@ -47,5 +47,11 @@ module.exports = {
     'no-empty-function': 0,
     'no-extra-semi': 0,
     'no-console': 0,
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [['^react-?'], ['^@?react-?'], ['^@?\\w']],
+      },
+    ],
   },
 }

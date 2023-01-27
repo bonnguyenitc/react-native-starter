@@ -1,10 +1,11 @@
 import create from 'zustand'
-import storage from '@/shared/utils/storage'
+
+import { loginWithEmailAndPasswordApi } from '../api'
+import { LoginPayload } from '../types'
+import { UserModel } from '../types/models'
 import { hideLoading, showLoading } from '@/shared/libs/dialog'
 import { delay } from '@/shared/utils/helpers'
-import { UserModel } from '../types/models'
-import { LoginPayload } from '../types'
-import { loginWithEmailAndPasswordApi } from '../api'
+import storage from '@/shared/utils/storage'
 
 type State = {
   data: UserModel | undefined

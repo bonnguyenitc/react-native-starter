@@ -1,6 +1,8 @@
 import React from 'react'
-import { createVariant, VariantProps, createRestyleComponent } from '@shopify/restyle'
 import { TextInput as RNTextInput } from 'react-native'
+
+import { createRestyleComponent, createVariant, VariantProps } from '@shopify/restyle'
+
 import { Theme } from '@/shared/themes'
 
 const variant = createVariant({

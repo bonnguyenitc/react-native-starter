@@ -1,5 +1,5 @@
-import common from './common'
 import auth from './auth'
+import common from './common'
 import navigate from './navigate'
 
 export default {

@@ -1,9 +1,11 @@
 import React from 'react'
+
 import {
   createStackNavigator,
   StackNavigationOptions,
   TransitionPresets,
 } from '@react-navigation/stack'
+
 import { Landing, Login, Register } from '../screens'
 
 export type AuthStackParamList = {
