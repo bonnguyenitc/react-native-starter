@@ -5,6 +5,7 @@ import { ConfirmModal } from '@/components/modals'
 import { Button, Space } from '@/components/widgets'
 import { useAuthStore } from '@/modules/auth/stores'
 import { showModalComponent } from '@/shared/libs/dialog'
+import { EventRegister, EVENTS } from '@/shared/libs/event-register'
 import { useThemeStore } from '@/shared/stores'
 
 export const Home: React.FC = function () {
@@ -15,6 +16,10 @@ export const Home: React.FC = function () {
     showModalComponent(() => <ConfirmModal title="Alert" content="This is long text" />)
   }, [])
 
+  const emitEvent = useCallback(() => {
+    EventRegister.emit(EVENTS.EVENT_LOGOUT)
+  }, [])
+
   return (
     <HomeLayout title="Home">
       <Button
@@ -22,6 +27,13 @@ export const Home: React.FC = function () {
         onPress={showModal}
         labelColor={isDarkMode ? 'dark' : 'light'}>
         Show pop up
+      </Button>
+      <Space height={32} />
+      <Button
+        backgroundColor={!isDarkMode ? 'dark' : 'light'}
+        onPress={emitEvent}
+        labelColor={isDarkMode ? 'dark' : 'light'}>
+        Test event emit
       </Button>
       <Space height={32} />
       <Button

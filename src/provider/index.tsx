@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo } from 'react'
+import { Alert } from 'react-native'
 import { ModalPortal } from 'react-native-modals'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 
@@ -8,6 +9,7 @@ import { useAuthStore } from '@/modules/auth/stores'
 import { ErrorBoundary } from '@/modules/error/components'
 import { AppRoutes } from '@/routes'
 import { useBarStyle } from '@/shared/hooks'
+import { EventRegister, EVENTS } from '@/shared/libs/event-register'
 import { useThemeStore } from '@/shared/stores'
 import { darkTheme, lightTheme } from '@/shared/themes'
 
@@ -19,6 +21,9 @@ export const AppProvider: React.FC = function () {
 
   useEffect(() => {
     checkLoggedIn()
+    EventRegister.on(EVENTS.EVENT_LOGOUT, () => {
+      Alert.alert("I'm an event!")
+    })
   }, [checkLoggedIn])
 
   return (
