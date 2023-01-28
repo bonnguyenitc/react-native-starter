@@ -1,17 +1,17 @@
 /* eslint-disable no-restricted-syntax */
 
-type CallBack = (data?: any) => void
+import { CallbackFunction } from '../types'
 
 export class EventRegister {
   static listeners: {
     count: number
-    refs: Map<string, CallBack>
+    refs: Map<string, CallbackFunction<any, void>>
   } = {
     count: 0,
     refs: new Map(),
   }
 
-  static addEventListener(eventName: string, callback: CallBack) {
+  static addEventListener(eventName: string, callback: CallbackFunction<any, void>) {
     if (!eventName) return false
     EventRegister.listeners.refs.set(eventName, callback)
     return true
@@ -34,7 +34,7 @@ export class EventRegister {
     }
   }
 
-  static on(eventName: string, callback: CallBack) {
+  static on(eventName: string, callback: CallbackFunction<any, void>) {
     return EventRegister.addEventListener(eventName, callback)
   }
 
