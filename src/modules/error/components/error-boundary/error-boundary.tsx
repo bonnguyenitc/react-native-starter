@@ -2,6 +2,7 @@ import React, { ReactElement, useCallback, useMemo } from 'react'
 import ErrorBoundaryLib from 'react-native-error-boundary'
 
 import { Crash } from '../../screens'
+import { logger } from '@/shared/utils/logger'
 
 type Props = {
   children: ReactElement
@@ -19,8 +20,8 @@ export const ErrorBoundary: React.FC<Props> = function ({ children, catchErrors 
 
   const errorHandler = useCallback((error: Error, stackTrace: string) => {
     // send error to service log
-    console.log(error)
-    console.log(stackTrace)
+    logger.log(error)
+    logger.log(stackTrace)
   }, [])
 
   return isEnabled ? (

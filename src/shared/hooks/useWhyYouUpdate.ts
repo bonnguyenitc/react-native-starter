@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react'
 
+import { logger } from '../utils/logger'
+
 export const useWhyYouUpdate = (name: string, props: any) => {
   const previousProps = useRef<any>()
 
@@ -16,7 +18,7 @@ export const useWhyYouUpdate = (name: string, props: any) => {
         }
       })
       if (Object.keys(changesObj).length) {
-        console.log('[why-did-you-update]', name, changesObj)
+        logger.log('[why-did-you-update]', name, changesObj)
       }
     }
     previousProps.current = props
