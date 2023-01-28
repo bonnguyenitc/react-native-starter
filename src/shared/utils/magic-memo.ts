@@ -7,11 +7,11 @@ type DeepPartial<T> = {
   [P in keyof T]?: DeepPartial<T[P]>
 }
 
-export const magicMemo = function <C extends ComponentType<any>>(
+export const magicMemo = <C extends ComponentType<any>>(
   Component: C,
   deps?: string | string[], // This is list keys of props
   customComparisonFunc?: (props: DeepPartial<ComponentProps<C>>) => boolean,
-): MemoExoticComponent<C> {
+): MemoExoticComponent<C> => {
   return React.memo(Component, (prev, next) => {
     if (!deps) {
       if (customComparisonFunc) {
