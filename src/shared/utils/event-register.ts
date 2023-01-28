@@ -12,7 +12,7 @@ export class EventRegister {
   }
 
   static addEventListener(eventName: string, callback: CallbackFunction<any, void>) {
-    if (!eventName) return false
+    if (!eventName || !callback || typeof callback !== 'function') return false
     EventRegister.listeners.refs.set(eventName, callback)
     return true
   }
