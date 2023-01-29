@@ -81,122 +81,94 @@ And more in package.json. Check it!
 ##
 
 ```
+├── Gemfile
+├── README.md
 ├── __mocks__
-│   └── react-native-config.js
-├── app.tsx
+├── __tests__
+├── android
+├── app.json
 ├── assets
-│   ├── fonts
-│   ├── images
-│   │   └── index.ts
-│   ├── index.ts
-│   └── jsons
-│       └── index.ts
-├── components
-│   ├── form
+├── babel.config.js
+├── bin
+├── index.js
+├── ios
+├── jest
+├── jest.config.js
+├── metro.config.js
+├── package.json
+├── patches
+├── react-native.config.js
+├── scripts
+├── src
+│   ├── app.tsx
+│   ├── assets
+│   │   ├── fonts
+│   │   ├── images
 │   │   ├── index.ts
-│   │   └── input-field
-│   ├── modals
-│   │   ├── confirm
-│   │   └── index.ts
-│   └── widgets
-│       ├── align
-│       ├── app-bar
-│       ├── box
-│       ├── button
-│       ├── card
-│       ├── center
-│       ├── col
-│       ├── if
-│       ├── image
-│       ├── index.ts
-│       ├── positioned
-│       ├── row
-│       ├── screen
-│       ├── space
-│       ├── spinner
-│       ├── stack
-│       ├── switch
-│       ├── text
-│       ├── text-button
-│       ├── text-input
-│       └── touchable
-├── localization
-│   ├── en
-│   │   ├── auth.ts
-│   │   ├── common.ts
-│   │   ├── index.ts
-│   │   └── navigate.ts
-│   ├── i18n.ts
-│   ├── language.ts
-│   └── vi
-│       ├── auth.ts
-│       ├── common.ts
-│       ├── index.ts
-│       └── navigate.ts
-├── modules
-│   ├── auth
-│   │   ├── api
-│   │   ├── assets
-│   │   ├── components
-│   │   ├── hooks
-│   │   ├── index.ts
-│   │   ├── routes
-│   │   ├── screens
-│   │   ├── stores
-│   │   ├── types
-│   │   └── utils
-│   ├── error
-│   │   ├── components
-│   │   └── screens
-│   └── home
-│       ├── components
-│       ├── routes
-│       └── screens
-├── provider
-│   └── index.tsx
-├── routes
-│   └── index.tsx
-└── shared
-    ├── config
-    │   └── index.ts
-    ├── constants
-    │   ├── dimension.ts
-    │   ├── index.ts
-    │   ├── styles.ts
-    │   └── transitions.ts
-    ├── hooks
-    │   ├── __tests__
-    │   ├── index.ts
-    │   ├── useBarStyle.ts
-    │   ├── useDisclosure.ts
-    │   └── useTranslation.ts
-    ├── libs
-    │   ├── axios.ts
-    │   ├── dialog.tsx
-    │   └── mmvk.ts
-    ├── stores
-    │   ├── __tests__
-    │   ├── index.ts
-    │   ├── useNotificationStore.ts
-    │   └── useThemeStore.ts
-    ├── themes
-    │   ├── color.ts
-    │   ├── index.ts
-    │   ├── palette.ts
-    │   ├── spacing.ts
-    │   ├── theme.ts
-    │   ├── timing.ts
-    │   └── typography.ts
-    ├── types
-    │   ├── api.ts
-    │   ├── index.ts
-    │   └── view.ts
-    └── utils
-        ├── helpers.ts
-        ├── navigation-utilities.ts
-        ├── refresh-token-multi-request.ts
-        ├── responsive.ts
-        └── storage.ts
+│   │   └── jsons
+│   ├── components
+│   │   ├── form
+│   │   ├── modals
+│   │   └── widgets
+│   │       ├── align
+│   │       ├── app-bar
+│   │       ├── box
+│   │       ├── button
+│   │       ├── card
+│   │       ├── center
+│   │       ├── col
+│   │       ├── if
+│   │       ├── image
+│   │       ├── index.ts
+│   │       ├── positioned
+│   │       ├── row
+│   │       ├── screen
+│   │       ├── space
+│   │       ├── spinner
+│   │       ├── stack
+│   │       ├── switch
+│   │       ├── text
+│   │       ├── text-button
+│   │       ├── text-input
+│   │       ├── touchable
+│   │       └── wrap
+│   ├── localization
+│   ├── modules
+│   │   ├── auth
+│   │   │   ├── api
+│   │   │   ├── assets
+│   │   │   ├── components
+│   │   │   ├── hooks
+│   │   │   ├── index.ts
+│   │   │   ├── routes
+│   │   │   ├── screens
+│   │   │   ├── stores
+│   │   │   ├── types
+│   │   │   └── utils
+│   │   ├── error
+│   │   │   ├── components
+│   │   │   └── screens
+│   │   └── home
+│   │       ├── components
+│   │       ├── routes
+│   │       └── screens
+│   ├── provider
+│   ├── routes
+│   └── shared
+│       ├── config
+│       ├── constants
+│       ├── hooks
+│       ├── libs
+│       ├── stores
+│       ├── themes
+│       ├── types
+│       └── utils
+├── tsconfig.json
+├── tsconfig.paths.json
+├── types
+│   └── declarations.d.ts
+├── yarn-error.log
+└── yarn.lock
 ```
 
 ## Folder for a feature
