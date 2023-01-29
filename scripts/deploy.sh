@@ -3,7 +3,6 @@
 set -e
 
 now=$(date +'%d/%m/%Y - %H:%M')
-iosBuildVersion=$(date +'%H%M.%d%m%Y')
 read -r -p 'Enter the platform (ANDROID|IOS): ' platform
 read -r -p 'Enter the environment (DEV|STG|PROD): ' environment
 read -r -p 'Enter the store (deploygate|store): ' store
