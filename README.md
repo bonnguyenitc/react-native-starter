@@ -1,4 +1,4 @@
-# React Native Base Project
+# React Native Template 2023
 
 <p align="center"><img src="https://raw.githubusercontent.com/bonnguyenitc/react-native-starter/main/dist/demo.gif" alt="demo"></p>
 
