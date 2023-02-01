@@ -1,0 +1,76 @@
+---
+patch:
+  append: "export * from './<%= props.kebabCaseName %>'\n"
+  skip: <%= props.skipIndexFile %>
+---
+import React, { useCallback } from 'react'
+import { useForm } from 'react-hook-form'
+
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as yup from 'yup'
+
+import { Button, Col, Space } from '@/components/widgets'
+import { InputField } from '@/components/widgets/input-field'
+
+const schema = yup.object({
+  email: yup.string().required('Required'),
+  password: yup.string().required('Required'),
+})
+
+type DataForm = {
+  email: string
+  password: string
+}
+
+type Props = {
+  // props
+}
+
+/**
+ * Describe your component here
+ */
+
+export const <%= props.pascalCaseName %>: React.FC<Props> = function (props: Props) {
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<DataForm>({
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+    resolver: yupResolver(schema),
+  })
+
+  const onSubmit = useCallback((data: DataForm) => {
+    // handle
+  }, [])
+
+  return (
+    <Col width="80%">
+      <InputField
+        control={control}
+        error={errors.email?.message}
+        name="email"
+        placeholder="Email"
+        autoCapitalize="none"
+        keyboardType="email-address"
+      />
+      <Space height={16} />
+      <InputField
+        control={control}
+        error={errors.password?.message}
+        name="password"
+        placeholder="Password"
+        autoCapitalize="none"
+        secureTextEntry
+      />
+      <Space height={32} />
+      <Col>
+        <Button onPress={handleSubmit(onSubmit)}>Submit</Button>
+      </Col>
+      <Space height={32} />
+    </Col>
+  )
+}
