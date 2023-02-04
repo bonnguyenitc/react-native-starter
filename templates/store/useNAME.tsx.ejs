@@ -1,0 +1,18 @@
+---
+patch:
+  append: "export * from './use<%= props.pascalCaseName %>'\n"
+  skip: <%= props.skipIndexFile %>
+---
+import create from 'zustand'
+
+type State = {
+  //
+}
+
+type Action = {
+  //
+}
+
+export const use<%= props.pascalCaseName %> = create<State & Action>((set, get) => ({
+  //
+}))

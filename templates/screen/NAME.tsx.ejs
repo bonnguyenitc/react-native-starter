@@ -1,0 +1,18 @@
+---
+patch:
+  append: "export * from './<%= props.kebabCaseName %>'\n"
+  skip: <%= props.skipIndexFile %>
+---
+import React from 'react'
+
+import { Center, Screen, Text } from '@/components/widgets'
+
+export const <%= props.pascalCaseName %>: React.FC = function () {
+  return (
+    <Screen safe>
+      <Center flex={1}>
+        <Text><%= props.pascalCaseName %></Text>
+      </Center>
+    </Screen>
+  )
+}
