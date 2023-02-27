@@ -1,5 +1,5 @@
-import { axios, generateErrorData } from '@/shared/libs/axios'
 import { ResponseApi } from '@/shared/types/api'
+import { axios, generateErrorData } from '@/shared/utils/axios'
 
 export const getDemoApi = async (): Promise<ResponseApi<any, any>> => {
   try {

@@ -4,8 +4,8 @@ import { HomeLayout } from '../components/layout'
 import { ConfirmModal } from '@/components/modals'
 import { Button, Space } from '@/components/widgets'
 import { useAuthStore } from '@/modules/auth/stores'
-import { showModalComponent } from '@/shared/libs/dialog'
 import { useThemeStore } from '@/shared/stores'
+import { showModalComponent } from '@/shared/utils/dialog'
 import { EventRegister, EVENTS } from '@/shared/utils/event-register'
 
 export const Home: React.FC = function () {

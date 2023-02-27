@@ -3,7 +3,7 @@ import create from 'zustand'
 import { loginWithEmailAndPasswordApi } from '../api'
 import { LoginPayload } from '../types'
 import { UserModel } from '../types/models'
-import { hideLoading, showLoading } from '@/shared/libs/dialog'
+import { hideLoading, showLoading } from '@/shared/utils/dialog'
 import { delay } from '@/shared/utils/helpers'
 import storage from '@/shared/utils/storage'
 

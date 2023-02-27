@@ -14,10 +14,10 @@ export const RootNavigation = {
   goBack() {},
   resetRoot(_state?: PartialState<NavigationState> | NavigationState) {},
   getRootState(): NavigationState {
-    return {} as any;
+    return {} as any
   },
   dispatch(_action: NavigationAction) {},
-};
+}
 /* eslint-enable */
 
 export const navigationRef = createNavigationContainerRef()
