@@ -2,6 +2,42 @@
 
 <p align="center"><img src="https://raw.githubusercontent.com/bonnguyenitc/react-native-starter/main/dist/demo.gif" alt="demo"></p>
 
+## With Fue Cli [Source](https://github.com/bonnguyenitc/fue)
+
+### Create project
+
+`npx fue new`
+
+### Generate code with fue
+
+#### In root
+
+1. Generate widget
+   `fue g widget widget-name --react-native`
+2. Generate modal
+   `fue g modal modal-name --react-native`
+3. Generate module
+   `fue g module module-name --react-native`
+4. Generate form
+   `fue g form form-name --react-native`
+5. Generate in form a specify dir
+   `fue g form a/b/c/form-name --react-native`
+
+#### In module
+
+1. Generate widget
+   `fue g widget widget-name --react-native --module=auth`
+2. Generate modal
+   `fue g modal modal-name --react-native --module=auth`
+3. Generate module
+   `fue g module module-name --react-native --module=auth`
+4. Generate form
+   `fue g form form-name --react-native --module=auth`
+5. Generate screen
+   `fue g screen screen-name --react-native --module=auth`
+6. Generate in form a specify dir
+   `fue g form a/b/c/form-name --react-native`
+
 ## Features
 
 - Navigation v6
@@ -47,7 +83,10 @@
 ##
 
 ```bash
-# pull source
+# pull source from cli
+npx fue new
+
+# pull source from git
 git clone https://github.com/bonnguyenitc/react-native-starter.git
 
 # install:
