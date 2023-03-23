@@ -1,5 +1,5 @@
-import create from 'zustand'
-import { persist, StateStorage } from 'zustand/middleware'
+import { create } from 'zustand'
+import { createJSONStorage, persist } from 'zustand/middleware'
 
 import { MMKVStorage } from '@/shared/utils/storage'
 
@@ -25,8 +25,8 @@ export const useThemeStore = create(
     }),
     {
       name: 'theme-store',
-      getStorage: () => MMKVStorage as StateStorage,
-      partialize: state => ({ isDarkMode: state.isDarkMode }),
+      storage: createJSONStorage(() => MMKVStorage),
+      partialize: state => ({ isDarkMode: state.isDarkMode } as any),
     },
   ),
 )
