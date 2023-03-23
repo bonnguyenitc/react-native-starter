@@ -7,6 +7,7 @@ import {
 } from '@react-navigation/stack'
 
 import { Landing, Login, Register } from '../screens'
+import { RouterName } from '@/routes/router-name'
 
 export type AuthStackParamList = {
   register: undefined
@@ -23,11 +24,11 @@ const Stack = createStackNavigator<AuthStackParamList>()
 
 export const AuthRoutes: React.FC = function () {
   return (
-    <Stack.Navigator initialRouteName="landing" screenOptions={options}>
-      <Stack.Screen name="register" component={Register} />
-      <Stack.Screen name="login" component={Login} />
+    <Stack.Navigator initialRouteName={RouterName.landing} screenOptions={options}>
+      <Stack.Screen name={RouterName.register} component={Register} />
+      <Stack.Screen name={RouterName.login} component={Login} />
       <Stack.Screen
-        name="landing"
+        name={RouterName.landing}
         component={Landing}
         options={{
           headerShown: false,

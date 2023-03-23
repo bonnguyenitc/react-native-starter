@@ -10,9 +10,9 @@ import { HomeRoutes, HomeStackParamList } from '@/modules/home/routes'
 import { useThemeStore } from '@/shared/stores'
 import { navigationRef } from '@/shared/utils/navigation-utilities'
 
-export type StackParamList = AuthStackParamList & HomeStackParamList
+export type AppParamList = AuthStackParamList & HomeStackParamList
 
-export type AppNavigationProp = StackNavigationProp<StackParamList>
+export type AppNavigationProp = StackNavigationProp<AppParamList>
 
 export const AppRoutes: React.FC = function () {
   const isLoggedIn = useAuthStore(state => state.isLoggedIn)

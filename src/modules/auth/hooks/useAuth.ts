@@ -5,17 +5,18 @@ import { useNavigation } from '@react-navigation/native'
 import { useAuthStore } from '../stores'
 import { LoginPayload } from '../types'
 import { AppNavigationProp } from '@/routes'
+import { RouterName } from '@/routes/router-name'
 
 export const useAuth = () => {
   const navigation = useNavigation<AppNavigationProp>()
   const { loginAction, registerAction } = useAuthStore()
 
   const goToLogin = useCallback(() => {
-    navigation.navigate('login')
+    navigation.navigate(RouterName.login)
   }, [navigation])
 
   const goToRegister = useCallback(() => {
-    navigation.navigate('register')
+    navigation.navigate(RouterName.register)
   }, [navigation])
 
   const login = useCallback(
@@ -27,7 +28,7 @@ export const useAuth = () => {
 
   const register = useCallback(async () => {
     await registerAction()
-    navigation.navigate('login')
+    navigation.navigate(RouterName.login)
   }, [registerAction, navigation])
 
   return { goToLogin, goToRegister, login, register }

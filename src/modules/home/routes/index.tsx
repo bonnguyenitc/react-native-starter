@@ -7,6 +7,7 @@ import {
 } from '@react-navigation/stack'
 
 import { Home } from '../screens'
+import { RouterName } from '@/routes/router-name'
 
 export type HomeStackParamList = {
   home: undefined
@@ -21,9 +22,9 @@ const Stack = createStackNavigator<HomeStackParamList>()
 
 export const HomeRoutes: React.FC = function () {
   return (
-    <Stack.Navigator initialRouteName="home" screenOptions={options}>
+    <Stack.Navigator initialRouteName={RouterName.home} screenOptions={options}>
       <Stack.Screen
-        name="home"
+        name={RouterName.home}
         component={Home}
         options={{
           headerShown: false,
