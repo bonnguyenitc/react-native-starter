@@ -61,7 +61,7 @@ export const LoginForm: React.FC = function () {
         placeholder={t('auth:enter_email')}
         autoCapitalize="none"
         keyboardType="email-address"
-        placeholderTextColor={!isDarkMode ? colors.dim : colors.light}
+        placeholderTextColor={!isDarkMode ? colors.dim : colors['text.default']}
       />
       <Space height={16} />
       <InputField
@@ -71,23 +71,17 @@ export const LoginForm: React.FC = function () {
         placeholder={t('auth:enter_password')}
         autoCapitalize="none"
         secureTextEntry
-        placeholderTextColor={!isDarkMode ? colors.dim : colors.light}
+        placeholderTextColor={!isDarkMode ? colors.dim : colors['text.default']}
       />
       <Space height={32} />
       <Col>
-        <Button
-          backgroundColor={!isDarkMode ? 'dark' : 'light'}
-          onPress={handleSubmit(onSubmit)}
-          labelColor={isDarkMode ? 'dark' : 'light'}>
+        <Button backgroundColor="secondary" onPress={handleSubmit(onSubmit)} labelColor="primary">
           {t('auth:login')}
         </Button>
       </Col>
       <Space height={32} />
       <Col>
-        <Button
-          backgroundColor={!isDarkMode ? 'dark' : 'light'}
-          onPress={goToRegister}
-          labelColor={isDarkMode ? 'dark' : 'light'}>
+        <Button backgroundColor="secondary" onPress={goToRegister} labelColor="primary">
           {t('auth:register')}
         </Button>
       </Col>

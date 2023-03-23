@@ -6,9 +6,9 @@ import { ViewProps } from '@/shared/types'
 export const Card: React.FC<ViewProps> = function (props) {
   return (
     <Box
-      backgroundColor="background"
+      backgroundColor="background.default"
       borderRadius={4}
-      shadowColor="black"
+      shadowColor="secondary"
       shadowOffset={{
         width: 0,
         height: 0,

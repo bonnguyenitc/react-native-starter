@@ -9,7 +9,6 @@ import { language } from '@/localization/language'
 import { AppNavigationProp } from '@/routes'
 import { APP_NAME } from '@/shared/config'
 import { useTranslation } from '@/shared/hooks'
-import { useThemeStore } from '@/shared/stores'
 
 const languages = [
   // Language List
@@ -29,23 +28,14 @@ export const Landing: React.FC = function () {
 
   const { t, i18n } = useTranslation()
   const [lang, setLang] = useState(i18n.language)
-  const isDarkMode = useThemeStore(state => state.isDarkMode)
 
   return (
     <AuthLayout safe isShowToggleDarkMode title={APP_NAME}>
-      <Button
-        onPress={goToLogin}
-        backgroundColor={!isDarkMode ? 'dark' : 'light'}
-        width={200}
-        labelColor={isDarkMode ? 'dark' : 'light'}>
+      <Button onPress={goToLogin} backgroundColor="secondary" width={200} labelColor="primary">
         {t('auth:login')}
       </Button>
       <Space height={28} />
-      <Button
-        onPress={goToRegister}
-        backgroundColor={!isDarkMode ? 'dark' : 'light'}
-        width={200}
-        labelColor={isDarkMode ? 'dark' : 'light'}>
+      <Button onPress={goToRegister} backgroundColor="secondary" width={200} labelColor="primary">
         {t('auth:register')}
       </Button>
       <Space height={18} />
@@ -53,7 +43,7 @@ export const Landing: React.FC = function () {
         const selectedLanguage = currentLang.code === lang
         return (
           <Text
-            color="text"
+            color="text.default"
             variant={!selectedLanguage ? 'light' : 'normal'}
             key={currentLang.code}
             onPress={() => {

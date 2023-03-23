@@ -2,45 +2,38 @@ import { palette } from './palette'
 
 export type ColorName =
   | 'transparent'
-  | 'background'
+  | 'background.default'
   | 'primary'
-  | 'primaryDarker'
+  | 'secondary'
   | 'line'
-  | 'text'
+  | 'text.default'
   | 'dim'
   | 'error'
-  | 'violet'
   | 'highlight'
-  | 'dark'
-  | 'black'
-  | 'light'
-  | 'white'
+  | 'background.switchTrack'
+  | 'background.switch'
+  | 'shadow.default'
+
 export const color: { [key in ColorName]: string } = {
   transparent: 'rgba(0, 0, 0, 0)',
 
-  background: palette.white,
+  'background.default': palette.white,
 
-  primary: palette.orange,
+  primary: palette.white,
 
-  primaryDarker: palette.orangeDarker,
+  secondary: palette.black,
 
   line: palette.offWhite,
 
-  text: palette.black,
+  'text.default': palette.black,
 
   dim: palette.lightGrey,
 
   error: palette.angry,
 
-  violet: palette.deepPurple,
-
   highlight: palette.blue,
 
-  dark: palette.black,
-
-  black: palette.black,
-
-  light: palette.white,
-
-  white: palette.white,
+  'background.switch': palette.black,
+  'background.switchTrack': palette.white,
+  'shadow.default': palette.black,
 }

@@ -71,7 +71,7 @@ export const RegisterForm = function () {
         placeholder={t('auth:enter_email')}
         autoCapitalize="none"
         keyboardType="email-address"
-        placeholderTextColor={!isDarkMode ? colors.dim : colors.light}
+        placeholderTextColor={!isDarkMode ? colors.dim : colors.secondary}
       />
       <Space height={16} />
       <InputField
@@ -81,7 +81,7 @@ export const RegisterForm = function () {
         placeholder={t('auth:enter_password')}
         autoCapitalize="none"
         secureTextEntry
-        placeholderTextColor={!isDarkMode ? colors.dim : colors.light}
+        placeholderTextColor={!isDarkMode ? colors.dim : colors.secondary}
       />
       <Space height={16} />
       <InputField
@@ -91,23 +91,17 @@ export const RegisterForm = function () {
         placeholder={t('auth:enter_confirm_password')}
         autoCapitalize="none"
         secureTextEntry
-        placeholderTextColor={!isDarkMode ? colors.dim : colors.light}
+        placeholderTextColor={!isDarkMode ? colors.dim : colors.secondary}
       />
       <Space height={32} />
       <Col>
-        <Button
-          backgroundColor={!isDarkMode ? 'dark' : 'light'}
-          onPress={handleSubmit(onSubmit)}
-          labelColor={isDarkMode ? 'dark' : 'light'}>
+        <Button backgroundColor="secondary" onPress={handleSubmit(onSubmit)} labelColor="primary">
           {t('auth:register')}
         </Button>
       </Col>
       <Space height={32} />
       <Col>
-        <Button
-          backgroundColor={!isDarkMode ? 'dark' : 'light'}
-          onPress={goToLogin}
-          labelColor={isDarkMode ? 'dark' : 'light'}>
+        <Button backgroundColor="secondary" onPress={goToLogin} labelColor="primary">
           {t('auth:login')}
         </Button>
       </Col>

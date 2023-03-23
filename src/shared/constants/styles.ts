@@ -15,7 +15,7 @@ export type ShadowName = 'normal'
 export const shadows: { [key in ShadowName]: ViewProps } = {
   normal: {
     elevation: 5,
-    shadowColor: 'dark',
+    shadowColor: 'shadow.default',
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.3,
     shadowRadius: 10,

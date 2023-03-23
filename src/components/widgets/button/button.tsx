@@ -38,7 +38,7 @@ export const Button: React.FC<ButtonProps & ViewProps> = function ({
   style = {},
   onPress,
   isModal = false,
-  labelColor = 'dark',
+  labelColor = 'primary',
   shadow = false,
   labelVariant = 'normal',
   custom = false,

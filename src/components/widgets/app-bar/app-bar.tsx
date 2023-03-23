@@ -23,14 +23,14 @@ export const AppBar: React.FC<ViewProps & Props> = function ({ leading, actions,
     <Col
       width={WIDTH}
       height={56 + topSpace}
-      backgroundColor="dark"
+      backgroundColor="secondary"
       paddingHorizontal="16px"
       {...shadows.normal}>
       <Space height={topSpace} />
       <Row flex={1} alignItems="center">
         {leading && <Center>{leading}</Center>}
         <Center flex={1}>
-          <Text color="light" variant="normal">
+          <Text color="primary" variant="normal">
             {title}
           </Text>
         </Center>

@@ -21,7 +21,7 @@ export const lightTheme = createTheme({
     },
     normal: {
       fontSize: 16,
-      color: 'text',
+      color: 'text.default',
       fontFamily: 'Poppins',
       fontWeight: 'bold',
     },
@@ -29,7 +29,7 @@ export const lightTheme = createTheme({
   textVariants: {
     defaults: {
       fontSize: 16,
-      color: 'text',
+      color: 'text.default',
       fontFamily: 'Poppins',
     },
     ...typography,
@@ -49,9 +49,13 @@ export const darkTheme: Theme = {
   isDark: true,
   colors: {
     ...lightTheme.colors,
-    background: palette.black,
+    'background.default': palette.black,
     highlight: palette.white,
-    text: palette.white,
+    'text.default': palette.white,
+    primary: palette.black,
+    secondary: palette.white,
+    'background.switch': palette.white,
+    'background.switchTrack': palette.black,
   },
 }
 

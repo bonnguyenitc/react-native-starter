@@ -14,7 +14,7 @@ type Props = {
 export const TextButton: React.FC<Props> = function ({
   label,
   variant = 'normal',
-  color = 'dark',
+  color = 'text.default',
   onPress,
 }) {
   return (

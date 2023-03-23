@@ -32,30 +32,30 @@ export const ConfirmModal: React.FC<Props> = memo(function ({
   }, [onConfirm])
 
   return (
-    <Col width={0.8 * WIDTH} padding="medium" backgroundColor="light">
+    <Col width={0.8 * WIDTH} padding="medium" backgroundColor="primary">
       <Col>
-        <Text variant="normal" color="dark">
+        <Text variant="normal" color="secondary">
           {title}
         </Text>
       </Col>
       <Col>
-        <Text variant="subTitle" color="dark">
+        <Text variant="subTitle" color="secondary">
           {content}
         </Text>
       </Col>
       <Row justifyContent="flex-end">
         <Button
           isModal
-          backgroundColor="light"
+          backgroundColor="primary"
           onPress={handleClose}
-          labelColor="dark"
+          labelColor="secondary"
           borderWidth={1}
-          borderColor="dark"
+          borderColor="secondary"
           paddingHorizontal="large">
           {labelCancel}
         </Button>
         <Space width={16} />
-        <Button isModal backgroundColor="dark" onPress={handleConfirm} labelColor="light">
+        <Button isModal backgroundColor="secondary" onPress={handleConfirm} labelColor="primary">
           {labelConfirm}
         </Button>
       </Row>

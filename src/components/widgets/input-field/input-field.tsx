@@ -25,7 +25,7 @@ const INPUT: ViewStyle = {
 
 export const InputField: React.FC<
   InputFieldProps & React.ComponentProps<typeof TextInput> & TextProps<Theme>
-> = function ({ control, error, name, styleContainer = {}, colorText = 'text', ...props }) {
+> = function ({ control, error, name, styleContainer = {}, colorText = 'text.default', ...props }) {
   const { colors } = useTheme()
   return (
     <>
@@ -35,7 +35,7 @@ export const InputField: React.FC<
           required: true,
         }}
         render={({ field: { onChange, onBlur, value } }) => (
-          <Row style={[INPUT, styleContainer]} borderColor="text">
+          <Row style={[INPUT, styleContainer]} borderColor="text.default">
             <TextInput
               onBlur={onBlur}
               onChangeText={onChange}

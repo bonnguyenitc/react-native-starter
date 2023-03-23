@@ -40,17 +40,17 @@ export const Switch: React.FC<SwitchProps> = function ({ isActive, onPress, size
         <MotiView
           transition={transition}
           from={{
-            backgroundColor: isActive ? colors.dark : colors.light,
+            backgroundColor: colors['background.switch'],
           }}
           animate={{
-            backgroundColor: isActive ? colors.light : colors.dark,
+            backgroundColor: colors['background.switch'],
           }}
           style={{
             width: trackWitch,
             height: trackHeight,
             borderRadius: trackHeight / 2,
             borderWidth: 1,
-            borderColor: colors.dark,
+            borderColor: colors['background.switch'],
           }}
         />
         <MotiView
@@ -63,7 +63,7 @@ export const Switch: React.FC<SwitchProps> = function ({ isActive, onPress, size
             width: trackHeight * 0.8,
             height: trackHeight * 0.8,
             borderRadius: (trackHeight * 0.8) / 2,
-            backgroundColor: isActive ? colors.dark : colors.light,
+            backgroundColor: colors['background.switchTrack'],
           }}
         />
       </View>

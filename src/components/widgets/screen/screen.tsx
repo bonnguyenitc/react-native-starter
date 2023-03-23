@@ -19,24 +19,24 @@ export const Screen: React.FC<LayoutProps> = function ({ children, safe = false 
         style={styles.flex_1}
         transition={transitions.screen}
         from={{
-          backgroundColor: colors.background,
+          backgroundColor: colors['background.default'],
         }}
         animate={{
-          backgroundColor: colors.background,
+          backgroundColor: colors['background.default'],
         }}>
         {children}
       </MotiView>
     )
   return (
-    <SafeAreaView style={[styles.flex_1, { backgroundColor: colors.background }]}>
+    <SafeAreaView style={[styles.flex_1, { backgroundColor: colors['background.default'] }]}>
       <MotiView
         style={styles.flex_1}
         transition={transitions.screen}
         from={{
-          backgroundColor: colors.background,
+          backgroundColor: colors['background.default'],
         }}
         animate={{
-          backgroundColor: colors.background,
+          backgroundColor: colors['background.default'],
         }}>
         {children}
       </MotiView>
