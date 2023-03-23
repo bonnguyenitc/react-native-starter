@@ -1,4 +1,5 @@
 import { PixelRatio } from 'react-native'
+import { RFValue } from 'react-native-responsive-fontsize'
 
 import { HEIGHT, WIDTH } from '@/shared/constants'
 
@@ -14,7 +15,10 @@ const rHeight = (designHeight: number) => {
   return PixelRatio.roundToNearestPixel((HEIGHT * designHeight) / DESIGN_SCREEN_HEIGHT)
 }
 
+const rFontSize = (fontDesign: number) => RFValue(fontDesign, DESIGN_SCREEN_HEIGHT)
+
 export const responsive = {
   rWidth,
   rHeight,
+  rFontSize,
 }
