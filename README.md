@@ -6,7 +6,7 @@
 
 ### Create project
 
-`npx fue new`
+`npx fue-cli new`
 
 ### Generate code with fue
 
@@ -84,7 +84,7 @@
 
 ```bash
 # pull source from cli
-npx fue new
+npx fue-cli new
 
 # pull source from git
 git clone https://github.com/bonnguyenitc/react-native-starter.git
