@@ -1,9 +1,8 @@
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-import { MotiView } from 'moti'
-
-import { styles, transitions } from '@/shared/constants'
+import { MotiColor } from '../moti-color'
+import { styles } from '@/shared/constants'
 import { useTheme } from '@/shared/themes'
 
 type LayoutProps = {
@@ -15,31 +14,15 @@ export const Screen: React.FC<LayoutProps> = function ({ children, safe = false 
   const { colors } = useTheme()
   if (!safe)
     return (
-      <MotiView
-        style={styles.flex_1}
-        transition={transitions.screen}
-        from={{
-          backgroundColor: colors['background.default'],
-        }}
-        animate={{
-          backgroundColor: colors['background.default'],
-        }}>
+      <MotiColor style={styles.flex_1} backgroundColor="background.default">
         {children}
-      </MotiView>
+      </MotiColor>
     )
   return (
     <SafeAreaView style={[styles.flex_1, { backgroundColor: colors['background.default'] }]}>
-      <MotiView
-        style={styles.flex_1}
-        transition={transitions.screen}
-        from={{
-          backgroundColor: colors['background.default'],
-        }}
-        animate={{
-          backgroundColor: colors['background.default'],
-        }}>
+      <MotiColor style={styles.flex_1} backgroundColor="background.default">
         {children}
-      </MotiView>
+      </MotiColor>
     </SafeAreaView>
   )
 }
