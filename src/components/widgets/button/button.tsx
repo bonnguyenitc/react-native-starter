@@ -5,6 +5,7 @@ import { MotiPressable } from 'moti/interactions'
 
 import { Center } from '../center'
 import { Text } from '../text'
+import { borderRadiusSizes } from '@/shared/constants'
 import { ColorName, TypoName } from '@/shared/themes'
 import { palette } from '@/shared/themes/palette'
 import { ViewProps } from '@/shared/types'
@@ -12,7 +13,7 @@ import { ViewProps } from '@/shared/types'
 const styleDefault: ViewStyle = {
   padding: 8,
   paddingHorizontal: 16,
-  borderRadius: 32,
+  borderRadius: borderRadiusSizes.xl,
 }
 
 const SHADOW: ViewStyle = {

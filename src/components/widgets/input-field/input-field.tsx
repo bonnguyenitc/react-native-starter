@@ -5,6 +5,7 @@ import { ViewStyle } from 'react-native'
 import { TextProps } from '@shopify/restyle'
 
 import { Row, Space, Text, TextInput } from '@/components/widgets'
+import { borderRadiusSizes } from '@/shared/constants'
 import { ColorName, spacing, Theme, useTheme } from '@/shared/themes'
 
 type InputFieldProps = {
@@ -18,7 +19,7 @@ type InputFieldProps = {
 const INPUT: ViewStyle = {
   width: '100%',
   borderWidth: 1,
-  borderRadius: 8,
+  borderRadius: borderRadiusSizes.small,
   height: 56,
   paddingHorizontal: spacing.small,
 }

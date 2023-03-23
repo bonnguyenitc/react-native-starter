@@ -21,3 +21,12 @@ export const shadows: { [key in ShadowName]: ViewProps } = {
     shadowRadius: 10,
   },
 }
+
+export const borderRadiusSizes = {
+  tiny: 4,
+  small: 8,
+  medium: 12,
+  large: 24,
+  xl: 32,
+  huge: 64,
+}
