@@ -6,5 +6,4 @@ export const RouterName: Route = {
   landing: 'landing',
   register: 'register',
   login: 'login',
-  tabAnimation: 'tabAnimation',
 }
