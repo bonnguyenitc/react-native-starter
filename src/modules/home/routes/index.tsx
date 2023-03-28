@@ -11,6 +11,7 @@ import { RouterName } from '@/routes/router-name'
 
 export type HomeStackParamList = {
   home: undefined
+  tabAnimation: undefined
 }
 
 const options: StackNavigationOptions = {
