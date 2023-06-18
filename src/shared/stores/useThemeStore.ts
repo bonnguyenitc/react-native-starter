@@ -26,7 +26,7 @@ export const useThemeStore = create(
     {
       name: 'theme-store',
       storage: createJSONStorage(() => MMKVStorage),
-      partialize: state => ({ isDarkMode: state.isDarkMode } as any),
+      partialize: state => ({ isDarkMode: state.isDarkMode } as State & Action),
     },
   ),
 )
