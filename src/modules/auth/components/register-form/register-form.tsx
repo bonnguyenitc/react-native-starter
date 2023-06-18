@@ -1,33 +1,15 @@
 import React, { useCallback, useEffect } from 'react'
-import { useForm } from 'react-hook-form'
 
 import { useNavigation } from '@react-navigation/native'
 
-import { yupResolver } from '@hookform/resolvers/yup'
-import * as yup from 'yup'
-
 import { useAuth } from '../../hooks'
+import { useRegisterForm } from './useRegisterForm'
 import { Button, Col, Space } from '@/components/widgets'
 import { InputField } from '@/components/widgets/input-field'
 import { AppNavigationProp } from '@/routes'
 import { useTranslation } from '@/shared/hooks'
 import { useThemeStore } from '@/shared/stores'
 import { useTheme } from '@/shared/themes'
-
-type FormData = {
-  email: string
-  password: string
-  confirmPassword: string
-}
-
-const schema = yup.object({
-  email: yup.string().email().required('Required'),
-  password: yup.string().required('Required'),
-  confirmPassword: yup
-    .string()
-    .required('Required')
-    .oneOf([yup.ref('password'), null], 'Passwords must match'),
-})
 
 export const RegisterForm = function () {
   const navigation = useNavigation<AppNavigationProp>()
@@ -36,24 +18,13 @@ export const RegisterForm = function () {
   const isDarkMode = useThemeStore(state => state.isDarkMode)
   const { colors } = useTheme()
 
+  const { control, handleSubmit, errors } = useRegisterForm()
+
   useEffect(() => {
     navigation.setOptions({
       headerTitle: t('navigate:register'),
     })
   }, [navigation, t])
-
-  const {
-    control,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormData>({
-    defaultValues: {
-      email: '',
-      password: '',
-      confirmPassword: '',
-    },
-    resolver: yupResolver(schema),
-  })
 
   const onSubmit = useCallback(
     (/* data: FormData */) => {

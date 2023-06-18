@@ -1,4 +1,5 @@
 import { useCallback } from 'react'
+import { Keyboard } from 'react-native'
 
 import { useNavigation } from '@react-navigation/native'
 
@@ -21,6 +22,7 @@ export const useAuth = () => {
 
   const login = useCallback(
     (data: LoginPayload) => {
+      Keyboard.dismiss()
       loginAction(data)
     },
     [loginAction],

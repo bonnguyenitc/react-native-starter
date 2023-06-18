@@ -1,24 +1,15 @@
-import React, { useCallback, useEffect } from 'react'
-import { useForm } from 'react-hook-form'
+import React, { useEffect } from 'react'
 
 import { useNavigation } from '@react-navigation/native'
 
-import { yupResolver } from '@hookform/resolvers/yup'
-import * as yup from 'yup'
-
 import { useAuth } from '../../hooks'
-import { LoginPayload } from '../../types'
+import { useLoginForm } from './useLoginForm'
 import { Button, Col, Space } from '@/components/widgets'
 import { InputField } from '@/components/widgets/input-field'
 import { AppNavigationProp } from '@/routes'
 import { useTranslation } from '@/shared/hooks'
 import { useThemeStore } from '@/shared/stores'
 import { useTheme } from '@/shared/themes'
-
-const schema = yup.object({
-  email: yup.string().required('Required'),
-  password: yup.string().required('Required'),
-})
 
 export const LoginForm: React.FC = function () {
   const navigation = useNavigation<AppNavigationProp>()
@@ -27,30 +18,13 @@ export const LoginForm: React.FC = function () {
   const isDarkMode = useThemeStore(state => state.isDarkMode)
   const { colors } = useTheme()
 
+  const { control, handleSubmit, errors } = useLoginForm()
+
   useEffect(() => {
     navigation.setOptions({
       headerTitle: t('navigate:login'),
     })
   }, [navigation, t])
-
-  const {
-    control,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<LoginPayload>({
-    defaultValues: {
-      email: '',
-      password: '',
-    },
-    resolver: yupResolver(schema),
-  })
-
-  const onSubmit = useCallback(
-    (data: LoginPayload) => {
-      login(data)
-    },
-    [login],
-  )
 
   return (
     <Col width="80%">
@@ -75,7 +49,7 @@ export const LoginForm: React.FC = function () {
       />
       <Space height={32} />
       <Col>
-        <Button backgroundColor="secondary" onPress={handleSubmit(onSubmit)} labelColor="primary">
+        <Button backgroundColor="secondary" onPress={handleSubmit(login)} labelColor="primary">
           {t('auth:login')}
         </Button>
       </Col>

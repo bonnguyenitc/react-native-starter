@@ -24,8 +24,6 @@ export const useAuthStore = create<State & Action>(set => ({
   data: undefined,
   loginAction: async data => {
     showLoading()
-    await delay(3000)
-    hideLoading()
     const resp = await loginWithEmailAndPasswordApi(data)
     resp.ok = true
     if (resp.ok) {
@@ -35,6 +33,7 @@ export const useAuthStore = create<State & Action>(set => ({
         data: resp.data?.user,
       }))
     }
+    hideLoading()
   },
   registerAction: async () => {
     await delay(3000)

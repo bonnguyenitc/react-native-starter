@@ -589,7 +589,7 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  boost: a7c83b31436843459a1961bfd74b96033dc77234
+  boost: 57d2868c099736d80fcd648bf211b4431e51a558
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
   FBLazyVector: 068141206af867f72854753423d0117c4bf53419
@@ -604,7 +604,7 @@ SPEC CHECKSUMS:
   Flipper-RSocket: d9d9ade67cbecf6ac10730304bf5607266dd2541
   FlipperKit: cbdee19bdd4e7f05472a66ce290f1b729ba3cb86
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
-  glog: 3d02b25ca00c2d456734d0bcff864cbc62f6ae1a
+  glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   lottie-ios: 8f97d3271e155c2d688875c29cd3c74908aef5f8
   lottie-react-native: b702fab740cdb952a8e2354713d3beda63ff97b0

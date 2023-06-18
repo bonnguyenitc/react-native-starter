@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 
 import { useNavigation } from '@react-navigation/native'
 
@@ -29,6 +29,29 @@ export const Landing: React.FC = function () {
   const { t, i18n } = useTranslation()
   const [lang, setLang] = useState(i18n.language)
 
+  const languagesSelector = useMemo(
+    () => (
+      <>
+        {languages.map(currentLang => {
+          const selectedLanguage = currentLang.code === lang
+          return (
+            <Text
+              color="text.default"
+              variant={!selectedLanguage ? 'light' : 'normal'}
+              key={currentLang.code}
+              onPress={() => {
+                setLang(currentLang.code)
+                i18n.changeLanguage(currentLang.code) // it will change the language through out the app.
+              }}>
+              {currentLang.label}
+            </Text>
+          )
+        })}
+      </>
+    ),
+    [i18n, lang],
+  )
+
   return (
     <AuthLayout safe isShowToggleDarkMode title={APP_NAME}>
       <Button onPress={goToLogin} backgroundColor="secondary" width={200} labelColor="primary">
@@ -39,21 +62,7 @@ export const Landing: React.FC = function () {
         {t('auth:register')}
       </Button>
       <Space height={18} />
-      {languages.map(currentLang => {
-        const selectedLanguage = currentLang.code === lang
-        return (
-          <Text
-            color="text.default"
-            variant={!selectedLanguage ? 'light' : 'normal'}
-            key={currentLang.code}
-            onPress={() => {
-              setLang(currentLang.code)
-              i18n.changeLanguage(currentLang.code) // it will change the language through out the app.
-            }}>
-            {currentLang.label}
-          </Text>
-        )
-      })}
+      {languagesSelector}
     </AuthLayout>
   )
 }
