@@ -56,7 +56,7 @@
 
 | Package                                                                        | Version  |
 | ------------------------------------------------------------------------------ | -------- |
-| [React navigation](https://github.com/Shopify/restyle)                         | v6       |
+| [React navigation](https://reactnavigation.org)                                | v6       |
 | [@shopify/restyle](https://github.com/Shopify/restyle)                         | ^2.1.0   |
 | [axios](https://axios-http.com/)                                               | ^0.27.2  |
 | [i18next](https://www.i18next.com/)                                            | ^21.8.11 |
