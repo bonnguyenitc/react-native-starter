@@ -54,20 +54,20 @@
 
 ##
 
-| Package                                                                        | Version     |
-| ------------------------------------------------------------------------------ | ----------- |
-| [React navigation](https://github.com/Shopify/restyle)                         | v6          |
-| [@shopify/restyle](https://github.com/Shopify/restyle)                         | ^2.1.0      |
-| [axios](https://axios-http.com/)                                               | ^0.27.2     |
-| [i18next](https://www.i18next.com/)                                            | ^21.8.11    |
-| [react-hook-form](https://react-hook-form.com/)                                | ^7.33.0     |
-| [react-native](https://reactnative.dev/)                                       | 0.69.1      |
-| [react-native-bootsplash](https://github.com/zoontek/react-native-bootsplash)  | ^4.4.0      |
-| [react-native-config](https://github.com/luggit/react-native-config)           | ^1.4.6      |
-| [react-native-mmkv](https://github.com/mrousavy/react-native-mmkv)             | ^2.4.2      |
-| [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/) | ^2.9.1      |
-| [yup](https://github.com/jquense/yup)                                          | ^0.32.11    |
-| [zustand](https://github.com/pmndrs/zustand)                                   | ^4.0.0-rc.1 |
+| Package                                                                        | Version  |
+| ------------------------------------------------------------------------------ | -------- |
+| [React navigation](https://github.com/Shopify/restyle)                         | v6       |
+| [@shopify/restyle](https://github.com/Shopify/restyle)                         | ^2.1.0   |
+| [axios](https://axios-http.com/)                                               | ^0.27.2  |
+| [i18next](https://www.i18next.com/)                                            | ^21.8.11 |
+| [react-hook-form](https://react-hook-form.com/)                                | ^7.33.0  |
+| [react-native](https://reactnative.dev/)                                       | 0.72.5   |
+| [react-native-bootsplash](https://github.com/zoontek/react-native-bootsplash)  | ^5.0.3   |
+| [react-native-config](https://github.com/luggit/react-native-config)           | ^1.5.1   |
+| [react-native-mmkv](https://github.com/mrousavy/react-native-mmkv)             | ^2.10.2  |
+| [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/) | ^3.5.4   |
+| [yup](https://github.com/jquense/yup)                                          | ^0.32.11 |
+| [zustand](https://github.com/pmndrs/zustand)                                   | ^4.4.2   |
 
 ## Quick Start
 
