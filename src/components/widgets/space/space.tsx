@@ -18,7 +18,7 @@ export const Space: React.FC<SpaceProps & ViewProps> = function ({
   align = 'flex-start',
   ...props
 }) {
-  const styles = [style, { height, width }]
+  const styles: any = [style, { height, width }]
 
   return <Box alignSelf={align} {...props} style={styles} />
 }
