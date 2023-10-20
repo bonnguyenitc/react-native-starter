@@ -13,30 +13,30 @@
 #### In root
 
 1. Generate widget
-   `fue g widget widget-name --react-native`
+   `fue g widget widget-name --reactnative`
 2. Generate modal
-   `fue g modal modal-name --react-native`
+   `fue g modal modal-name --reactnative`
 3. Generate module
-   `fue g module module-name --react-native`
+   `fue g module module-name --reactnative`
 4. Generate form
-   `fue g form form-name --react-native`
+   `fue g form form-name --reactnative`
 5. Generate in form a specify dir
-   `fue g form a/b/c/form-name --react-native`
+   `fue g form a/b/c/form-name --reactnative`
 
 #### In module
 
 1. Generate widget
-   `fue g widget widget-name --react-native --module=auth`
+   `fue g widget widget-name --reactnative --module=auth`
 2. Generate modal
-   `fue g modal modal-name --react-native --module=auth`
+   `fue g modal modal-name --reactnative --module=auth`
 3. Generate module
-   `fue g module module-name --react-native --module=auth`
+   `fue g module module-name --reactnative --module=auth`
 4. Generate form
-   `fue g form form-name --react-native --module=auth`
+   `fue g form form-name --reactnative --module=auth`
 5. Generate screen
-   `fue g screen screen-name --react-native --module=auth`
+   `fue g screen screen-name --reactnative --module=auth`
 6. Generate in form a specify dir
-   `fue g form a/b/c/form-name --react-native`
+   `fue g form a/b/c/form-name --reactnative`
 
 ## Features
 
