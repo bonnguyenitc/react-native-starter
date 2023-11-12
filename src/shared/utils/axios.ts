@@ -77,7 +77,7 @@ export const getProblemFromError = (error: AxiosError | any) => {
   return UNKNOWN_ERROR
 }
 
-export const generateErrorData = (error: any): ResponseApi<any, any> => {
+export const generateErrorData = (error: any): ResponseApi<any> => {
   return {
     ok: false,
     error: {

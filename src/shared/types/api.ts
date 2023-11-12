@@ -1,5 +1,7 @@
-export type ResponseApi<T, E> = {
+export type ResponseApi<T> = {
   ok: boolean
   data?: T
-  error?: E
+  error?: {
+    message: string
+  }
 }

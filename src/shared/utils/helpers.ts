@@ -1,5 +1,10 @@
 import { Insets } from 'react-native'
 
+import { AxiosResponse } from 'axios'
+
+import { ResponseApi } from '../types'
+import { generateErrorData } from './axios'
+
 export const delay = (ms: number) => {
   return new Promise(resolve => {
     setTimeout(() => resolve(true), ms)
@@ -37,4 +42,20 @@ export const uploadFileToS3 = ({ url, data, onError, onLoad, onProcess }: Upload
   xhr.onload = onLoad
   xhr.onerror = onError
   xhr.send(photo)
+}
+
+export const wrapApiCall = async <T>(
+  apiCall: () => Promise<AxiosResponse<T>>,
+): Promise<ResponseApi<T>> => {
+  try {
+    const response = await apiCall()
+    return {
+      ok: true,
+      data: response.data,
+    }
+  } catch (error) {
+    // You can customize the error handling as needed
+    console.error('API error:', error)
+    return generateErrorData(error)
+  }
 }
