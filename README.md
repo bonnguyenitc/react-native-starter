@@ -193,7 +193,7 @@ And more in package.json. Check it!
 │   │       └── screens
 │   ├── provider
 │   ├── routes
-│   └──  common
+│   └── common
 │       ├── config
 │       ├── constants
 │       ├── hooks
@@ -226,7 +226,3 @@ And more in package.json. Check it!
     ├── types
     └── utils
 ```
-
-## License
-
-MIT
