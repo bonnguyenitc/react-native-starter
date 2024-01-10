@@ -1,10 +1,18 @@
-# React Native Template 2023
+# React Native Template Starter
 
 [![Demo](./dist/demo.gif)](https://github-production-user-asset-6210df.s3.amazonaws.com/29059779/295525856-20ef36fa-e946-448b-805d-8c95ea5e33c3.mp4)
 
+# Document table of contents
+
+### [✅ 01 - How to change app logo](https://github.com/bonnguyenitc/react-native-starter/blob/main/docs/01-how-to-change-app-logo.md)
+
+### [✅ 02 - How to change splash screen](https://github.com/bonnguyenitc/react-native-starter/blob/main/docs/02-how-to-change-splash-screen.md)
+
+### [✅ 03 - How to keep code changed from node_modules](https://github.com/bonnguyenitc/react-native-starter/blob/main/docs/03-how-to-keep-code-changed-from-node-modules.md)
+
 ## With Fue Cli [Source](https://github.com/bonnguyenitc/fue)
 
-### Create project
+### Create project with fue
 
 `npx fue-cli new`
 
@@ -12,13 +20,13 @@
 
 #### In root
 
-1. Generate widget
+1. Generate widget (default dir: src/components/widgets)
    `fue g widget widget-name --reactnative`
-2. Generate modal
+2. Generate modal (default dir: src/components/modals)
    `fue g modal modal-name --reactnative`
-3. Generate module
+3. Generate module (default dir: src/modules)
    `fue g module module-name --reactnative`
-4. Generate form
+4. Generate form (default dir: src/components/forms)
    `fue g form form-name --reactnative`
 5. Generate in form a specify dir
    `fue g form a/b/c/form-name --reactnative`
@@ -38,19 +46,19 @@
 6. Generate in form a specify dir
    `fue g form a/b/c/form-name --reactnative`
 
-## Features
+## Features and Roadmap
 
-- Navigation v6
-- Theme by restyle
-- Splash screen
-- State management
-- Multi env: dev, stg, prd
-- Multi language
-- Validate form
-- Integrate api
-- Git Hooks with Husky
+- ✅ Navigation v6
+- ✅ Theme by restyle
+- ✅ Splash screen
+- ✅ State management
+- ✅ Multi env: dev, stg, prd
+- ✅ Multi language
+- ✅ Validate form
+- ✅ Integrate api
+- ✅ Git Hooks with Husky
 
-## Tech
+## Dependencies and Libraries
 
 ##
 
@@ -71,7 +79,7 @@
 
 ## Quick Start
 
-#### Require
+#### Require environment:
 
 - XCode >= 13.2.1, Android Studio, JDK 11
 - NodeJS v16.17.0, Yarn v1.22.19
@@ -108,14 +116,14 @@ yarn ios:prod
 And more in package.json. Check it!
 ```
 
-## Rules and Conventions
+## Rules and Conventions for development
 
 - Airbnb JavaScript Style Guide [LINK](https://github.com/airbnb/javascript)
 - Naming
   - Folder, File : kabab-case (name-file.tsx)
   - Hook file, naming variables, functions, classes, interfaces, types, enums: camelCase (useHook)
 
-## Structure folder app
+## Structure of the project
 
 ##
 
@@ -210,7 +218,7 @@ And more in package.json. Check it!
 └── yarn.lock
 ```
 
-## Folder for a feature
+## Folder structure of a module
 
 ##
 
@@ -226,3 +234,5 @@ And more in package.json. Check it!
     ├── types
     └── utils
 ```
+
+## Welcome contributors from this project!!!
