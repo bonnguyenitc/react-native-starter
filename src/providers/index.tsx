@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo } from 'react'
 import { Alert } from 'react-native'
-import { ModalPortal } from 'react-native-modals'
 import { RootSiblingParent } from 'react-native-root-siblings'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 
@@ -35,7 +34,6 @@ export const AppProviders: React.FC = function () {
             <AppRoutes />
           </ErrorBoundary>
         </SafeAreaProvider>
-        <ModalPortal />
       </RootSiblingParent>
     </ThemeProvider>
   )

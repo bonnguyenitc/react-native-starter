@@ -49,7 +49,7 @@ export const Button: React.FC<ButtonProps & ViewProps> = function ({
 }) {
   if (isModal) {
     return (
-      <TouchableOpacity disabled={!!onPress || disabled} onPress={onPress} activeOpacity={0.6}>
+      <TouchableOpacity disabled={!onPress || disabled} onPress={onPress} activeOpacity={0.6}>
         <Center style={[!custom && styleDefault, style, shadow && SHADOW]} {...props}>
           {typeof children === 'string' ? (
             <Text variant={labelVariant} color={labelColor}>
@@ -64,7 +64,7 @@ export const Button: React.FC<ButtonProps & ViewProps> = function ({
   }
   return (
     <MotiPressable
-      disabled={!!onPress || disabled}
+      disabled={!onPress || disabled}
       onPress={onPress}
       // eslint-disable-next-line react-hooks/rules-of-hooks
       animate={useMemo(

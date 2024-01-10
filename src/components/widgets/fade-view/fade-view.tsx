@@ -25,7 +25,7 @@ type Props = {
 
 export const FadeView: React.FC<Props & ViewProps> = function ({
   children,
-  type = 'left',
+  type = 'fade',
   ...props
 }) {
   const entering = React.useMemo(() => {

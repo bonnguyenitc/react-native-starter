@@ -1,6 +1,5 @@
 import React from 'react'
 import { StyleSheet, TouchableWithoutFeedback } from 'react-native'
-import { ModalPortal } from 'react-native-modals'
 import RootSiblings from 'react-native-root-siblings'
 
 import { HEIGHT, WIDTH } from '../constants'
@@ -15,22 +14,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
 })
-
-const modal: any = ModalPortal
-
-const modalIds: string[] = []
-
-export function hideLoading() {
-  const id = modalIds.shift()
-  modal.dismiss(id)
-}
-
-export function showLoading() {
-  const id = modal.show(<Spinner />, {
-    modalStyle: { backgroundColor: 'transparent' },
-  })
-  modalIds.push(id)
-}
 
 export const siblings: any = []
 
@@ -80,4 +63,13 @@ export function showCustomDialog(component: React.ReactNode, isHide = false, bot
     ),
   )
   siblings.push(sibling as never)
+}
+
+export function hideLoading() {
+  const current = siblings.shift()
+  current?.destroy()
+}
+
+export function showLoading() {
+  showCustomDialog(<Spinner />)
 }
