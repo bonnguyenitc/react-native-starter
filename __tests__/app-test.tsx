@@ -2,13 +2,15 @@
  * @format
  */
 
-import 'react-native'
 import React from 'react'
+
 import { render } from '@testing-library/react-native'
-import { App } from '../src/app'
+
+import 'react-native'
+import { Starter } from '../src/starter'
 
 // Note: test renderer must be required after react-native.
 
 it('renders correctly', () => {
-  render(<App />)
+  render(<Starter />)
 })

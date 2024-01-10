@@ -3,9 +3,9 @@ import { StyleProp, ViewStyle } from 'react-native'
 
 import { MotiView } from 'moti'
 
-import { transitions } from '@/shared/constants'
-import { ColorName, useTheme } from '@/shared/themes'
-import { ViewProps } from '@/shared/types'
+import { transitions } from '@/common/constants'
+import { ColorName, useTheme } from '@/common/themes'
+import { ViewProps } from '@/common/types'
 
 type Props = {
   // components's props

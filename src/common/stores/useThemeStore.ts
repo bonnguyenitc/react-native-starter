@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { createJSONStorage, persist } from 'zustand/middleware'
 
-import { MMKVStorage } from '@/shared/utils/storage'
+import { MMKVStorage } from '@/common/utils/storage'
 
 export type State = {
   isDarkMode: boolean

@@ -1,9 +1,9 @@
 import Axios, { AxiosError, AxiosRequestConfig } from 'axios'
 
 import { ResponseApi } from '../types/api'
-import { API_URL } from '@/shared/config'
-import { useNotificationStore } from '@/shared/stores'
-import storage from '@/shared/utils/storage'
+import { API_URL } from '@/common/config'
+import { useNotificationStore } from '@/common/stores'
+import storage from '@/common/utils/storage'
 
 function authRequestInterceptor(config: AxiosRequestConfig) {
   const token = storage.getAccessToken()

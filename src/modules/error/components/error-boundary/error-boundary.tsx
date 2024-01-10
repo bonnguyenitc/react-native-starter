@@ -2,7 +2,7 @@ import React, { ReactElement, useCallback, useMemo } from 'react'
 import ErrorBoundaryLib from 'react-native-error-boundary'
 
 import { Crash } from '../../screens'
-import { logger } from '@/shared/utils/logger'
+import { logger } from '@/common/utils/logger'
 
 type Props = {
   children: ReactElement

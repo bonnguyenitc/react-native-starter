@@ -193,7 +193,7 @@ And more in package.json. Check it!
 │   │       └── screens
 │   ├── provider
 │   ├── routes
-│   └── shared
+│   └──  common
 │       ├── config
 │       ├── constants
 │       ├── hooks

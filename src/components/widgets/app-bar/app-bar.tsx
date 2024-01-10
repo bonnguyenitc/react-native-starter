@@ -6,8 +6,8 @@ import { Col } from '../col'
 import { Row } from '../row'
 import { Space } from '../space'
 import { Text } from '../text'
-import { shadows, WIDTH } from '@/shared/constants'
-import { ViewProps } from '@/shared/types'
+import { shadows, WIDTH } from '@/common/constants'
+import { ViewProps } from '@/common/types'
 
 type Props = {
   leading?: React.ReactNode

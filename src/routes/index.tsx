@@ -4,11 +4,11 @@ import RNBootSplash from 'react-native-bootsplash'
 import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
 
+import { useThemeStore } from '@/common/stores'
+import { navigationRef } from '@/common/utils/navigation-utilities'
 import { AuthRoutes, AuthStackParamList } from '@/modules/auth/routes'
 import { useAuthStore } from '@/modules/auth/stores'
 import { HomeRoutes, HomeStackParamList } from '@/modules/home/routes'
-import { useThemeStore } from '@/shared/stores'
-import { navigationRef } from '@/shared/utils/navigation-utilities'
 
 export type AppParamList = AuthStackParamList & HomeStackParamList
 

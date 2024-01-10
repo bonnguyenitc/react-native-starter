@@ -1,19 +1,20 @@
 import React, { useEffect, useMemo } from 'react'
 import { Alert } from 'react-native'
 import { ModalPortal } from 'react-native-modals'
+import { RootSiblingParent } from 'react-native-root-siblings'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 import { ThemeProvider } from '@shopify/restyle'
 
+import { useBarStyle } from '@/common/hooks'
+import { useThemeStore } from '@/common/stores'
+import { darkTheme, lightTheme } from '@/common/themes'
+import { EventRegister, EVENTS } from '@/common/utils/event-register'
 import { useAuthStore } from '@/modules/auth/stores'
 import { ErrorBoundary } from '@/modules/error/components'
 import { AppRoutes } from '@/routes'
-import { useBarStyle } from '@/shared/hooks'
-import { useThemeStore } from '@/shared/stores'
-import { darkTheme, lightTheme } from '@/shared/themes'
-import { EventRegister, EVENTS } from '@/shared/utils/event-register'
 
-export const AppProvider: React.FC = function () {
+export const AppProviders: React.FC = function () {
   useBarStyle()
   const checkLoggedIn = useAuthStore(state => state.checkLoggedInAction)
   const isDarkMode = useThemeStore(state => state.isDarkMode)
@@ -28,12 +29,14 @@ export const AppProvider: React.FC = function () {
 
   return (
     <ThemeProvider theme={theme}>
-      <SafeAreaProvider>
-        <ErrorBoundary catchErrors="dev">
-          <AppRoutes />
-        </ErrorBoundary>
-      </SafeAreaProvider>
-      <ModalPortal />
+      <RootSiblingParent>
+        <SafeAreaProvider>
+          <ErrorBoundary catchErrors="dev">
+            <AppRoutes />
+          </ErrorBoundary>
+        </SafeAreaProvider>
+        <ModalPortal />
+      </RootSiblingParent>
     </ThemeProvider>
   )
 }

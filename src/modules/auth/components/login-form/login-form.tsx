@@ -4,12 +4,12 @@ import { useNavigation } from '@react-navigation/native'
 
 import { useAuth } from '../../hooks'
 import { useLoginForm } from './useLoginForm'
+import { useTranslation } from '@/common/hooks'
+import { useThemeStore } from '@/common/stores'
+import { useTheme } from '@/common/themes'
 import { Button, Col, Space } from '@/components/widgets'
 import { InputField } from '@/components/widgets/input-field'
 import { AppNavigationProp } from '@/routes'
-import { useTranslation } from '@/shared/hooks'
-import { useThemeStore } from '@/shared/stores'
-import { useTheme } from '@/shared/themes'
 
 export const LoginForm: React.FC = function () {
   const navigation = useNavigation<AppNavigationProp>()

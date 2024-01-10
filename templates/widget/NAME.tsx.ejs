@@ -5,8 +5,6 @@ patch:
 ---
 import React from 'react'
 
-import { Box } from '../box'
-import { Text } from '../text'
 import { ViewProps } from '@/shared/types'
 
 type Props = {
@@ -18,9 +16,5 @@ type Props = {
  */
 
 export const <%= props.pascalCaseName %>: React.FC<Props & ViewProps> = function (props: Props) {
-  return (
-    <Box>
-      <Text>HelloNe</Text>
-    </Box>
-  )
+  return null
 }

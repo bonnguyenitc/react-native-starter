@@ -5,10 +5,10 @@ import { MotiPressable } from 'moti/interactions'
 
 import { Center } from '../center'
 import { Text } from '../text'
-import { borderRadiusSizes } from '@/shared/constants'
-import { ColorName, TypoName } from '@/shared/themes'
-import { palette } from '@/shared/themes/palette'
-import { ViewProps } from '@/shared/types'
+import { borderRadiusSizes } from '@/common/constants'
+import { ColorName, TypoName } from '@/common/themes'
+import { palette } from '@/common/themes/palette'
+import { ViewProps } from '@/common/types'
 
 const styleDefault: ViewStyle = {
   padding: 8,

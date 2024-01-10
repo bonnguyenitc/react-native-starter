@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { StatusBar } from 'react-native'
 
-import { useThemeStore } from '@/shared/stores'
+import { useThemeStore } from '@/common/stores'
 
 export const useBarStyle = () => {
   const isDarkMode = useThemeStore(state => state.isDarkMode)

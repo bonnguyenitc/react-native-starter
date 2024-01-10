@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Box } from '../box'
-import { ViewProps } from '@/shared/types'
+import { ViewProps } from '@/common/types'
 
 type Props = {
   children: React.ReactNode

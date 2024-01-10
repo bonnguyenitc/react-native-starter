@@ -2,8 +2,8 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 import { MotiColor } from '../moti-color'
-import { styles } from '@/shared/constants'
-import { useTheme } from '@/shared/themes'
+import { styles } from '@/common/constants'
+import { useTheme } from '@/common/themes'
 
 type LayoutProps = {
   children: React.ReactNode

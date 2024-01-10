@@ -5,7 +5,7 @@ import { Easing } from 'react-native-reanimated'
 import { MotiTransitionProp, MotiView } from 'moti'
 
 import { MotiColor } from '../moti-color'
-import { useTheme } from '@/shared/themes'
+import { useTheme } from '@/common/themes'
 
 type SwitchProps = {
   isActive?: boolean

@@ -11,7 +11,7 @@ import Animated, {
   SlideOutRight,
 } from 'react-native-reanimated'
 
-import { ViewProps } from '@/shared/types'
+import { ViewProps } from '@/common/types'
 
 type Props = {
   // components's props

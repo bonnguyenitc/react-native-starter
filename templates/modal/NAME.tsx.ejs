@@ -7,7 +7,7 @@ import React, { memo, useCallback } from 'react'
 
 import { Button, Col, Row, Space, Text } from '@/components/widgets'
 import { WIDTH } from '@/shared/constants'
-import { hideModalComponent } from '@/shared/libs/dialog'
+import { hideCustomDialog } from '@/shared/libs/dialog'
 
 type Props = {
   onClose?: () => void
@@ -32,12 +32,12 @@ export const <%= props.pascalCaseName %>: React.FC<Props> = memo(function ({
 }) {
   const handleClose = useCallback(() => {
     onClose?.()
-    hideModalComponent()
+    hideCustomDialog()
   }, [onClose])
 
   const handleConfirm = useCallback(() => {
     onConfirm?.()
-    hideModalComponent()
+    hideCustomDialog()
   }, [onConfirm])
 
   return (

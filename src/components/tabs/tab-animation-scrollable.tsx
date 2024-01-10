@@ -8,8 +8,8 @@ import Animated, {
   useSharedValue,
 } from 'react-native-reanimated'
 
+import { HEIGHT, WIDTH } from '@/common/constants'
 import { Col, Image, Screen, Text, Touchable } from '@/components/widgets'
-import { HEIGHT, WIDTH } from '@/shared/constants'
 
 type TabsProps = {
   tabName: string

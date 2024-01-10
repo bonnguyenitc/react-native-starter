@@ -1,7 +1,7 @@
 import { PixelRatio } from 'react-native'
 import { RFValue } from 'react-native-responsive-fontsize'
 
-import { HEIGHT, WIDTH } from '@/shared/constants'
+import { HEIGHT, WIDTH } from '@/common/constants'
 
 // change it
 const DESIGN_SCREEN_WIDTH = 0

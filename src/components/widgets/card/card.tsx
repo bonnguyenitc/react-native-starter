@@ -1,8 +1,8 @@
 import React from 'react'
 
 import { Box } from '../box'
-import { borderRadiusSizes } from '@/shared/constants'
-import { ViewProps } from '@/shared/types'
+import { borderRadiusSizes } from '@/common/constants'
+import { ViewProps } from '@/common/types'
 
 export const Card: React.FC<ViewProps> = function (props) {
   return (

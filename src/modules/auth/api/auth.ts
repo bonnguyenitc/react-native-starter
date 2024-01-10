@@ -1,9 +1,9 @@
 import { LoginPayload, RegisterPayload } from '../types'
 import { UserResponse } from '../types/api'
 import { UserModel } from '../types/models'
-import { ResponseApi } from '@/shared/types/api'
-import { axios } from '@/shared/utils/axios'
-import { wrapApiCall } from '@/shared/utils/helpers'
+import { ResponseApi } from '@/common/types/api'
+import { axios } from '@/common/utils/axios'
+import { wrapApiCall } from '@/common/utils/helpers'
 
 export const getUserApi = async (): Promise<ResponseApi<UserModel>> => {
   return wrapApiCall<UserModel>(() => axios.get('/auth/me'))

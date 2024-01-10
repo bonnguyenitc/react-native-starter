@@ -1,8 +1,8 @@
 import React, { memo, useCallback } from 'react'
 
+import { WIDTH } from '@/common/constants'
+import { hideCustomDialog } from '@/common/utils/dialog'
 import { Button, Col, Row, Space, Text } from '@/components/widgets'
-import { WIDTH } from '@/shared/constants'
-import { hideModalComponent } from '@/shared/utils/dialog'
 
 type Props = {
   onClose?: () => void
@@ -23,12 +23,12 @@ export const ConfirmModal: React.FC<Props> = memo(function ({
 }) {
   const handleClose = useCallback(() => {
     onClose?.()
-    hideModalComponent()
+    hideCustomDialog()
   }, [onClose])
 
   const handleConfirm = useCallback(() => {
     onConfirm?.()
-    hideModalComponent()
+    hideCustomDialog()
   }, [onConfirm])
 
   return (

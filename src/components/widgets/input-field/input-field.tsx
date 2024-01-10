@@ -4,9 +4,9 @@ import { ViewStyle } from 'react-native'
 
 import { TextProps } from '@shopify/restyle'
 
+import { borderRadiusSizes } from '@/common/constants'
+import { ColorName, spacing, Theme, useTheme } from '@/common/themes'
 import { Row, Space, Text, TextInput } from '@/components/widgets'
-import { borderRadiusSizes } from '@/shared/constants'
-import { ColorName, spacing, Theme, useTheme } from '@/shared/themes'
 
 type InputFieldProps = {
   control?: Control<any, any>

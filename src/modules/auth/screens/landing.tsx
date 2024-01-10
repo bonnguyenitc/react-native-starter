@@ -4,11 +4,11 @@ import { useNavigation } from '@react-navigation/native'
 
 import { AuthLayout } from '../components/layout/layout'
 import { useAuth } from '../hooks'
+import { APP_NAME } from '@/common/config'
+import { useTranslation } from '@/common/hooks'
 import { Button, Space, Text } from '@/components/widgets'
 import { language } from '@/localization/language'
 import { AppNavigationProp } from '@/routes'
-import { APP_NAME } from '@/shared/config'
-import { useTranslation } from '@/shared/hooks'
 
 const languages = [
   // Language List

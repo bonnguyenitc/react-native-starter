@@ -2,7 +2,7 @@ import React from 'react'
 import { FlexAlignType, StyleProp, ViewStyle } from 'react-native'
 
 import { Box } from '../box/box'
-import { ViewProps } from '@/shared/types'
+import { ViewProps } from '@/common/types'
 
 export interface SpaceProps {
   style?: StyleProp<ViewStyle>

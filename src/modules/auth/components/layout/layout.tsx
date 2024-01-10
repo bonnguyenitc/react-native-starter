@@ -1,8 +1,8 @@
 import React from 'react'
 
+import { useThemeStore } from '@/common/stores'
+import { ChildrenProps } from '@/common/types'
 import { Center, Row, Screen, Space, Switch, Text } from '@/components/widgets'
-import { useThemeStore } from '@/shared/stores'
-import { ChildrenProps } from '@/shared/types'
 
 type AuthLayoutProps = {
   title?: string
