@@ -15,5 +15,5 @@
 1. Unzip downloaded file from https://www.appicon.co/
 2. Copy all Downloads/android/\* to react-native-starter/android/app/src/main/res
 3. Unzip downloaded file from https://icon.kitchen/
-4. Copy merge folder Downloads/ic_launcher/res to react-native-starter/android/app/src/main/res
+4. Copy merge folder Downloads/ic_launcher/res/\* to react-native-starter/android/app/src/main/res
 5. Done
