@@ -1,6 +1,6 @@
 import React, { memo, useCallback } from 'react'
 
-import { WIDTH } from '@/common/constants'
+import { borderRadiusSizes, WIDTH } from '@/common/constants'
 import { hideCustomDialog } from '@/common/utils/dialog'
 import { Button, Col, Row, Space, Text } from '@/components/widgets'
 
@@ -32,7 +32,11 @@ export const ConfirmModal: React.FC<Props> = memo(function ({
   }, [onConfirm])
 
   return (
-    <Col width={0.8 * WIDTH} padding="medium" backgroundColor="primary">
+    <Col
+      width={0.8 * WIDTH}
+      padding="medium"
+      backgroundColor="primary"
+      borderRadius={borderRadiusSizes.medium}>
       <Col>
         <Text variant="normal" color="secondary">
           {title}

@@ -55,7 +55,7 @@ export const wrapApiCall = async <T>(
     }
   } catch (error) {
     // You can customize the error handling as needed
-    console.error('API error:', error)
+    // console.error('API error:', error)
     return generateErrorData(error)
   }
 }

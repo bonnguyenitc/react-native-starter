@@ -1,6 +1,6 @@
 # React Native Template 2023
 
-<p align="center"><img src="https://raw.githubusercontent.com/bonnguyenitc/react-native-starter/main/dist/demo.gif" alt="demo"></p>
+<p align="center"><video src="https://raw.githubusercontent.com/bonnguyenitc/react-native-starter/main/dist/demo.mp4" alt="demo"></p>
 
 ## With Fue Cli [Source](https://github.com/bonnguyenitc/fue)
 

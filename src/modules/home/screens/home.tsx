@@ -21,11 +21,11 @@ export const Home: React.FC = function () {
   return (
     <HomeLayout title="Home">
       <Button backgroundColor="secondary" onPress={showModal} labelColor="primary">
-        Show pop up
+        Test modal
       </Button>
       <Space height={32} />
       <Button backgroundColor="secondary" onPress={emitEvent} labelColor="primary">
-        Test event emit
+        Test event emitter
       </Button>
       <Space height={32} />
       <Button backgroundColor="secondary" onPress={logout} labelColor="primary">
